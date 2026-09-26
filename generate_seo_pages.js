@@ -244,11 +244,11 @@ const services_fa = [
 ];
 
 for (const [p, t, d, c] of services_tr) {
-    writeFile(\`src/pages/tr/\${p}.astro\`, makePageContent(t, d, "tr", c, \`/tr/\${p}\`));
+    writeFile("src/pages/tr/" + p + ".astro", makePageContent(t, d, "tr", c, "/tr/" + p));
 }
 
 for (const [p, t, d, c] of services_fa) {
-    writeFile(\`src/pages/fa/\${p}.astro\`, makePageContent(t, d, "fa", c, \`/fa/\${p}\`));
+    writeFile("src/pages/fa/" + p + ".astro", makePageContent(t, d, "fa", c, "/fa/" + p));
 }
 
 console.log('SEO pages generated successfully.');
