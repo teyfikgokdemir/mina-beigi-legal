@@ -4,30 +4,41 @@ const isTr = lang === 'tr';
 
 const trPhone = '+905392425624';
 const irPhone = '+989125102088';
-const trPhoneFormatted = '+90 539 2425 624';
+const trPhoneFormatted = '+90 539 242 56 24';
 const irPhoneFormatted = '+98 912 510 20 88';
 
 const phone1 = isTr ? { tel: trPhone, fmt: trPhoneFormatted } : { tel: irPhone, fmt: irPhoneFormatted };
 const phone2 = isTr ? { tel: irPhone, fmt: irPhoneFormatted } : { tel: trPhone, fmt: trPhoneFormatted };
 ---
-<footer class="bg-[#111112] pt-12 pb-6 border-t border-white/10 text-gray-400 text-sm">
-  <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 mb-8" dir={isTr ? "ltr" : "rtl"}>
+<footer class="bg-surface pt-16 pb-8 border-t border-[#17191D] text-ivory/70 text-sm">
+  <div class="container mx-auto px-4 grid md:grid-cols-3 gap-12 mb-12" dir={isTr ? "ltr" : "rtl"}>
     <div>
-      <h3 class="text-[#C29B62] text-lg font-semibold mb-4">MINA BEIGI</h3>
-      <p class="mb-4">{isTr ? 'İstanbul merkezli profesyonel hukuki danışmanlık ve süreç yönetimi.' : 'مشاوره حرفه‌ای حقوقی و مدیریت فرآیندها در استانبول.'}</p>
+      <h3 class="text-brand text-lg font-semibold mb-6">MINA BEIGI</h3>
+      <p class="mb-6 leading-relaxed">
+        {isTr ? 'İstanbul ve Tahran merkezli, uluslararası alanda profesyonel danışmanlık, süreç koordinasyonu ve yeminli tercümanlık hizmetleri.' : 'خدمات حرفه‌ای مشاوره بین‌المللی، مدیریت فرایندها و ترجمه رسمٌ مستقر در استانبول و تهران.'}
+      </p>
+      <div class="text-xs bg-primary/50 p-4 rounded text-bronze border border-primary">
+        {isTr ? 'Önemli Not: Mina Beigi\\'in avukatlık yetkisi İran kapsamındadır. Türkiye\\'de sunulan hizmetler danışmanlık, başvuru koordinasyonu ve resmí tercümanlık kapsamındadır.' : 'توجه مهم: صلاحیت وکالت مٸنا بیگی در محدوده ایران است. خدمات ارائه‌شده در ترکیه سhامل مشاورم، هماهنگی درخواست‌ها و ترجمه رسمی می‌باشد.'}
+      </div>
     </div>
-    <div>
-      <h3 class="text-white text-lg font-semibold mb-4">{isTr ? 'İletişim' : 'تماس با ما'}</h3>
-      <p class="mb-2 text-start">📍 Pendik, İstanbul / Türkiye</p>
-      <p class="mb-2 text-start" dir="ltr">📞 <a href={`tel:${phone1.tel}`} class="hover:text-[#C29B62]">{phone1.fmt}</a></p>
-      <p class="mb-2 text-start" dir="ltr">📞 <a href={`tel:${phone2.tel}`} class="hover:text-[#C29B62]">{phone2.fmt}</a></p>
+    <div class={isTr ? "ps-0 md:ps-8" : "pe-0 md:pe-8"}>
+      <h3 class="text-ivory text-lg font-semibold mb-6">{isTr ? 'İletişim' : 'demas ba ma'}</h3>
+      <div class="space-y-4">
+        <p class="flex items-start gap-3">
+            <span class="text-brand mt-1">📌</span>
+            <span>{isTr ? 'Tahran, İran' : 'تهرانٌ ایران'} <br/> {isTr ? 'Pendik, İstanbul / Türkiye' : 'оندیک، استانبول / ترکیه'}</span>
+        </p>
+        <p class="flex items-center gap-3" dir="ltr">
+            <span class="text-brand">🔄</span>
+            <a href={`tel:${phone1.tel}`} class="hover:text-brand transition-colors">{phone1.fmt}</a>
+        </p>
+        <p class="flex items-center gap-3" dir="ltr">
+            <span class="text-brand">🔄</span>
+            <a href={`tel:${phone2.tel}`} class="hover:text-brand transition-colors">{phone2.fmt}</a>
+        </p>
+      </div>
     </div>
-    <div>
-      <h3 class="text-white text-lg font-semibold mb-4">{isTr ? 'Sosyal Medya' : 'شبکه‌های اجتماعی'}</h3>
-      <a href="https://www.instagram.com/mina_beigi_lawyer?igsh=MXRtY2tlMTVjYm9jNA==" target="_blank" class="hover:text-[#C29B62]">Instagram</a>
-    </div>
-  </div>
-  <div class="container mx-auto px-4 text-center border-t border-white/10 pt-6">
-    <p>&copy; {new Date().getFullYear()} Mina Beigi. {isTr ? 'Tüm hakları saklıdır.' : 'تمامی حقوق محفوظ است.'}</p>
-  </div>
-</footer>
+    <div class={isTr ? "ps-0 md:ps-8" : "pe-0 md:pe-8"}>
+      <h3 class="text-ivory text-lg font-semibold mb-6">{isTr ? 'Bağlantılar' : 'لینک‌های مو6�6+��O�ς�]��\��H��X�K^KL��^�^X��][\�\�\����H�Y�^�\���	����Z��[Z^�I��	�٘K�X��]	�H�\��H�ݙ\��^X��[��[��][ۋX��ܜȏ��\���	�Z��,[q^�I��	�+�,v*6)�,va�6av)��O�O��H�Y�^�\���	����^�Y]\���	�٘K��\��X�\��H�\��H�ݙ\��^X��[��[��][ۋX��ܜȏ��\���	�^�Y]\���	�+�+�av)�*��O�O��H�Y�^�\���	����[]\�[I��	�٘K��۝X�	�H�\��H�ݙ\��^X��[��[��][ۋX��ܜȏ��\���	�,]qg�[I��	�*�av)�,��O�O��H�Y�^�\���	����ݚ����	�٘K��]�X�I�H�\��H�ݙ\��^X��[��[��][ۋX��ܜ�]M^^��X�]KM����\���	�Ւ��	�[\��^�[Z���	�L��L��WL���L�HL��L��WL��WL�L��WL����O�O��H�Y�H�΋����˚[��Yܘ[K���K�Z[�WؙZY�W�]�Y\��\��]H�؛[�Ȉ�\��H��^][\�X�[�\��\L�ݙ\��^X��[��[��][ۋX��ܜ�]M�ܙ\��ܙ\�\�\��X�HMKL���[�Y��\�[X\�H����[��[��Yܘ[O��[����O���]����]����]���]��\��H��۝Z[�\�^X]]�M^X�[�\��ܙ\�]�ܙ\�\�[X\�K�LN�X�]KM��������N�ۙ]�]J
+K��]�[YX\�
+_HZ[�H�ZY�K��\���	�0�HZ�\�,H�Z�1,Y1,\����	�*�av)�avc6+v`�b6`�6av+v`v-�.6)�,�*���O����]���ٛ��\��

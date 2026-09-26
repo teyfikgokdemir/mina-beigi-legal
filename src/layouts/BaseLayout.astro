@@ -22,23 +22,22 @@ const siteUrl = "https://mina-beigi-legal.pages.dev";
     <title>{title} | Mina Beigi</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={siteUrl + currentUrl.pathname} />
-    <link rel="alternate" hreflang="tr" href={siteUrl + "/tr/"} />
-    <link rel="alternate" hreflang="fa" href={siteUrl + "/fa/"} />
     <meta property="og:title" content={`${title} | Mina Beigi`} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Vazirmatn:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       const lang = document.documentElement.lang;
-      localStorage.setItem('mb_lang', lang);
+      localeStorage.setItem('mb_lang', lang);
     </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LegalService",
+        "@type": "ProfessionalService",
         "name": "Mina Beigi",
+        "description": "Uluslararası danışmanlık, resmi tercümanlık ve göcmenlik süreçleri",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Pendik",
@@ -49,7 +48,7 @@ const siteUrl = "https://mina-beigi-legal.pages.dev";
       }
     </script>
   </head>
-  <body class="flex flex-col min-h-screen bg-primary">
+  <body class="flex flex-col min-h-screen bg-primary selection:bg-brand selection:text-white">
     <Header lang={lang} />
     <main class="flex-grow">
       <slot />
@@ -57,4 +56,4 @@ const siteUrl = "https://mina-beigi-legal.pages.dev";
     <Footer lang={lang} />
     <WhatsAppBtn lang={lang} />
   </body>
-</html>\n
+</html>

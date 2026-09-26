@@ -2,94 +2,59 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="Ana Sayfa" description="Türkiye'de Hukuk, İkamet ve Yatırım Süreçlerinde Profesyonel Destek" lang="tr">
-  <section class="relative py-24 md:py-32 bg-[#1C1C1E] overflow-hidden border-b border-white/5">
-    <div class="absolute inset-0 opacity-20 bg-[url('/images/hero-office.webp')] bg-cover bg-center object-cover"></div>
-    <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
-        Türkiye'de İkamet, Yatırım ve <span class="text-[#C29B62]">Danışmanlık Süreçlerinde</span> Profesyonel Destek
+<BaseLayout title="Ana Sayfa" description="Türkiye\'de Göçmenlik, Yatırim ve ResmÎ Süreçlerde Profesyonel Destek" lang="tr">
+  <!-- 1. Hero -->
+  <section class="relative py-28 md:py-40 bg-primary overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/50 to-primary z-10"></div>
+    <div class="absolute inset-0 bg-[url('/images/hero-background.webp')] bg-cover bg-center object-cover opacity-30 mix-blend-luminosity"></div>
+    
+    <div class="container mx-auto px-4 relative z-20 text-center max-w-5xl">
+      <span class="inline-block py-1 px-3 border border-surface bg-surface/50 rounded-full text-bronze text-sm tracking-widest uppercase mb-8 backdrop-blur">
+        Uluslararası Danışmanlık
+      </span>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-ivory leading-tight tracking-tight">
+        Türkiye'de Göcmenlik, Yatırim ve <span class="text-brand">Resmî Süreçlerde</span> Profesyonel Destek
       </h1>
-      <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-        Çalışma izni, ikamet, şirket kuruluşu, yatırım ve resmî işlemleriniz için İstanbul & Tahran merkezli profesyonel danışmanlık.
+      <p class="text-lg md:text-xl text-ivory/70 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+        ıran ve Türkiye arasındaki hukuki, ticari ve resmî süreçlerde deneyimli danışmanlık ve dosya koordinasyonu.
       </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="https://wa.me/905392425624" class="bg-[#C29B62] text-[#1C1C1E] font-bold py-3 px-8 rounded hover:bg-yellow-600 transition-colors">
-          WhatsApp'tan İletişime Geçin
+      <div class="flex flex-col sm:flex-row justify-center gap-5">
+        <a href="#iletisim" class="bg-brand text-white font-semibold py-4 px-10 rounded shadow-2xl hover:bg-[#A33850] hover:-translate-y-1 transition-all duration-300">
+          Danışmanlık Talebi
         </a>
-        <a href="#iletisim" class="border border-white/30 text-white font-medium py-3 px-8 rounded hover:bg-white/10 transition-colors">
-          Danışmanlık Talebi Oluşturun
+        <a href="https://wa.me/905392425624" class="bg-surface border border-primary text-ivory font-semibold py-4 px-10 rounded hover:bg-primary transition-all duration-300">
+          WhatsApp'tan İletişim
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Profil / Hakkımızda Bölümü -->
-  <section class="py-20 bg-[#141415] border-b border-white/5">
-    <div class="container mx-auto px-4 max-w-5xl">
-      <div class="flex flex-col md:flex-row items-center gap-12">
-        <div class="w-full md:w-1/3 flex justify-center">
-          <div class="w-64 h-64 md:w-72 md:h-80 rounded-2xl overflow-hidden border border-[#C29B62]/30 relative bg-[#2C2C2E]">
-            <img src="/images/mina-profile.webp" alt="Mina Beigi" class="w-full h-full object-cover object-center" onerror="this.style.display='none'" />
-            <div class="absolute inset-0 flex items-center justify-center text-gray-500 text-sm" style="z-index:-1;">Fotoğraf Alanı</div>
-          </div>
-        </div>
-        <div class="w-full md:w-2/3">
-          <h2 class="text-3xl font-bold mb-2 text-white">Mina Beigi</h2>
-          <h3 class="text-[#C29B62] text-xl font-medium mb-6">Uluslararası Danışman & Resmî Tercüman</h3>
-          <ul class="space-y-4 text-gray-300">
-            <li class="flex items-start gap-3">
-              <span class="text-[#C29B62] mt-1">⚖️</span>
-              <span><strong>İran'da</strong> Birinci Derece Lisanslı Avukat (وکیل پایه یک دادگستری)</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-[#C29B62] mt-1">📜</span>
-              <span><strong>Türkiye'de</strong> Resmî Yeminli Tercüman</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-[#C29B62] mt-1">🛂</span>
-              <span>Türkiye Göçmenlik ve İkamet Süreçleri Danışmanlığı</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-[#C29B62] mt-1">🤝</span>
-              <span>İran - İtalya Ticaret Odası Üyesi</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-[#C29B62] mt-1">📍</span>
-              <span>Ofisler: Tahran & İstanbul</span>
-            </li>
-          </ul>
-          <p class="mt-6 text-sm text-gray-500 italic">* Not: Türkiye'de avukatlık faaliyeti yürütülmemekte olup, hizmetlerimiz resmi danışmanlık, süreç takibi ve yeminli tercümanlık kapsamındadır.</p>
-        </div>
+  <!-- 2. Kısa Tanıtım -->
+  <section class="py-20 bg-surface border-y border-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-2xl md:text-3xl font-light text-ivory leading-relaxed">
+        Sınırɱ��Ÿ��ѕͥ�������}�����ɥ��鑔�������������ѕ�е�ɽ�锁���е͕����������ٕ����Ȱ�����Յф���ո�ٔ�}��������������ȁ彰���ɥх�ă�������(���������(����𽑥��(���͕�ѥ���((�������̸�!�鵕Ё������Ā���(���͕�ѥ������������Ё����ɥ�����(�����؁�����􉍽�х���ȁ�൅�Ѽ���Ј�(�������؁�����􉙱������്�����陱��ɽ܁���ѥ�䵉��ݕ����ѕ�̵��������؈�(���������؁�����􉵅�ܴ�ᰈ�(�����������ȁ������ѕ�д�ᰁ���е�����ѕ�е�ٽ�䁵��Ј�U鵅�����������ŵ�����(�������������������ѕ�е�ٽ�����ѕ�е����O�ɗ���ɥ��饸���ȁ�}����Ź����ɽ���役���ٸ���}�ɱ����ɵ������儁����ɳ�āٔ�ɕ͵���������ȁ��鑥�������ɑ����彸�͇}���������(��������𽑥��(��������񄁡ɕ���Ƚ��鵕ѱ�Ȉ��������ext-bronze hover:text-brand font-medium mt-6 md:mt-0 flex items-center gap-2 transition-colors">
+          Tüm Hizmetleri İncele <span aria-hidden="true">&rarr;</span>
+        </a>
       </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-[#1C1C1E]">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-12 text-white">Hizmetlerimiz</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+      
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
         {[
-          {t: 'Çalışma İzni Süreçleri', d: 'Türkiye’de çalışma izni başvurularının mevzuata uygun şekilde, profesyonel dosya yönetimiyle yürütülmesi.'},
-          {t: 'Şirket Kuruluşu', d: 'İranlı ve yabancı yatırımcılar için şirket kuruluş ve ticaret odası kayıt süreçlerinin koordinasyonu.'},
-          {t: 'Gayrimenkul ve İkamet', d: 'Yatırım yoluyla ikamet ve vatandaşlık dosyalarının ön değerlendirmesi ve resmi başvuru takibi.'},
-          {t: 'Deport & Ret Süreçleri', d: 'Göçmenlik süreçlerinde karşılaşılan ret durumlarında danışmanlık ve itiraz süreçlerinin takibi.'},
-          {t: 'Uluslararası Banka İşlemleri', d: 'Yabancılar için banka hesabı açılış süreçleri ve ticari gereksinimlerin yönetimi.'},
-          {t: 'Yeminli Tercümanlık', d: 'Resmi makamlarda geçerli tercüme, noter onaylı belge hizmetleri ve sözlü çeviri.'}
+          {l: '/tr/calisma-izni', t: 'Çalışma İzni Süreçleri', d: 'Mevzuata uygun başvuru koordinasyonu ve profesyonel dosya yönetimi.'},
+          {l: '/tr/gayrimenkul-ikamet-vatandaslik', t: 'İkamet ve Vatandaşlık', d: 'Gayrimenkul ve yatırim yoluyla vatandaşlık dosyalarının ön değerlendirmesi.'},
+          {l: '/tr/sirket-kurulusu', t: 'Şirket Kuruluşu', d: 'Ticaret odası kayıt süreçleri ve ticari izinlerin koordinasyonu.'},
+          {l: '/tr/yatirim-danismanligi', t: 'Yatırım Danışmanlİ�q', d: 'Dmğru ve stratejik pazar konumlandırması için rehberlik.'},
+          {l: '/tr/deport-ret-surecleri', t: 'Deport / Ret Danışmanlıı', d: 'Reddedilen dosyaların analizi ve idari itiraz süreçlerinin takibi.'},
+          {l: '/tr/tercumanlik', t: 'Resmî Tercümanlık', d: 'Noter onaylı belge çevirisi ve kurumlarda ardıl sözlü tercümanlĩk.'}
         ].map(s => (
-          <div class="bg-[#141415] p-8 rounded-lg border border-white/5 hover:border-[#C29B62]/50 transition-colors text-start">
-            <h3 class="text-xl font-bold text-[#C29B62] mb-3">{s.t}</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">{s.d}</p>
-          </div>
-        ))}
+          <a href={s.l} class="group block p-8 bg-surface rounded-xl border border-primary hover:border-brand/50 transition-all duration-300">
+            <h3 class="text-xl font-bold text-ivory mb-3 group-hover:text-brand transition-colors">{s.t}</h3>
+            <p class="text-ivory/60 leading-relaxed text-sm">{s.d}</p>
+          </a>
+        i)}
       </div>
     </div>
   </section>
 
-  <section id="iletisim" class="py-20 bg-[#141415]">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-4 text-white">İletişime Geçin</h2>
-      <p class="text-center text-gray-400 mb-12 max-w-xl mx-auto">Dosya değerlendirmesi ve profesyonel destek için formumuzu doldurun, size en kısa sürede dönüş yapalım.</p>
-      <ContactForm lang="tr" />
-    </div>
-  </section>
-</BaseLayout>
+  <!-- 4. Mina Beigi / Hakkımq^�HKO���X�[ۈ�\��H�KL���\�\��X�H�ܙ\�^H�ܙ\�\�[X\�H���]��\��H��۝Z[�\�^X]]�MX^]�M����]��\��H��^�^X��Ι�^\���][\�X�[�\��\LM����]��\��H��Y�[Ν�MK�L��[]]�H���]��\��H�X���]H[[��]M��X��[��L��[�YL��[�ٛܛH��]KLȏ��]���]��\��H��[]]�H\�X�V��WH��[�YL�ݙ\����ZY[���\�[X\�H�ܙ\��ܙ\�\�\��X�H���[Y�ܘ�H��[XY�\��Z[�K\�ٚ[K��X��[H�Z[�H�ZY�H��\��H��Y�[Y�[ؚ�X�X�ݙ\�ܘ^\��[[V̌	WH�ۙ\��܏H�\˜�[K�\�^OIۛۙIȈς�]��\��H�X���]H[��]L�^][\�X�[�\��\�Y�KX�[�\�^Z]�ܞK��^\�H��[OH��Z[�^�LNȏ����'ܘY�[[�,O�]����]����]���]��\��H��Y�[Ν�M��L�����[��\��H�^\���H�۝[YY][H�X��[��]�YH\\��\�H^\�HX�L����ȏ��\�X�H[�,qg�X[���[�����\��H�^M�۝X��X�M�^Z]�ܞH��Z[�H�ZY�O�����\��H�^[�^Z]�ܞK�X�NXY[��\�[^Y���1,\�[��H0���^YHZ��[�[�HX�\�H�H�\�^\�[qg�[[\�[�p���0�Y\�[�Hp���Z�Y\�Z�H�[�\�\�H\�Z��q'�[XZ�^q,^��[XX�,[q,^�Z�Z�H�H����ܘ]Z�[��[\�Hqg�X[�,^�H�^�H�Z�\�Z�]YZ�\������]��\��H���\�[X\�HM���[�Y^�ܙ\��ܙ\�\�\��X�HX�N���[�\��H��X�K^KM^Z]�ܞK�L�۝[YY][H���H�\��H��^][\�X�[�\��\M��]��\��H��L�L���[�YY�[��X��[����]���[��,\�[��H�\�[��H\�X�H\�[��1,H]�Z�]��[���O��H�\��H��^][\�X�[�\��\M��]��\��H��L�L���[�YY�[��XX��[����]���[��0���\YI�H�\�p�Y[Z[�H\���X[���[���O��H�\��H��^][\�X�[�\��\M��]��\��H��L�L���[�YY�[��\���H���]���[��0���^YH���Y[�Z����p��\�H[�,qg�X[�,O��[���O��H�\��H��^][\�X�[�\��\M��]��\��H��L�L���[�YY�[��X��۞�H���]���[��,�[�q,�[XHX�\�]�\�,H0�Y\�O��[���O���[���]����\��H�^\�H^Z]�ܞK�L��\�[X\�K��M��[�Y[��ܙ\��ܙ\�\�[X\�H���Z[�H�ZY�K1,�[��H\�[��1,H]�Z�]�\0���^YI�H�\�p�\���X[�1,Z������Y[�Z����p��\�H[�,qg�X[�1*q,K�qgݝ\�H��ܙ[�\�[۝H�HX]1,\�[H���p��\�H[[�\�,[�H�ٙ\�[ۙ[\�Z��[�XZ�Y1,\��
+0���\YI�H]�Z�]1,Z�[��q'�H�^XH�\���^q,]1,H]�Z�]1,Z�Y]�\�H�\�[q,[�H^�Y]�\�[Y[YZ�Y\��B�����]����]����]�����X�[ۏ���KKHK�1,]qg�[H�ܛ]HKO���X�[ۈYH�[]\�[H��\��H�KL���\�[X\�H�[]]�Hݙ\����ZY[����]��\��H�X���]H�L�Y�L�V�LHV�LH��X��[��H��[�YY�[�\�L��[��]K^LK̈]�[��]K^KLK̈���]����]��\��H��۝Z[�\�^X]]�M�[]]�H�LL���]��\��H�X^]�L�^X]]�^X�[�\�X�LL������\��H�^M�۝X��^Z]�ܞHX�M���,]qg�[YH�p��[������\��H�^Z]�ܞK��^[ȏ���XHq'�\�[�\�Y\�H�H�ٙ\�[ۙ[�qgݝ\�H\�q'�Hp��[��ܛ][]^�H�\�[�Z�X�[Z^��^�H[��,\�H���YH0훰�1g�X\�,[������]����۝X��ܛH[��H���ς��]�����X�[ۏ��И\�S^[�]�

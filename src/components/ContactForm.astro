@@ -2,57 +2,73 @@
 const { lang } = Astro.props;
 const isTr = lang === 'tr';
 ---
-<form id="contactForm" class="max-w-xl mx-auto bg-[#2C2C2E]/30 p-8 rounded-lg border border-white/5" method="POST" action="/api/contact" dir={isTr ? "ltr" : "rtl"}>
-  <!-- Honeypot -->
+<form id="contactForm" class="max-w-yl bg-surface p-10 rounded-2xl border border-primary shadow-2xl" method="POST" action="/api/contact" dir={isTr ? "ltr" : "rtl"}>
   <input type="text" name="b_name" class="hidden" tabindex="-1" autocomplete="off" />
   
-  <div class="mb-4">
-    <label class="block mb-2 text-sm text-gray-300 text-start">{isTr ? 'Ad Soyad' : 'نام و نام خانوادگی'}</label>
-    <input type="text" name="name" required class="w-full bg-[#1C1C1E] border border-white/20 rounded p-3 text-white outline-none" />
+  <div class="mb-6">
+    <label class="block mb-2 text-sm font-medium text-ivory/80 text-start">{isTr ? 'Ad Soyad' : 'نام و نام خانوادگی'}</label>
+    <input type="text" name="name" required class="w-full bg-primary border border-surface rounded-lg p-4 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all" />
   </div>
   
-  <div class="mb-4">
-    <label class="block mb-2 text-sm text-gray-300 text-start">{isTr ? 'Telefon' : 'تلفن'}</label>
-    <input type="tel" name="phone" required class="w-full bg-[#1C1C1E] border border-white/20 rounded p-3 text-white outline-none" dir="ltr" />
+  <div class="mb-6">
+    <label class="block mb-2 text-sm font-medium text-ivory/80 text-start">{isTr ? 'Telefon' : 'تلفق' }</label>
+    <input type="tel" name="phone" required class="w-full bg-primary border border-surface rounded-lg p-4 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all" dir="ltr" />
+  </div>
+
+  <div class="mb-6">
+    <label class="block mb-2 text-sm font-medium text-ivory/80 text-start">{isTr ? 'Hizmet Türü' : 'نوع خدمات'}</label>
+    <select name="service" required class="w-full bg-primary border border-surface rounded-lg p-4 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all">
+      <option value="">{isTr ? 'Seçiniz' : 'انتخاب کنید'}</option>
+      <option value="immigration">{isTr ? 'Göcmenlik &amp; İkamet' : 'مباجرت و اقامت'}</option>
+      <option value="company">{isTr ? 'Şirket Kuruluşu' : 'ثبت شرکت'}</option>
+      <option value="translation">{isTr ? 'Yeminli Tercümanlık' : 'ترجمه رسهی'}</option>
+      <option value="other">{isTr ? 'Dişer' : 'سایر'}</option>
+    </select>
   </div>
   
-  <div class="mb-4">
-    <label class="block mb-2 text-sm text-gray-300 text-start">{isTr ? 'Mesajınız' : 'پیام شما'}</label>
-    <textarea name="message" rows="4" required class="w-full bg-[#1C1C1E] border border-white/20 rounded p-3 text-white outline-none"></textarea>
+  <div class="mb-8">
+    <label class="block mb-2 text-sm font-medium text-ivory/80 text-start">{isTr ? 'Mesajınız' : 'پیام ش؅ا'}</label>
+    <textarea name="message" rows="4" required class="w-full bg-primary border border-surface rounded-lg p-4 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all"></textarea>
   </div>
   
-  <button type="submit" class="w-full bg-[#C29B62] text-[#1C1C1E] font-bold py-3 px-4 rounded hover:bg-yellow-500 transition-colors">
-    {isTr ? 'Gönder' : 'ارسال'}
+  <button type="submit" class="w-full bg-brand text-white font-bold py-4 px-4 rounded-lg hover:bg-[#A33850] transition-colors shadow-lg">
+    {isTr ? 'Danışmanlĩk Talebi Gönder' : 'ersal/darxoast/moshavereh}
   </button>
   
-  <p id="formStatus" class="mt-4 text-center hidden"></p>
+  <p id="formStatus" class="mt-6 text-center hidden font-medium"></p>
 </form>
 
 <script>
   document.getElementById('contactForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
+    
     const formData = new FormData(form);
+    let valid = true;
+    for (let [key, value] of formData.entries()) {
+        if(key !== 'b_name' && !value) valid = false;
+    }
+    
     const statusEl = document.getElementById('formStatus');
+    if(!valid && statusEl) {
+        statusEl.textContent = document.documentElement.lang === 'tr' ? 'Lütfen tüm alanları doldurun.' : 'لطفاً تمام فیلدها ذا پر کنید.';
+        statusEl.className = 'mt-6 text-center block text-rose';
+        return;
+    }
     
     if (statusEl) {
       statusEl.textContent = document.documentElement.lang === 'tr' ? 'Gönderiliyor...' : 'در حال ارسال...';
-      statusEl.classList.remove('hidden', 'text-green-400', 'text-red-400');
-      statusEl.classList.add('text-gray-300', 'block');
+      statusEl.className = 'mt-6 text-center block text-bronze';
     }
     
     try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: formData
-      });
+      const res = await fetch(form.action, { method: 'POST', body: formData });
       const data = await res.json();
       
       if (res.ok) {
         if(statusEl) {
-          statusEl.textContent = document.documentElement.lang === 'tr' ? 'Mesajınız başarıyla iletildi.' : 'پیام شما با موفقیت ارسال شد.';
-          statusEl.classList.remove('text-gray-300');
-          statusEl.classList.add('text-green-400');
+          statusEl.textContent = document.documentElement.lang === 'tr' ? 'Mesajınız başarıyla iletildi. En kısa sürede dönüş yapacağız.' : 'پیام شما با موفقیت ارسال شد. در اسرع وقت پاسخ خواهیم داد.';
+          statusEl.className = 'mt-6 text-center block text-green-500';
         }
         form.reset();
       } else {
@@ -60,10 +76,9 @@ const isTr = lang === 'tr';
       }
     } catch (err) {
       if(statusEl) {
-        statusEl.textContent = document.documentElement.lang === 'tr' ? 'Bir hata oluştu, lütfen tekrar deneyin.' : 'خطایی رخ داد، لطفاً دوباره تلاش کنید.';
-        statusEl.classList.remove('text-gray-300');
-        statusEl.classList.add('text-red-400');
+        statusEl.textContent = document.documentElement.lang === 'tr' ? 'Bir hata oluştu, lütfen tekrar deneyin veya WhatsApp üzerinden ulaşın.' : 'خ�зی رخ دادՌ لطفا؋ دوباره تلاش کنید یا از طریق واتساپ تماس بگیرید.';
+        statusEl.className = 'mt-6 text-center block text-rose';
       }
     }
   });
-</script>\n
+</script>
