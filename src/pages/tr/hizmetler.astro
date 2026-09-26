@@ -13,18 +13,20 @@ const services = [
   { link: '/tr/banka-vergi-finansal-surecler/', title: 'Banka, Vergi ve Finansal Süreçler', desc: 'Yabancılar için vergi numarası, bireysel veya şirket banka hesabı, KYC ve finansal belge hazırlığı danışmanlığı.' }
 ];
 ---
-<BaseLayout title="Hizmetlerimiz | Mina Beigi" description="Türkiye’de Göçmenlik, Yatırım, Şirket Kuruluşu ve Resmî Süreç Danışmanlığı" lang="tr">
+<BaseLayout title="Türkiye’de Çalışma İzni, Şirket Kuruluşu, Yatırım ve Göçmenlik Hizmetleri" description="İranlılar ve diğer yabancılar için Türkiye’de çalışma izni, öğrenci ikameti, şirket kuruluşu, yatırım, gayrimenkul, resmî tercümanlık, banka, vergi ve deport/ret süreçleri." lang="tr">
   <Fragment slot="head">
     <link rel="canonical" href={SITE_URL + "/tr/hizmetler"} />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Mina Beigi Uluslararası Danışmanlık",
-        "description": "Türkiye'de göçmenlik, yatırım ve şirket kuruluşu süreçlerinde profesyonel danışmanlık hizmetleri.",
-        "url": "{SITE_URL}/tr/hizmetler"
-      }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Mina Beigi Türkiye danışmanlık hizmetleri",
+      "itemListElement": services.map((service, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": service.title,
+        "url": SITE_URL + service.link
+      }))
+    })} />
   </Fragment>
 
   <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
@@ -67,7 +69,7 @@ const services = [
           <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Şirket kuruluşu</strong><br><span class="text-sm">Şirket yapısı, tescil, ticaret odası ve operasyon başlangıcı.</span></div>
           <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Yatırım danışmanlığı</strong><br><span class="text-sm">Türkiye’de yatırım, pazar girişi ve ticari yapı planlaması.</span></div>
           <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Ticaret kartı / ticari kart işlemleri</strong><br><span class="text-sm">Faaliyete göre gerekli ticari kayıt ve kart süreçlerinin koordinasyonu.</span></div>
-          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Fabrika ve üretim atölyesi kurulumu</strong><br><span class="text-sm">İstanbul sanayi bölgelerinde tesis, atölye ve üretim yapılanması için süreç planlama.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">İstanbul ve Türkiye’de fabrika ve üretim atölyesi kurulumu</strong><br><span class="text-sm">İstanbul ve Türkiye’de sanayi bölgelerinde fabrika, tesis ve üretim atölyesi kurulumu için süreç planlama ve resmî işlem koordinasyonu.</span></div>
           <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Gerekli izinlerin alınması</strong><br><span class="text-sm">Faaliyete bağlı ruhsat, izin ve resmî başvuru koordinasyonu.</span></div>
           <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Uluslararası banka hesabı açılması</strong><br><span class="text-sm">Bireysel ve kurumsal hesaplar için KYC ve belge hazırlığı.</span></div>
           <div class="bg-primary/30 rounded-xl p-4 md:col-span-2"><strong class="text-ivory">Türkiye’de deport ve ret sorunlarının çözüm süreci</strong><br><span class="text-sm">Ret, tahdit ve deport dosyalarının değerlendirilmesi; izlenebilecek resmî ve hukuki yolların koordinasyonu.</span></div>
