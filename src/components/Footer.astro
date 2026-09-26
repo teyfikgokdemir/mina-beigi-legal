@@ -1,21 +1,61 @@
-﻿---
+---
 const { lang } = Astro.props;
 const isTr = lang === "tr";
+const serviceLinks = isTr ? [
+  ["/tr/calisma-izni/","Çalışma İzni"],
+  ["/tr/sirket-kurulusu/","Şirket Kuruluşu"],
+  ["/tr/yatirim-danismanligi/","Yatırım Danışmanlığı"],
+  ["/tr/banka-vergi-finansal-surecler/","Banka & Finans"],
+] : [
+  ["/fa/work-permit/","مجوز کار"],
+  ["/fa/company-formation/","ثبت شرکت"],
+  ["/fa/investment-consulting/","سرمایه‌گذاری"],
+  ["/fa/banking-tax-financial-processes/","بانک و امور مالی"],
+];
 ---
-<footer class="bg-surface border-t border-primary pt-16 pb-8">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-6" dir={isTr ? "ltr" : "rtl"}>
-      <div class="text-ivory/60 text-sm">
-        &copy; {new Date().getFullYear()} Mina Beigi. {isTr ? "Tüm hakları saklıdır." : "تمامی حقوق محفوظ است."}
+<footer class="bg-surface border-t border-primary">
+  <div class="container mx-auto px-4 py-12 md:py-14" dir={isTr ? "ltr" : "rtl"}>
+    <div class="grid md:grid-cols-3 gap-10 md:gap-8 items-start">
+      <div>
+        <a href={isTr ? "/tr/" : "/fa/"} class="inline-block text-2xl font-bold text-brand tracking-wide">MINA BEIGI</a>
+        <p class="mt-3 text-sm text-ivory/60 leading-relaxed max-w-sm">
+          {isTr
+            ? "Türkiye–İran ekseninde göçmenlik, yatırım, şirket kuruluşu, resmî tercümanlık ve süreç koordinasyonu."
+            : "همراهی حرفه‌ای در امور مهاجرتی، سرمایه‌گذاری، ثبت شرکت، ترجمه رسمی و هماهنگی فرآیندها میان ایران و ترکیه."}
+        </p>
+        <div class="mt-5 flex items-center gap-3">
+          <a href="https://www.instagram.com/mina_beigi_lawyer" target="_blank" aria-label="Instagram" class="w-10 h-10 inline-flex items-center justify-center rounded-full border border-primary text-bronze hover:text-brand hover:border-brand transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="flex items-center gap-6">
-        <a href={isTr ? "/tr/gizlilik" : "/fa/privacy"} class="text-sm text-bronze hover:text-brand transition-colors">
-          {isTr ? "Gizlilik ve KVKK" : "حریم خصوصی"}
-        </a>
-        <a href="https://www.instagram.com/mina_beigi_lawyer" target="_blank" aria-label="Instagram" class="text-bronze hover:text-brand transition-colors">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        </a>
+
+      <div>
+        <h2 class="text-sm uppercase tracking-wider text-ivory font-semibold mb-4">{isTr ? "Hızlı Bağlantılar" : "دسترسی سریع"}</h2>
+        <div class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
+          <a href={isTr ? "/tr/hakkimizda/" : "/fa/about/"} class="text-ivory/60 hover:text-brand">{isTr ? "Hakkımızda" : "درباره ما"}</a>
+          <a href={isTr ? "/tr/hizmetler/" : "/fa/services/"} class="text-ivory/60 hover:text-brand">{isTr ? "Hizmetler" : "خدمات"}</a>
+          <a href={isTr ? "/tr/sss/" : "/fa/faq/"} class="text-ivory/60 hover:text-brand">{isTr ? "SSS" : "سوالات متداول"}</a>
+          <a href={isTr ? "/tr/iletisim/" : "/fa/contact/"} class="text-ivory/60 hover:text-brand">{isTr ? "İletişim" : "تماس با ما"}</a>
+          <a href={isTr ? "/tr/gizlilik/" : "/fa/privacy/"} class="text-ivory/60 hover:text-brand">{isTr ? "Gizlilik & KVKK" : "حریم خصوصی"}</a>
+        </div>
       </div>
+
+      <div>
+        <h2 class="text-sm uppercase tracking-wider text-ivory font-semibold mb-4">{isTr ? "Öne Çıkan Hizmetler" : "خدمات منتخب"}</h2>
+        <div class="space-y-3 text-sm">
+          {serviceLinks.map(([href,label]) => <a href={href} class="block text-ivory/60 hover:text-brand">{label}</a>)}
+        </div>
+        <div class="mt-6 pt-5 border-t border-primary text-sm text-ivory/60 space-y-2">
+          <a href="tel:+905392425624" class="block hover:text-brand" dir="ltr">+90 539 2425 624</a>
+          <a href="tel:+989125102088" class="block hover:text-brand" dir="ltr">+98 912 510 20 88</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-primary flex flex-col sm:flex-row gap-3 justify-between items-center text-xs text-ivory/45">
+      <span>&copy; {new Date().getFullYear()} Mina Beigi. {isTr ? "Tüm hakları saklıdır." : "تمامی حقوق محفوظ است."}</span>
+      <span>{isTr ? "İstanbul • Tahran" : "استانبول • تهران"}</span>
     </div>
   </div>
 </footer>
