@@ -42,9 +42,8 @@ const getOtherLangPath = () => {
 ---
 <header class="sticky top-0 z-50 bg-primary/95 backdrop-blur-md border-b border-surface">
   <div class="container mx-auto px-4 py-5 flex justify-between items-center">
-    <a href={`/${lang}/`} class="text-2xl font-bold text-ivory tracking-wide flex items-center gap-3 group">
-      <span class="text-brand group-hover:text-rose transition-colors duration-300">MINA BEIGI</span>
-      <span class="text-xs font-normal text-bronze hidden sm:inline-block border-s border-surface ps-3 ms-1 opacity-80">{isTr ? "International Consulting" : "مشاوره بین‌المللی"}</span>
+    <a href={`/${lang}/`} class="group inline-flex items-center" aria-label="Mina Beigi">
+      <img src="/images/mina-beigi-logo.svg" alt="Mina Beigi International Consulting" class="h-10 md:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.015]" />
     </a>
     
     <nav class="hidden md:flex gap-8 items-center" dir={isTr ? "ltr" : "rtl"}>
