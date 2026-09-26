@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContactForm from '../../components/ContactForm.astro';
 import { SITE_URL } from '../../consts';
 ---
 <BaseLayout title="ثبت شرکت در ترکیه برای ایرانیان | Mina Beigi" description="ثبت شرکت، آماده‌سازی مدارک، هماهنگی ثبت تجاری و برنامه شروع فعالیت در ترکیه." lang="fa">
@@ -35,11 +34,15 @@ import { SITE_URL } from '../../consts';
 <section><h2 class="text-2xl font-bold text-ivory mb-4">نکته مهم</h2><p>ثبت شرکت به‌تنهایی به معنای دریافت خودکار اقامت، اجازه کار یا مجوز فعالیت خاص نیست. این موارد باید جداگانه و متناسب با ساختار شرکت بررسی شوند.</p></section>
 <section><h2 class="text-2xl font-bold text-ivory mb-4">سوالات متداول</h2><div class="space-y-3"><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا یک تبعه خارجی می‌تواند شرکت تک‌نفره ثبت کند؟</summary><p class="mt-3 text-sm">در بسیاری از ساختارها امکان‌پذیر است؛ انتخاب ساختار به فعالیت و برنامه مالکیت بستگی دارد.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا ثبت شرکت اقامت می‌دهد؟</summary><p class="mt-3 text-sm">خیر. اقامت و اجازه کار فرآیندهای جداگانه با شرایط مستقل هستند.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">برای ایرانیان چه موضوعی حساس‌تر است؟</summary><p class="mt-3 text-sm">بانک، انتقال وجه، قراردادها و ساختار عملیاتی باید از ابتدا با دقت برنامه‌ریزی شود.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">بعد از ثبت حسابداری لازم است؟</summary><p class="mt-3 text-sm">بله، تعهدات مالیاتی و حسابداری شرکت از زمان فعالیت و ثبت آغاز می‌شود.</p></details></div></section>
 
-      <section class="pt-8 border-t border-surface">
-        <div class="bg-surface p-6 md:p-10 rounded-2xl border border-primary shadow-xl">
-          <h2 class="text-3xl font-bold text-ivory mb-4 text-center">پرونده شما را بررسی کنیم</h2>
-          <p class="text-center text-ivory/70 mb-8">وضعیت خود را کوتاه توضیح دهید تا برای مدارک، مراحل و مسیر قابل پیگیری ارزیابی اولیه انجام شود.</p>
-          <ContactForm lang="fa" />
+      
+      <section class="pt-7 border-t border-surface">
+        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center" dir="rtl">
+          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">برای ارزیابی سریع با ما در تماس باشید</h2>
+          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">برای یک بررسی اولیه از طریق واتساپ پیام دهید یا برای ارسال اطلاعات کامل‌تر از صفحه تماس استفاده کنید.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-3">
+            <a href="https://wa.me/989125102088" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">واتساپ ایران</a>
+            <a href="/fa/contact/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">صفحه تماس</a>
+          </div>
         </div>
       </section>
     </div>
