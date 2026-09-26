@@ -21,6 +21,27 @@ const marqueeItems = isTr
 <footer class="bg-surface border-t border-primary/80">
   <div class="container mx-auto px-4 pt-10 md:pt-12 pb-10" dir={isTr ? "ltr" : "rtl"}>
 
+    <div class="footer-marquee mb-6 overflow-hidden rounded-xl border border-primary/80 bg-primary/35" aria-label={isTr ? "Hizmet başlıkları" : "عناوین خدمات"}>
+      <div class="footer-marquee__track flex w-max items-center py-3 text-[0.78rem] md:text-sm font-medium tracking-wide text-bronze whitespace-nowrap">
+        <div class="flex items-center shrink-0">
+          {marqueeItems.map((item) => (
+            <span class="inline-flex items-center">
+              <span class="px-5 md:px-7">{item}</span>
+              <span class="text-brand/80">◆</span>
+            </span>
+          ))}
+        </div>
+        <div class="flex items-center shrink-0" aria-hidden="true">
+          {marqueeItems.map((item) => (
+            <span class="inline-flex items-center">
+              <span class="px-5 md:px-7">{item}</span>
+              <span class="text-brand/80">◆</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
     <div class="grid lg:grid-cols-[1.15fr_0.85fr_1fr] gap-6 lg:gap-8 items-stretch">
       <div class="rounded-2xl border border-primary bg-primary/35 p-6 h-full">
         <div class="flex items-center justify-between gap-4">
@@ -73,32 +94,6 @@ const marqueeItems = isTr
               <span>{label}</span><span aria-hidden="true">↗</span>
             </a>
           ))}
-        </div>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-[1.15fr_0.85fr_1fr] gap-6 lg:gap-8 mt-6">
-      <div class="hidden lg:block"></div>
-      <div class="lg:col-span-2">
-        <div class="footer-marquee overflow-hidden rounded-xl border border-primary/80 bg-primary/35" aria-label={isTr ? "Hizmet başlıkları" : "عناوین خدمات"}>
-          <div class="footer-marquee__track flex w-max items-center py-3 text-[0.78rem] md:text-sm font-medium tracking-wide text-bronze whitespace-nowrap">
-            <div class="flex items-center shrink-0">
-              {marqueeItems.map((item) => (
-                <span class="inline-flex items-center">
-                  <span class="px-5 md:px-7">{item}</span>
-                  <span class="text-brand/80">◆</span>
-                </span>
-              ))}
-            </div>
-            <div class="flex items-center shrink-0" aria-hidden="true">
-              {marqueeItems.map((item) => (
-                <span class="inline-flex items-center">
-                  <span class="px-5 md:px-7">{item}</span>
-                  <span class="text-brand/80">◆</span>
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </div>
