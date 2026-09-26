@@ -1,0 +1,47 @@
+---
+const { lang } = Astro.props;
+const isTr = lang === 'tr';
+
+const nav = isTr ? [
+  { name: 'Ana Sayfa', href: '/tr/' },
+  { name: 'Hakkımızda', href: '/tr/hakkimizda' },
+  { name: 'Hizmetler', href: '/tr/hizmetler' },
+  { name: 'İletişim', href: '/tr/iletisim' },
+] : [
+  { name: 'خانه', href: '/fa/' },
+  { name: 'درباره ما', href: '/fa/about' },
+  { name: 'خدمات', href: '/fa/services' },
+  { name: 'تماس با ما', href: '/fa/contact' },
+];
+
+const otherLang = isTr ? 'fa' : 'tr';
+const otherLangName = isTr ? 'FA' : 'TR';
+const otherLangHref = isTr ? '/fa/' : '/tr/';
+---
+<header class="sticky top-0 z-50 bg-[#0F172A]/95 backdrop-blur border-b border-white/10">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <a href={`/${lang}/`} class="text-2xl font-bold text-[#D4AF37] tracking-wide flex items-center gap-2">
+      MINA BEIGI<span class="text-sm font-normal text-gray-300 hidden sm:inline-block border-s border-white/20 ps-2 ms-1">{isTr ? 'Legal & Consulting' : 'مشاوره حقوقی'}</span>
+    </a>
+    
+    <nav class="hidden md:flex gap-8 items-center" dir={isTr ? "ltr" : "rtl"}>
+      {nav.map(item => (
+        <a href={item.href} class="text-sm font-medium text-white hover:text-[#D4AF37] transition-colors">
+          {item.name}
+        </a>
+      ))}
+      <a href={otherLangHref} class="px-3 py-1 text-xs font-bold border border-[#D4AF37] text-[#D4AF37] rounded hover:bg-[#D4AF37] hover:text-[#0F172A] transition-colors">
+        {otherLangName}
+      </a>
+    </nav>
+    
+    <div class="md:hidden flex items-center gap-4">
+      <a href={otherLangHref} class="px-2 py-1 text-xs font-bold border border-[#D4AF37] text-[#D4AF37] rounded">
+        {otherLangName}
+      </a>
+      <button class="text-[#D4AF37] p-2" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>\n

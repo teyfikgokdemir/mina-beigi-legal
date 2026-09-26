@@ -1,0 +1,25 @@
+---
+const { lang } = Astro.props;
+const isTr = lang === 'tr';
+---
+<footer class="bg-[#0a0f1c] pt-12 pb-6 border-t border-white/10 text-gray-400 text-sm">
+  <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 mb-8" dir={isTr ? "ltr" : "rtl"}>
+    <div>
+      <h3 class="text-[#D4AF37] text-lg font-semibold mb-4">MINA BEIGI</h3>
+      <p class="mb-4">{isTr ? 'İstanbul merkezli profesyonel hukuki danışmanlık ve süreç yönetimi.' : 'مشاوره حرفه‌ای حقوقی و مدیریت فرآیندها در استانبول.'}</p>
+    </div>
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-4">{isTr ? 'İletişim' : 'تماس با ما'}</h3>
+      <p class="mb-2 text-start">📍 Pendik, İstanbul / Türkiye</p>
+      <p class="mb-2 text-start" dir="ltr">📞 <a href="tel:+905392425624" class="hover:text-[#D4AF37]">+90 539 2425 624</a></p>
+      <p class="mb-2 text-start" dir="ltr">📞 <a href="tel:+989125102088" class="hover:text-[#D4AF37]">+98 912 510 20 88</a></p>
+    </div>
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-4">{isTr ? 'Sosyal Medya' : 'شبکه‌های اجتماعی'}</h3>
+      <a href="https://www.instagram.com/mina_beigi_lawyer?igsh=MXRtY2tlMTVjYm9jNA==" target="_blank" class="hover:text-[#D4AF37]">Instagram</a>
+    </div>
+  </div>
+  <div class="container mx-auto px-4 text-center border-t border-white/10 pt-6">
+    <p>&copy; {new Date().getFullYear()} Mina Beigi. {isTr ? 'Tüm hakları saklıdır.' : 'تمامی حقوق محفوظ است.'}</p>
+  </div>
+</footer>\n
