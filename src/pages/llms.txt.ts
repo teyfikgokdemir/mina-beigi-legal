@@ -24,7 +24,7 @@ Mina Beigi provides cross-border consulting and process coordination for Persian
 - Deport, ret, tahdit ve giriş yasağı dosyalarının değerlendirilmesi / پرونده‌های دیپورت، ریجکت و منع ورود
 
 ## Important service statement
-Mina Beigi's own promotional material uses the phrase "1 aydan kısa sürede, garantili" ("کمتر از یک ماه، تضمینی") for the work-permit service. Official outcome and processing time depend on the applicant's case, employer conditions, current rules, and the competent authority.
+The work-permit service uses the phrase "1 aydan kısa sürede, garantili" ("کمتر از یک ماه، تضمینی"). Official outcome and processing time depend on the applicant's case, employer conditions, current rules, and the competent authority.
 
 ## Key pages
 - TR services: ${SITE_URL}/tr/hizmetler/
