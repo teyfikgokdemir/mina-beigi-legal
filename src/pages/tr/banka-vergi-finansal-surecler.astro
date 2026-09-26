@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContactForm from '../../components/ContactForm.astro';
 import { SITE_URL } from '../../consts';
 
 const faq = [
@@ -119,11 +118,19 @@ const faq = [
         </div>
       </section>
 
-      <section class="pt-8 border-t border-surface">
-        <div class="bg-surface p-6 md:p-10 rounded-2xl border border-primary shadow-xl">
-          <h2 class="text-3xl font-bold text-ivory mb-4 text-center">Finansal Sürecinizi Önceden Planlayın</h2>
-          <p class="text-center text-ivory/70 mb-8">Banka hesabı, vergi numarası veya yatırım ödemesi ihtiyacınızı paylaşın; gerekli belgeleri ve işlem sırasını birlikte değerlendirelim.</p>
-          <ContactForm lang="tr" />
+      
+      <section class="pt-7 border-t border-surface">
+        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">Durumunuzu hızlıca değerlendirelim</h2>
+          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">Kısa bir ön görüşme için WhatsApp’tan yazabilir veya detaylı bilgi bırakmak için iletişim sayfasını kullanabilirsiniz.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-3">
+            <a href="https://wa.me/905392425624" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">
+              WhatsApp Türkiye
+            </a>
+            <a href="/tr/iletisim/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">
+              İletişim Sayfası
+            </a>
+          </div>
         </div>
       </section>
     </div>
