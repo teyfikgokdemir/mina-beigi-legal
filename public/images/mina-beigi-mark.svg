@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 220" role="img" aria-label="Mina Beigi">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4D9A6"/><stop offset=".5" stop-color="#C9A46C"/><stop offset="1" stop-color="#F2DEB7"/></linearGradient>
+    <linearGradient id="burgundy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6E1930"/><stop offset="1" stop-color="#A93450"/></linearGradient>
+  </defs>
+  <text x="5" y="176" font-family="Georgia,Times New Roman,serif" font-size="205" font-weight="700" fill="url(#gold)">M</text>
+  <path d="M38 75 C86 123 124 113 163 142 C188 160 207 183 225 207" fill="none" stroke="url(#burgundy)" stroke-width="22" stroke-linecap="round"/>
+  <path d="M40 72 C87 118 126 108 166 137 C190 154 211 178 229 202" fill="none" stroke="#E2C18B" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+</svg>
