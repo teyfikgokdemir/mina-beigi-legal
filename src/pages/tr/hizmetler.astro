@@ -9,7 +9,8 @@ const services = [
   { link: '/tr/sirket-kurulusu/', title: 'Şirket Kuruluşu', desc: 'Yabancı yatırımcılar için Türkiye\'de limited (LTD) veya anonim (A.Ş.) şirket kurulumu, ticaret odası kayıtları ve yasal süreç danışmanlığı.' },
   { link: '/tr/yatirim-danismanligi/', title: 'Yatırım Danışmanlığı', desc: 'Türkiye pazarında yatırım hedefi, risk, şirketleşme, gayrimenkul ve uygulama planının koordinasyonu.' },
   { link: '/tr/deport-ret-surecleri/', title: 'Deport / Ret Süreçleri', desc: 'İkamet retleri, tahdit ve deport dosyalarının ön değerlendirmesi ve izlenebilecek süreçlerin açıklanması.' },
-  { link: '/tr/tercumanlik/', title: 'Resmî Tercümanlık', desc: 'Noter onaylı ve resmî kurumlarda geçerli her türlü belgenin Türkçe-Farsça yeminli tercüme ve tasdik işlemleri.' }
+  { link: '/tr/tercumanlik/', title: 'Resmî Tercümanlık', desc: 'Noter onaylı ve resmî kurumlarda geçerli her türlü belgenin Türkçe-Farsça yeminli tercüme ve tasdik işlemleri.' },
+  { link: '/tr/banka-vergi-finansal-surecler/', title: 'Banka, Vergi ve Finansal Süreçler', desc: 'Yabancılar için vergi numarası, bireysel veya şirket banka hesabı, KYC ve finansal belge hazırlığı danışmanlığı.' }
 ];
 ---
 <BaseLayout title="Hizmetlerimiz | Mina Beigi" description="Türkiye’de Göçmenlik, Yatırım, Şirket Kuruluşu ve Resmî Süreç Danışmanlığı" lang="tr">
@@ -44,10 +45,10 @@ const services = [
 
   <div class="py-24 bg-primary">
     <div class="container mx-auto px-4 max-w-6xl">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
         {services.map(s => (
-          <div class="bg-surface border border-primary rounded-xl p-8 hover:-translate-y-2 hover:border-brand transition-all duration-300 shadow-lg flex flex-col">
-            <h3 class="text-2xl font-bold text-ivory mb-4">{s.title}</h3>
+          <div class="bg-surface border border-primary rounded-2xl p-7 hover:-translate-y-1.5 hover:border-brand hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 flex flex-col min-h-[250px]">
+            <h3 class="text-xl xl:text-2xl font-bold text-ivory mb-4 leading-snug">{s.title}</h3>
             <p class="text-ivory/70 leading-relaxed mb-8 flex-grow">{s.desc}</p>
             <a href={s.link} class="inline-flex items-center gap-2 text-brand font-semibold hover:text-bronze transition-colors mt-auto">
               Detayları İncele <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
