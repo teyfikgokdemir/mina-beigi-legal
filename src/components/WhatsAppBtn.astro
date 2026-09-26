@@ -4,10 +4,52 @@ const isTr = lang === 'tr';
 
 const msg = isTr 
   ? 'Merhaba, danışmanlık hizmetleriniz hakkında bilgi almak istiyorum.' 
-  : 'سلام، می‌خواستم دربارد خدمات مشاوره شما اطلاعات کسب کنل.';
+  : 'سلام، می‌خواستم درباره خدمات مشاوره شما اطلاعات کسب کنم.';
 
-const waUrlTr = `https://wa.me/905392425624?text=${tisTr ? msg : encodeURIComponent(msg)}`{}= `https://wa.me/905392425624?text=${encodeURIComponent(msg)}`;
-aonst waUrlIr = `https://wa.me/989125102088?text=${encodeURIComponent(msg)}`;
+const waUrlTr = `https://wa.me/905392425624?text=${encodeURIComponent(msg)}`;
+const waUrlIr = `https://wa.me/989125102088?text=${encodeURIComponent(msg)}`;
 
-const trOption = { name: isTr ? 'Türkiqe WhatsApp' : 'واتساپ ترکیه', url: waUrlTr, flag: 'TR🗺', num: '+90 539 242 56 24' };
-const irOption = { name: isTr ? 'İran WhatsApp' : 'واتساپ ایراق', url: waUrlIr, flag: 'IR🗻����մ耜������Ȁ�������������()����Ё��ѥ��̀��QȀ��m��=�ѥ������=�ѥ��t��m��=�ѥ������=�ѥ��t�(���(�؁�����􉙥ᕐ����ѽ��؁����؁������������്����ѕ�̵�����(���؁���݅5��Ԉ������􉡥��������Ё�����ə������ɑ�ȁ��ɑ�ȵ�ɥ����͡���ܴ�ᰁɽչ����ᰁ�ٕə��ܵ�����������ܵl�����t����്����Ʌ�ͥѥ���������Ʌѥ��������(�����؁��������Ё����Ʌ���ѕ�е�ٽ�䁙��е�����ѕ�е���ѕȈ�(���������QȀ������ѧ}����������耟b�fb�b̃b�b��fb���(����𽑥��(�����؁�����􉙱������്����(���������ѥ��̹�������а��������(��������񄁡ɕ�����й�ɱ�хɝ���}�������������큙�����ѕ�̵���ѕȁ����Ё��ԁ��ٕ�鉜��ɥ�����Ʌ�ͥѥ��������̀��������������ɑ�ȵ����ɑ�ȵ�ɥ���䜀耜���􁑥�����QȀ�����Ȉ�耉�Ѱ���(����������������������ѕ�д�ᰈ����й�����������(�����������؁�����􉙱������്����(������������������������ѕ�е�ٽ��ѕ�еʹ����е͕�����������й�����������(������������������������ѕ�е�ɽ�锁ѕ�е�́�дĈ������Ȉ����й�յ�������(����������𽑥��(����������(���������(����𽑥��(��𽑥��(��(�����ѽ�����݅Q������������􉉜�l������ѕ�еݡ�є���Ёɽչ�����ձ��͡���ܵ�����ٕ��͍������ԁ�Ʌ�ͥѥ����Ʌ�͙�ɴ��������ѱ�����������ɥ��������]��������(������ٜ�ᵱ������輽��ܹ�̹�ɜ�������ٜ��ݥ�Ѡ����������������٥��	��������Ѐ�Ј�����􉹽������ɽ�����ɕ�����Ȉ���ɽ���ݥ�Ѡ�Ȉ���ɽ�����������ɽչ�����ɽ������������ɽչ������Ѡ���4̀�Űĸ�Դ̸�����ĀĀ̸Ѐȸ�0̀�Ĉ�����Ѡ���4�����ԸԀ������Ā�X儸ԸԀ������Ā��ńԀԀ������Ԁՠń�ԸԀ��������Š�ń�ԸԀ��������Ĉ����ٜ�(�����ѽ��(𽑥��((�͍ɥ���(������Ёѽ�����􁑽�յ��й���������	�%���݅Q��������(������Ё���Ԁ􁑽�յ��й���������	�%���݅5��Ԝ��(��(��ѽ���������ٕ��1��ѕ��Ƞ����������������(���������������1��йѽ���������������(���������������1��йѽ�������������(�����((�����յ��й���ٕ��1��ѕ��Ƞ�����������������(���������ѽ���������х��̡��хɝ�Ё�́9������������������х��̡��хɝ�Ё�́9�������(�����������������1��й��������������(�����������������1��йɕ��ٔ���������(�����(�����(�͍ɥ���
+const trOption = { name: isTr ? 'Türkiye WhatsApp' : 'واتساپ ترکیه', url: waUrlTr, flag: '🇹🇷', num: '+90 539 2425 624' };
+const irOption = { name: isTr ? 'İran WhatsApp' : 'واتساپ ایران', url: waUrlIr, flag: '🇮🇷', num: '+98 912 510 20 88' };
+
+const options = isTr ? [trOption, irOption] : [irOption, trOption];
+---
+<div class="fixed bottom-6 end-6 z-50 flex flex-col items-end">
+  <div id="waMenu" class="hidden mb-4 bg-surface border border-primary shadow-2xl rounded-xl overflow-hidden min-w-[260px] flex-col transition-all duration-300">
+    <div class="p-4 bg-brand text-ivory font-bold text-center">
+      {isTr ? 'İletişime Geçin' : 'تماس با ما'}
+    </div>
+    <div class="flex flex-col">
+      {options.map((opt, i) => (
+        <a href={opt.url} target="_blank" class={`flex items-center gap-4 p-5 hover:bg-primary transition-colors ${i === 0 ? 'border-b border-primary' : ''}`} dir={isTr ? "ltr" : "rtl"}>
+          <span class="text-3xl">{opt.flag}</span>
+          <div class="flex flex-col">
+            <span class="text-ivory text-sm font-semibold">{opt.name}</span>
+            <span class="text-bronze text-xs mt-1" dir="ltr">{opt.num}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+  
+  <button id="waToggle" class="bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-105 transition-transform focus:outline-none" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+  </button>
+</div>
+
+<script>
+  const toggle = document.getElementById('waToggle');
+  const menu = document.getElementById('waMenu');
+  
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    menu?.classList.toggle('flex');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!toggle?.contains(e.target as Node) && !menu?.contains(e.target as Node)) {
+      menu?.classList.add('hidden');
+      menu?.classList.remove('flex');
+    }
+  });
+</script>
