@@ -1,33 +1,49 @@
----
+﻿---
 const { lang } = Astro.props;
-const isTr = lang === 'tr';
+const isTr = lang === "tr";
 
 const nav = isTr ? [
-  { name: 'Ana Sayfa', href: '/tr/' },
-  { name: 'Hakkımızda', href: '/tr/hakkimizda' },
-  { name: 'Hizmetler', href: '/tr/hizmetler' },
-  { name: 'İletişim', href: '/tr/iletisim' },
+  { name: "Ana Sayfa", href: "/tr/" },
+  { name: "Hakkımızda", href: "/tr/hakkimizda" },
+  { name: "Hizmetler", href: "/tr/hizmetler" },
+  { name: "İletişim", href: "/tr/iletisim" },
 ] : [
-  { name: 'خانه', href: '/fa/' },
-  { name: 'درباره ما', href: '/fa/about' },
-  { name: 'خدمات', href: '/fa/services' },
-  { name: 'تماس با ما', href: '/fa/contact' },
+  { name: "خانه", href: "/fa/" },
+  { name: "درباره ما", href: "/fa/about" },
+  { name: "خدمات", href: "/fa/services" },
+  { name: "تماس با ما", href: "/fa/contact" },
 ];
 
-const otherLang = isTr ? 'fa' : 'tr';
-const otherLangName = isTr ? 'FA' : 'TR';
+const otherLang = isTr ? "fa" : "tr";
+const otherLangName = isTr ? "FA" : "TR";
+
+const routeMap = {
+  "/tr/": "/fa/", "/fa/": "/tr/",
+  "/tr/hakkimizda/": "/fa/about/", "/fa/about/": "/tr/hakkimizda/",
+  "/tr/hizmetler/": "/fa/services/", "/fa/services/": "/tr/hizmetler/",
+  "/tr/calisma-izni/": "/fa/work-permit/", "/fa/work-permit/": "/tr/calisma-izni/",
+  "/tr/ogrenci-ikameti/": "/fa/student-residence/", "/fa/student-residence/": "/tr/ogrenci-ikameti/",
+  "/tr/gayrimenkul-ikamet-vatandaslik/": "/fa/property-residence-citizenship/", "/fa/property-residence-citizenship/": "/tr/gayrimenkul-ikamet-vatandaslik/",
+  "/tr/sirket-kurulusu/": "/fa/company-formation/", "/fa/company-formation/": "/tr/sirket-kurulusu/",
+  "/tr/yatirim-danismanligi/": "/fa/investment-consulting/", "/fa/investment-consulting/": "/tr/yatirim-danismanligi/",
+  "/tr/deport-ret-surecleri/": "/fa/deport-rejection/", "/fa/deport-rejection/": "/tr/deport-ret-surecleri/",
+  "/tr/tercumanlik/": "/fa/translation/", "/fa/translation/": "/tr/tercumanlik/",
+  "/tr/sss/": "/fa/faq/", "/fa/faq/": "/tr/sss/",
+  "/tr/iletisim/": "/fa/contact/", "/fa/contact/": "/tr/iletisim/",
+  "/tr/gizlilik/": "/fa/privacy/", "/fa/privacy/": "/tr/gizlilik/"
+};
+
 const getOtherLangPath = () => {
-    const p = Astro.url.pathname;
-    if(p.includes('/tr/')) return p.replace('/tr/', '/fa/');
-    if(p.includes('/fa/')) return p.replace('/fa/', '/tr/');
-    return isTr ? '/fa/' : '/tr/';
+  let p = Astro.url.pathname;
+  if (!p.endsWith("/")) p += "/";
+  return routeMap[p] || (isTr ? "/fa/" : "/tr/");
 };
 ---
 <header class="sticky top-0 z-50 bg-primary/95 backdrop-blur-md border-b border-surface">
   <div class="container mx-auto px-4 py-5 flex justify-between items-center">
     <a href={`/${lang}/`} class="text-2xl font-bold text-ivory tracking-wide flex items-center gap-3 group">
       <span class="text-brand group-hover:text-rose transition-colors duration-300">MINA BEIGI</span>
-      <span class="text-xs font-normal text-bronze hidden sm:inline-block border-s border-surface ps-3 ms-1 opacity-80">{isTr ? 'International Consulting' : 'مشاوره بین‌المللی'}</span>
+      <span class="text-xs font-normal text-bronze hidden sm:inline-block border-s border-surface ps-3 ms-1 opacity-80">{isTr ? "International Consulting" : "مشاوره بین‌المللی"}</span>
     </a>
     
     <nav class="hidden md:flex gap-8 items-center" dir={isTr ? "ltr" : "rtl"}>

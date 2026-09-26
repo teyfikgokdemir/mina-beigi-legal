@@ -1,55 +1,21 @@
----
+﻿---
 const { lang } = Astro.props;
-const isTr = lang === 'tr';
-
-const trPhone = '+905392425624';
-const irPhone = '+989125102088';
-const trPhoneFormatted = '+90 539 2425 624';
-const irPhoneFormatted = '+98 912 510 20 88';
-
-const phone1 = isTr ? { tel: trPhone, fmt: trPhoneFormatted } : { tel: irPhone, fmt: irPhoneFormatted };
-const phone2 = isTr ? { tel: irPhone, fmt: irPhoneFormatted } : { tel: trPhone, fmt: trPhoneFormatted };
+const isTr = lang === "tr";
 ---
-<footer class="bg-surface pt-16 pb-8 border-t border-[#17191D] text-ivory/70 text-sm">
-  <div class="container mx-auto px-4 grid md:grid-cols-3 gap-12 mb-12" dir={isTr ? "ltr" : "rtl"}>
-    <div>
-      <h3 class="text-brand text-lg font-semibold mb-6">MINA BEIGI</h3>
-      <p class="mb-6 leading-relaxed">
-        {isTr ? 'İstanbul ve Tahran merkezli, uluslararası alanda profesyonel danışmanlık, süreç koordinasyonu ve yeminli tercümanlık hizmetleri.' : 'خدمات حرفه‌ای مشاوره بین‌المللی، مدیریت فرآیندها و ترجمه رسمی مستقر در استانبول و تهران.'}
-      </p>
-
-    </div>
-    <div class={isTr ? "ps-0 md:ps-8" : "pe-0 md:pe-8"}>
-      <h3 class="text-ivory text-lg font-semibold mb-6">{isTr ? 'İletişim' : 'تماس با ما'}</h3>
-      <div class="space-y-4">
-        <p class="flex items-start gap-3">
-            <span class="text-brand mt-1">📍</span>
-            <span>{isTr ? 'Tahran, İran' : 'تهران، ایران'} <br/> {isTr ? 'Pendik, İstanbul / Türkiye' : 'پندیک، استانبول / ترکیه'}</span>
-        </p>
-        <p class="flex items-center gap-3" dir="ltr">
-            <span class="text-brand">📞</span>
-            <a href={`tel:${phone1.tel}`} class="hover:text-brand transition-colors">{phone1.fmt}</a>
-        </p>
-        <p class="flex items-center gap-3" dir="ltr">
-            <span class="text-brand">📞</span>
-            <a href={`tel:${phone2.tel}`} class="hover:text-brand transition-colors">{phone2.fmt}</a>
-        </p>
+<footer class="bg-surface border-t border-primary pt-16 pb-8">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6" dir={isTr ? "ltr" : "rtl"}>
+      <div class="text-ivory/60 text-sm">
+        &copy; {new Date().getFullYear()} Mina Beigi. {isTr ? "Tüm hakları saklıdır." : "تمامی حقوق محفوظ است."}
       </div>
-    </div>
-    <div class={isTr ? "ps-0 md:ps-8" : "pe-0 md:pe-8"}>
-      <h3 class="text-ivory text-lg font-semibold mb-6">{isTr ? 'Bağlantılar' : 'لینک‌های مفید'}</h3>
-      <div class="space-y-3 flex flex-col items-start">
-        <a href={isTr ? '/tr/hakkimizda' : '/fa/about'} class="hover:text-brand transition-colors">{isTr ? 'Hakkımızda' : 'درباره ما'}</a>
-        <a href={isTr ? '/tr/hizmetler' : '/fa/services'} class="hover:text-brand transition-colors">{isTr ? 'Hizmetler' : 'خدمات'}</a>
-        <a href={isTr ? '/tr/iletisim' : '/fa/contact'} class="hover:text-brand transition-colors">{isTr ? 'İletişim' : 'تماس'}</a>
-        <a href={isTr ? '/tr/kvkk' : '/fa/privacy'} class="hover:text-brand transition-colors mt-4 text-xs opacity-60">{isTr ? 'KVKK & Gizlilik' : 'حریم خصوصی'}</a>
-        <a href="https://www.instagram.com/mina_beigi_lawyer" target="_blank" class="flex items-center gap-2 hover:text-brand transition-colors mt-4 border border-surface px-4 py-2 rounded bg-primary">
-          <span>Instagram</span>
+      <div class="flex items-center gap-6">
+        <a href={isTr ? "/tr/gizlilik" : "/fa/privacy"} class="text-sm text-bronze hover:text-brand transition-colors">
+          {isTr ? "Gizlilik ve KVKK" : "حریم خصوصی"}
+        </a>
+        <a href="https://www.instagram.com/mina_beigi_lawyer" target="_blank" aria-label="Instagram" class="text-bronze hover:text-brand transition-colors">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         </a>
       </div>
     </div>
-  </div>
-  <div class="container mx-auto px-4 text-center border-t border-primary/50 pt-8 opacity-60">
-    <p>&copy; {new Date().getFullYear()} Mina Beigi. {isTr ? 'Tüm hakları saklıdır.' : 'تمامی حقوق محفوظ است.'}</p>
   </div>
 </footer>
