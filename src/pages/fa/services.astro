@@ -1,16 +1,61 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL } from '../../consts';
+
+const services = [
+  { link: '/fa/investment-consulting/', title: 'سرمایه‌گذاری در ترکیه', desc: 'مشاوره و راهنمایی تخصصی برای سرمایه‌گذاران ایرانی جهت ورود به بازار ترکیه و انتخاب بهترین گزینه‌ها.' },
+  { link: '/fa/company-formation/', title: 'ثبت شرکت در ترکیه', desc: 'صفر تا صد مراحل ثبت شرکت تجاری، دریافت کد اقتصادی و امور اتاق بازرگانی برای اتباع خارجی.' },
+  { link: '/fa/property-residence-citizenship/', title: 'خرید ملک / اقامت / شهروندی', desc: 'همراهی در خرید امن املاک، اخذ اقامت ترکیه و پیگیری پرونده‌های شهروندی از طریق سرمایه‌گذاری.' },
+  { link: '/fa/work-permit/', title: 'مجوز کار', desc: 'هماهنگی و اقدام برای اخذ چالیشما ایزنی (مجوز کار) ویژه مدیران، پرسنل و شرکای تجاری.' },
+  { link: '/fa/student-residence/', title: 'اقامت تحصیلی', desc: 'مشاوره و هماهنگی دریافت اقامت دانشجویی برای پذیرفته‌شدگان دانشگاه‌های ترکیه.' },
+  { link: '/fa/translation/', title: 'ترجمه رسمی', desc: 'ترجمه رسمی، تایید نوتر (دفتر اسناد رسمی) و سفارت برای تمامی مدارک هویتی و تجاری.' },
+  { link: '/fa/deport-rejection/', title: 'بررسی اولیه پرونده‌های دیپورت', desc: 'ارزیابی دلایل ریجکتی یا منع ورود، و هماهنگی برای ارجاع به وکلای مجاز و متخصص در ترکیه.' }
+];
 ---
-<BaseLayout title="خدمات ما" description="خدمات ما - Mina Beigi" lang="fa">
-  <div class="py-24 bg-surface border-b border-primary">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">خدمات ما</h1>
-      <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
+<BaseLayout title="خدمات | Mina Beigi" description="خدمات مشاوره سرمایه‌گذاری، اقامت و امور رسمی در ترکیه" lang="fa">
+  <Fragment slot="head">
+    <link rel="canonical" href={SITE_URL + "/fa/services"} />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Mina Beigi International Consulting",
+        "description": "خدمات مشاوره سرمایه‌گذاری، اقامت و امور رسمی در ترکیه برای سرمایه‌گذاران ایرانی.",
+        "url": "{SITE_URL}/fa/services"
+      }
+    </script>
+  </Fragment>
+
+  <div class="relative py-32 bg-primary border-b border-primary overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center object-cover opacity-80 z-0" style="background-image: url('/images/hero-company.webp');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent z-10"></div>
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20" dir="rtl">
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb">
+        <a href="/fa/" class="hover:text-brand transition-colors">خانه</a>
+        <span>/</span>
+        <span class="text-ivory/60">خدمات</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6 leading-tight">خدمات مشاوره <span class="text-brand">سرمایه‌گذاری</span>، اقامت و امور رسمی در ترکیه</h1>
+      <p class="text-lg text-ivory/80 max-w-2xl mx-auto leading-relaxed">
+        مدیریت یکپارچه تمامی نیازهای حقوقی، ثبتی و سرمایه‌گذاری شما. برای مشاهده جزئیات هر خدمت، روی آن کلیک کنید.
+      </p>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="rtl">
-      <p>مجموعه خدمات حرفه‌ای ما در ارتباط با امور حقوقی، تجاری و مهاجرتی در ترکیه.</p>
+
+  <div class="py-24 bg-primary">
+    <div class="container mx-auto px-4 max-w-6xl" dir="rtl">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(s => (
+          <div class="bg-surface border border-primary rounded-xl p-8 hover:-translate-y-2 hover:border-brand transition-all duration-300 shadow-lg flex flex-col text-start">
+            <h3 class="text-2xl font-bold text-ivory mb-4">{s.title}</h3>
+            <p class="text-ivory/70 leading-relaxed mb-8 flex-grow">{s.desc}</p>
+            <a href={s.link} class="inline-flex items-center gap-2 text-brand font-semibold hover:text-bronze transition-colors mt-auto w-fit">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              مشاهده جزئیات
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </BaseLayout>

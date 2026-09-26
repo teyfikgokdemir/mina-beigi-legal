@@ -28,8 +28,8 @@ import { SITE_URL } from '../../consts';
   </Fragment>
 
   <div class="relative py-32 bg-primary border-b border-primary overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary z-10"></div>
-    <div class="absolute inset-0 bg-cover bg-center object-cover opacity-40 mix-blend-luminosity" style="background-image: url('${imgUrl}');"></div>
+    <div class="absolute inset-0 bg-cover bg-center object-cover opacity-80 z-0" style="background-image: url('${imgUrl}');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent z-10"></div>
     <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
       <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="${dir}">
         <a href="/${lang}/" class="hover:text-brand transition-colors">${lang === 'tr' ? 'Ana Sayfa' : 'خانه'}</a>
