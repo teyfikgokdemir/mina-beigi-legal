@@ -16,8 +16,8 @@ const serviceLinks = isTr ? [
 ---
 <footer class="bg-surface border-t border-primary/80">
   <div class="container mx-auto px-4 pt-10 md:pt-12 pb-10 md:pb-10" dir={isTr ? "ltr" : "rtl"}>
-    <div class="grid lg:grid-cols-[1.15fr_0.85fr_1fr] gap-8 lg:gap-10 items-start">
-      <div class="rounded-2xl border border-primary bg-primary/35 p-6">
+    <div class="grid lg:grid-cols-[1.15fr_0.85fr_1fr] lg:grid-rows-[auto_auto] gap-6 lg:gap-8 items-stretch">
+      <div class="rounded-2xl border border-primary bg-primary/35 p-6 lg:row-span-2 h-full">
         <div class="flex items-center justify-between gap-4">
           <a href={isTr ? "/tr/" : "/fa/"} class="inline-flex items-center">
             <img src="/images/mina-beigi-logo.svg" alt="Mina Beigi International Consulting" class="h-14 md:h-16 w-auto object-contain" />
@@ -43,7 +43,7 @@ const serviceLinks = isTr ? [
         </div>
       </div>
 
-      <div class="rounded-2xl border border-primary bg-primary/20 p-6">
+      <div class="rounded-2xl border border-primary bg-primary/20 p-6 h-full">
         <h2 class="text-xs uppercase tracking-[0.18em] text-ivory font-semibold mb-4">{isTr ? "Hızlı Bağlantılar" : "دسترسی سریع"}</h2>
         <div class="grid grid-cols-2 gap-x-5 gap-y-3 text-sm">
           <a href={isTr ? "/tr/hakkimizda/" : "/fa/about/"} class="text-ivory/60 hover:text-brand transition-colors">{isTr ? "Hakkımızda" : "درباره ما"}</a>
@@ -54,7 +54,7 @@ const serviceLinks = isTr ? [
         </div>
       </div>
 
-      <div class="rounded-2xl border border-primary bg-primary/20 p-6">
+      <div class="rounded-2xl border border-primary bg-primary/20 p-6 h-full">
         <h2 class="text-xs uppercase tracking-[0.18em] text-ivory font-semibold mb-4">{isTr ? "Öne Çıkan Hizmetler" : "خدمات منتخب"}</h2>
         <div class="space-y-3 text-sm">
           {serviceLinks.map(([href,label]) => (
@@ -64,9 +64,9 @@ const serviceLinks = isTr ? [
           ))}
         </div>
       </div>
-    </div>
 
-    <div class="footer-marquee mt-8 mb-2 overflow-hidden rounded-xl border border-primary/80 bg-primary/35" aria-label={isTr ? "Hizmet başlıkları" : "عناوین خدمات"}>
+      <div class="lg:col-start-2 lg:col-span-2 self-end">
+        <div class="footer-marquee mt-0 mb-0 overflow-hidden rounded-xl border border-primary/80 bg-primary/35" aria-label={isTr ? "Hizmet başlıkları" : "عناوین خدمات"}>
       <div class="footer-marquee__track flex w-max items-center py-3 text-[0.78rem] md:text-sm font-medium tracking-wide text-bronze whitespace-nowrap">
         {Array.from({ length: 2 }).map(() => (
           <div class="flex items-center shrink-0">
@@ -81,6 +81,7 @@ const serviceLinks = isTr ? [
             ))}
           </div>
         ))}
+      </div>
       </div>
     </div>
 
