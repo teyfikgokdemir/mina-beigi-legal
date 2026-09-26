@@ -15,7 +15,7 @@ const serviceLinks = isTr ? [
 ];
 ---
 <footer class="bg-surface border-t border-primary/80">
-  <div class="container mx-auto px-4 py-10 md:py-12" dir={isTr ? "ltr" : "rtl"}>
+  <div class="container mx-auto px-4 pt-10 md:pt-12 pb-24 md:pb-20" dir={isTr ? "ltr" : "rtl"}>
     <div class="grid lg:grid-cols-[1.15fr_0.85fr_1fr] gap-8 lg:gap-10 items-start">
       <div class="rounded-2xl border border-primary bg-primary/35 p-6">
         <div class="flex items-center justify-between gap-4">
@@ -29,7 +29,6 @@ const serviceLinks = isTr ? [
             ? "Türkiye–İran ekseninde göçmenlik, yatırım, şirket kuruluşu, resmî tercümanlık ve süreç koordinasyonu."
             : "همراهی حرفه‌ای در امور مهاجرتی، سرمایه‌گذاری، ثبت شرکت، ترجمه رسمی و هماهنگی فرآیندها میان ایران و ترکیه."}
         </p>
-
         <div class="mt-6 grid sm:grid-cols-2 gap-3">
           <a href="tel:+905392425624" class="group rounded-xl border border-primary bg-surface/70 p-4 hover:border-brand transition-colors">
             <span class="block text-xs uppercase tracking-wide text-brand font-semibold mb-1">{isTr ? "Türkiye İletişim" : "تماس ترکیه"}</span>
@@ -65,9 +64,14 @@ const serviceLinks = isTr ? [
       </div>
     </div>
 
-    <div class="mt-8 pt-5 border-t border-primary/80 flex flex-col sm:flex-row gap-3 justify-between items-center text-xs text-ivory/45">
-      <span>&copy; {new Date().getFullYear()} Mina Beigi. {isTr ? "Tüm hakları saklıdır." : "تمامی حقوق محفوظ است."}</span>
-      <span>{isTr ? "İstanbul • Tahran" : "استانبول • تهران"}</span>
+    <div class="mt-8 pt-5 border-t border-primary/80 grid md:grid-cols-3 gap-3 items-center text-xs">
+      <span class="text-ivory/70 md:text-start text-center font-medium">&copy; {new Date().getFullYear()} Mina Beigi. {isTr ? "Tüm hakları saklıdır." : "تمامی حقوق محفوظ است."}</span>
+      <div class="text-center text-ivory/50">
+        {isTr ? "Web sitesi " : "طراحی و توسعه توسط "}
+        <a href="https://qctcommerce.com/" target="_blank" rel="noopener noreferrer" class="text-bronze hover:text-brand transition-colors font-medium">QCT Commerce</a>
+        {isTr ? " tarafından hazırlanmıştır." : ""}
+      </div>
+      <span class="text-ivory/50 md:text-end text-center">{isTr ? "İstanbul • Tahran" : "استانبول • تهران"}</span>
     </div>
   </div>
 </footer>
