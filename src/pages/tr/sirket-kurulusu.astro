@@ -3,55 +3,78 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
 import { SITE_URL } from '../../consts';
 ---
-<BaseLayout title="Şirket Kuruluşu | Mina Beigi" description="Yabancılar ve İranlılar için Türkiye'de şirket kuruluşu ve ticaret odası kayıt süreçleri. İstanbul şirket kuruluş danışmanlığı." lang="tr">
+<BaseLayout title="Şirket Kuruluşu | Mina Beigi" description="Yabancı ve İranlı girişimciler için Türkiye’de şirket kuruluşu, tescil hazırlığı ve operasyon başlangıcı danışmanlığı." lang="tr">
   <Fragment slot="head">
-    <link rel="canonical" href={SITE_URL + "/tr/sirket-kurulusu"} />
-    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/sirket-kurulusu"} />
-    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/sirket-kurulusu"} />
-    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/sirket-kurulusu"} />
+    <link rel="canonical" href={SITE_URL + "/tr/sirket-kurulusu/"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/sirket-kurulusu/"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/company-formation/"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/sirket-kurulusu/"} />
   </Fragment>
 
-  <div class="relative py-32 bg-primary border-b border-primary overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center object-cover opacity-80 z-0" style="background-image: url('/images/hero-translation.webp');"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent z-10"></div>
+  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-75 z-0" style="background-image: url('/images/hero-company.webp');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/35 to-primary/10 z-10"></div>
     <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
-      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="ltr">
-        <a href="/tr/" class="hover:text-brand transition-colors">Ana Sayfa</a>
-        <span>/</span>
-        <a href="/tr/hizmetler" class="hover:text-brand transition-colors">Hizmetler</a>
-        <span>/</span>
+      <nav class="text-sm text-bronze/80 mb-5 flex items-center justify-center gap-2" aria-label="Breadcrumb">
+        <a href="/tr/" class="hover:text-brand">Ana Sayfa</a><span>/</span>
+        <a href="/tr/hizmetler/" class="hover:text-brand">Hizmetler</a><span>/</span>
         <span class="text-ivory/60" aria-current="page">Şirket Kuruluşu</span>
       </nav>
-      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">Şirket Kuruluşu</h1>
-      <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">Şirket Kuruluşu</h1>
+      <p class="text-ivory/75 max-w-2xl mx-auto">Yabancı ve İranlı girişimciler için Türkiye’de şirket kuruluşu, tescil hazırlığı ve operasyon başlangıcı danışmanlığı.</p>
     </div>
   </div>
-  
-  <div class="py-20 bg-primary">
-    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="ltr">
+
+  <main class="py-12 md:py-16 bg-primary">
+    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed text-lg space-y-10">
       
-      <section>
-        <p class="mb-4">Türkiye'nin stratejik konumu ve dinamik pazar yapısı, uluslararası yatırımcılar için büyük fırsatlar barındırır. Yabancı uyruklu girişimciler, Türk vatandaşları ile aynı haklara sahip olarak Limited (LTD) veya Anonim Şirket (A.Ş.) kurabilirler.</p>
-        <p>İranlı ve yabancı yatırımcılar için Türkiye'de şirket kuruluşu, ticaret odası kayıtları, vergi dairesi işlemleri ve ruhsat başvuru koordinasyonunda profesyonel rehberlik sunuyoruz.</p>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Süreç Nasıl İşler?</h2>
-        <ol class="list-decimal list-inside space-y-2 text-ivory/70">
-          <li><strong>Şirket Tipinin Belirlenmesi:</strong> Ticari hedeflerinize uygun (LTD, A.Ş. vb.) şirket yapısının seçilmesi ve unvan tespiti.</li>
-          <li><strong>Ana Sözleşme Hazırlığı:</strong> Şirket faaliyet alanlarına uygun ana sözleşmenin hazırlanması (Mersis girişi).</li>
-          <li><strong>Noter ve Tescil:</strong> Ortakların pasaport tercümeleri ve imza beyannamelerinin noterde onaylanması, Ticaret Sicil Müdürlüğü'nde tescil işleminin gerçekleştirilmesi.</li>
-          <li><strong>Vergi Levhası:</strong> Vergi dairesi açılış yoklamasının koordinasyonu ve vergi levhasının alınması.</li>
-        </ol>
-      </section>
-    
-      
-      <div class="mt-16 pt-16 border-t border-surface">
-        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
-          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">Profesyonel Destek Alın</h2>
-          <p class="text-center mb-8">Sürecinizle ilgili ön değerlendirme yapmak ve danışmanlık talep etmek için formu doldurun.</p>
+<section>
+  <h2 class="text-3xl font-bold text-ivory mb-4">Türkiye’de şirket kurarken önce ticari modeli netleştirin</h2>
+  <p>Şirket türü, faaliyet konusu, ortaklık yapısı, adres, muhasebe düzeni ve izin gerektiren faaliyetler kuruluş aşamasından önce birlikte düşünülmelidir. Özellikle İranlı yatırımcılar için bankacılık, para transferi, ortaklık ve operasyon modeli kuruluş sonrasında da önem taşır.</p>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">Kimler için uygun?</h2>
+  <ul class="list-disc list-inside space-y-2 text-ivory/70">
+    <li>Türkiye’de ticari faaliyet başlatmak isteyen yabancı girişimciler</li>
+    <li>İran’dan Türkiye pazarına açılmak isteyen şirket sahipleri</li>
+    <li>İthalat, ihracat, danışmanlık, üretim veya hizmet şirketi kuracak yatırımcılar</li>
+    <li>Mevcut faaliyetini yeni bir tüzel yapı altında sürdürmek isteyenler</li>
+  </ul>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">Kuruluş öncesi değerlendirme</h2>
+  <p>Faaliyet konusu, ortak sayısı, sermaye planı, şirket adresi, imza yetkisi ve varsa özel izin ihtiyacı netleştirilir. Böylece şirket kurulduktan sonra yanlış faaliyet kodu, eksik izin veya iş modeline uymayan şirket yapısı gibi sorunların önüne geçilmesi hedeflenir.</p>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">Süreç nasıl ilerler?</h2>
+  <ol class="space-y-3 text-ivory/70">
+    <li><strong class="text-ivory">1. Yapı seçimi:</strong> LTD, A.Ş. veya uygun diğer yapı seçenekleri ticari hedeflere göre değerlendirilir.</li>
+    <li><strong class="text-ivory">2. Evrak hazırlığı:</strong> Pasaport, adres, ortaklık ve imza belgeleri ile gerekli tercümeler planlanır.</li>
+    <li><strong class="text-ivory">3. Tescil koordinasyonu:</strong> MERSİS, ticaret sicili ve noter adımları için gerekli hazırlıklar koordine edilir.</li>
+    <li><strong class="text-ivory">4. Kuruluş sonrası:</strong> Vergi, muhasebe, banka hesabı, faaliyet izinleri ve operasyon başlangıcı için gerekli başlıklar belirlenir.</li>
+  </ol>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">Dikkat edilmesi gerekenler</h2>
+  <p>Şirket kurmak tek başına çalışma izni, ikamet veya faaliyet ruhsatı sağlamaz. Bu başlıklar şirketin faaliyet alanına ve ortakların statüsüne göre ayrıca değerlendirilmelidir.</p>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">Sık sorulan sorular</h2>
+  <div class="space-y-3">
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">Yabancı tek ortaklı şirket kurabilir mi?</summary><p class="mt-3 text-sm">Birçok şirket türünde yabancı ortaklık mümkündür; uygun yapı faaliyet ve ortaklık planına göre değerlendirilir.</p></details>
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">Şirket kurunca otomatik ikamet alınır mı?</summary><p class="mt-3 text-sm">Hayır. İkamet ve çalışma izinleri ayrı koşullara bağlı süreçlerdir.</p></details>
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">İranlı yatırımcılar için farklı hazırlık gerekir mi?</summary><p class="mt-3 text-sm">Para transferi, bankacılık ve belge düzeni gibi başlıklar işlem modeline göre önceden planlanmalıdır.</p></details>
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">Kuruluş sonrası muhasebe gerekir mi?</summary><p class="mt-3 text-sm">Şirketin vergi ve muhasebe yükümlülükleri kuruluşla birlikte başlar; düzenli takip gerekir.</p></details>
+  </div>
+</section>
+
+      <section class="pt-8 border-t border-surface">
+        <div class="bg-surface p-6 md:p-10 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-4 text-center">Dosyanızı Birlikte Değerlendirelim</h2>
+          <p class="text-center text-ivory/70 mb-8">Durumunuzu kısaca paylaşın; gerekli hazırlıklar ve izlenebilecek adımlar hakkında ön değerlendirme yapalım.</p>
           <ContactForm lang="tr" />
         </div>
-      </div>
+      </section>
     </div>
-  </div>
+  </main>
 </BaseLayout>
