@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import { SITE_URL } from '../../consts';
 ---
 <BaseLayout title="مشاوره سرمایه‌گذاری | Mina Beigi" description="مشاوره سرمایه‌گذاری در ترکیه. جایگاه‌یابی استراتژیک و راهنمایی سرمایه‌گذاران خارجی در استانبول." lang="fa">
   <Fragment slot="head">
-    <link rel="canonical" href="https://minabeigi.com/fa/investment-consulting" />
-    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/investment-consulting" />
-    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/investment-consulting" />
-    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/investment-consulting" />
+    <link rel="canonical" href={SITE_URL + "/fa/investment-consulting"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/investment-consulting"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/investment-consulting"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/investment-consulting"} />
   </Fragment>
 
   <div class="py-24 bg-surface border-b border-primary">

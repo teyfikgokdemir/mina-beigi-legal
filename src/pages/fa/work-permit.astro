@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import { SITE_URL } from '../../consts';
 ---
 <BaseLayout title="فرآیندهای مجوز کار | Mina Beigi" description="مشاوره مجوز کار در ترکیه و هماهنگی درخواست‌ها. روند اخذ اجازه کار برای خارجی‌ها، مدارک لازم و بررسی پرونده." lang="fa">
   <Fragment slot="head">
-    <link rel="canonical" href="https://minabeigi.com/fa/work-permit" />
-    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/work-permit" />
-    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/work-permit" />
-    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/work-permit" />
+    <link rel="canonical" href={SITE_URL + "/fa/work-permit"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/work-permit"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/work-permit"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/work-permit"} />
   </Fragment>
 
   <div class="py-24 bg-surface border-b border-primary">

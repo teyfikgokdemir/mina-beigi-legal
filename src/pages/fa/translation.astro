@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import { SITE_URL } from '../../consts';
 ---
 <BaseLayout title="ترجمه رسمی و معتمد | Mina Beigi" description="مترجم رسمی ترکی و فارسی در استانبول. ترجمه مدارک با تایید نوتر و ترجمه همزمان." lang="fa">
   <Fragment slot="head">
-    <link rel="canonical" href="https://minabeigi.com/fa/translation" />
-    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/translation" />
-    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/translation" />
-    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/translation" />
+    <link rel="canonical" href={SITE_URL + "/fa/translation"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/translation"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/translation"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/translation"} />
   </Fragment>
 
   <div class="py-24 bg-surface border-b border-primary">

@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import { SITE_URL } from '../../consts';
 ---
 <BaseLayout title="Çalışma İzni Süreçleri | Mina Beigi" description="Türkiye çalışma izni danışmanlığı ve başvuru koordinasyonu. Yabancılar için çalışma izni süreci, gerekli belgeler ve dosya değerlendirmesi." lang="tr">
   <Fragment slot="head">
-    <link rel="canonical" href="https://minabeigi.com/tr/calisma-izni" />
-    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/calisma-izni" />
-    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/calisma-izni" />
-    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/calisma-izni" />
+    <link rel="canonical" href={SITE_URL + "/tr/calisma-izni"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/calisma-izni"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/calisma-izni"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/calisma-izni"} />
   </Fragment>
 
   <div class="py-24 bg-surface border-b border-primary">

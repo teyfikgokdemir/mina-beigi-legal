@@ -16,13 +16,14 @@ function makePageContent(title, desc, lang, contentHtml, canonical) {
     return `---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import { SITE_URL } from '../../consts';
 ---
 <BaseLayout title="${title} | Mina Beigi" description="${desc}" lang="${lang}">
   <Fragment slot="head">
-    <link rel="canonical" href="https://minabeigi.com${canonical}" />
-    <link rel="alternate" hreflang="tr" href="https://minabeigi.com${hr_tr}" />
-    <link rel="alternate" hreflang="fa" href="https://minabeigi.com${hr_fa}" />
-    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com${hr_tr}" />
+    <link rel="canonical" href={SITE_URL + "${canonical}"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "${hr_tr}"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "${hr_fa}"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "${hr_tr}"} />
   </Fragment>
 
   <div class="py-24 bg-surface border-b border-primary">

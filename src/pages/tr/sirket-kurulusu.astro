@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import { SITE_URL } from '../../consts';
 ---
 <BaseLayout title="Şirket Kuruluşu | Mina Beigi" description="Yabancılar ve İranlılar için Türkiye'de şirket kuruluşu ve ticaret odası kayıt süreçleri. İstanbul şirket kuruluş danışmanlığı." lang="tr">
   <Fragment slot="head">
-    <link rel="canonical" href="https://minabeigi.com/tr/sirket-kurulusu" />
-    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/sirket-kurulusu" />
-    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/sirket-kurulusu" />
-    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/sirket-kurulusu" />
+    <link rel="canonical" href={SITE_URL + "/tr/sirket-kurulusu"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/sirket-kurulusu"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/sirket-kurulusu"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/sirket-kurulusu"} />
   </Fragment>
 
   <div class="py-24 bg-surface border-b border-primary">

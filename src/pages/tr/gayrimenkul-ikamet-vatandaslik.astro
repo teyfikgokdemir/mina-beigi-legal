@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import { SITE_URL } from '../../consts';
 ---
 <BaseLayout title="İkamet ve Vatandaşlık | Mina Beigi" description="Türkiye ikamet izni, gayrimenkul ile ikamet ve yatırım yoluyla vatandaşlık süreci danışmanlığı. Dosya ön değerlendirmesi ve başvuru takibi." lang="tr">
   <Fragment slot="head">
-    <link rel="canonical" href="https://minabeigi.com/tr/gayrimenkul-ikamet-vatandaslik" />
-    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/gayrimenkul-ikamet-vatandaslik" />
-    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/gayrimenkul-ikamet-vatandaslik" />
-    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/gayrimenkul-ikamet-vatandaslik" />
+    <link rel="canonical" href={SITE_URL + "/tr/gayrimenkul-ikamet-vatandaslik"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/gayrimenkul-ikamet-vatandaslik"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/gayrimenkul-ikamet-vatandaslik"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/gayrimenkul-ikamet-vatandaslik"} />
   </Fragment>
 
   <div class="py-24 bg-surface border-b border-primary">
