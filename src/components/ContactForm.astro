@@ -20,9 +20,14 @@ const isTr = lang === "tr";
     <label class="block mb-2 text-sm font-medium text-ivory/80 text-start">{isTr ? "Hizmet Türü" : "نوع خدمت"}</label>
     <select name="service" required class="w-full bg-primary border border-surface rounded-lg p-4 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all">
       <option value="">{isTr ? "Seçiniz" : "انتخاب کنید"}</option>
-      <option value="immigration">{isTr ? "Göçmenlik & İkamet" : "مهاجرت و اقامت"}</option>
+      <option value="work-permit">{isTr ? "Çalışma İzni" : "مجوز کار"}</option>
+      <option value="student-residence">{isTr ? "Öğrenci İkameti" : "اقامت تحصیلی"}</option>
+      <option value="property">{isTr ? "Gayrimenkul / İkamet / Vatandaşlık" : "ملک / اقامت / شهروندی"}</option>
       <option value="company">{isTr ? "Şirket Kuruluşu" : "ثبت شرکت"}</option>
-      <option value="translation">{isTr ? "Yeminli Tercümanlık" : "ترجمه رسمی"}</option>
+      <option value="investment">{isTr ? "Yatırım Danışmanlığı" : "مشاوره سرمایه‌گذاری"}</option>
+      <option value="deport">{isTr ? "Deport / Ret Süreçleri" : "دیپورت / ریجکت"}</option>
+      <option value="translation">{isTr ? "Resmî Tercümanlık" : "ترجمه رسمی"}</option>
+      <option value="banking">{isTr ? "Banka / Vergi / Finansal Süreçler" : "بانک / مالیات / امور مالی"}</option>
       <option value="other">{isTr ? "Diğer" : "سایر"}</option>
     </select>
   </div>
