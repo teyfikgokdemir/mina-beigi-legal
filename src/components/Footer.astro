@@ -66,7 +66,25 @@ const serviceLinks = isTr ? [
       </div>
     </div>
 
-    <div class="mt-8 pt-5 border-t border-primary/80 grid md:grid-cols-3 gap-3 items-center text-xs">
+    <div class="footer-marquee mt-8 mb-2 overflow-hidden rounded-xl border border-primary/80 bg-primary/35" aria-label={isTr ? "Hizmet başlıkları" : "عناوین خدمات"}>
+      <div class="footer-marquee__track flex w-max items-center py-3 text-[0.78rem] md:text-sm font-medium tracking-wide text-bronze whitespace-nowrap">
+        {Array.from({ length: 2 }).map(() => (
+          <div class="flex items-center shrink-0">
+            {(isTr
+              ? ["İstanbul", "Tahran", "Yatırım Danışmanlığı", "Şirket Kuruluşu", "Çalışma İzni", "Resmî Tercümanlık", "Gayrimenkul", "İkamet ve Vatandaşlık", "Banka & Finans"]
+              : ["استانبول", "تهران", "مشاوره سرمایه‌گذاری", "ثبت شرکت", "مجوز کار", "ترجمه رسمی", "خرید ملک", "اقامت و شهروندی", "بانک و امور مالی"]
+            ).map((item) => (
+              <>
+                <span class="px-5 md:px-7">{item}</span>
+                <span class="text-brand/80">◆</span>
+              </>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-5 pt-5 border-t border-primary/80 grid md:grid-cols-3 gap-3 items-center text-xs">
       <span class="text-ivory/70 text-center md:text-start md:pl-20 font-medium">&copy; {new Date().getFullYear()} Mina Beigi. {isTr ? "Tüm hakları saklıdır." : "تمامی حقوق محفوظ است."}</span>
       <div class="text-center text-ivory/50">
         {isTr ? "Web sitesi " : "طراحی و توسعه توسط "}
@@ -77,3 +95,23 @@ const serviceLinks = isTr ? [
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-marquee__track {
+    animation: footerMarquee 34s linear infinite;
+    will-change: transform;
+  }
+  .footer-marquee:hover .footer-marquee__track {
+    animation-play-state: paused;
+  }
+  @keyframes footerMarquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .footer-marquee__track {
+      animation: none;
+      transform: none;
+    }
+  }
+</style>
