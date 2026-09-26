@@ -1,16 +1,51 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="درباره ما | Mina Beigi" description="مینا بیگی، وکیل پایه یک دادگستری در ایران است و در ترکیه خدمات مترجمی رسمی، مشاوره فرآیندهای مهاجرتی، هماهنگی درخواست‌ها و مشاوره سرمایه‌گذاری ارائه می‌دهد." lang="fa">
-  <div class="py-24 bg-surface border-b border-primary">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">درباره ما</h1>
-      <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
+<BaseLayout title="درباره ما | Mina Beigi" description="مینا بیگی در حوزه مهاجرت، ترجمه رسمی، سرمایه‌گذاری، ثبت شرکت و هماهنگی امور میان ایران و ترکیه فعالیت می‌کند." lang="fa">
+  <div class="py-16 md:py-20 bg-surface border-b border-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-center" dir="rtl">
+      <p class="text-brand font-semibold mb-3">استانبول • تهران</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">درباره ما</h1>
+      <p class="text-ivory/70 max-w-2xl mx-auto">همراهی حرفه‌ای در امور مهاجرتی، ترجمه رسمی، سرمایه‌گذاری، ثبت شرکت و هماهنگی فرآیندهای میان ایران و ترکیه.</p>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="rtl">
-      <p>مینا بیگی، وکیل پایه یک دادگستری در ایران است و در ترکیه خدمات مترجمی رسمی، مشاوره فرآیندهای مهاجرتی، هماهنگی درخواست‌ها و مشاوره سرمایه‌گذاری ارائه می‌دهد.</p>
+
+  <div class="py-14 md:py-16 bg-primary">
+    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed" dir="rtl">
+      <div class="grid md:grid-cols-[0.8fr_1.2fr] gap-10 md:gap-14 items-start">
+        <div class="bg-surface rounded-2xl border border-primary overflow-hidden">
+          <div class="aspect-[4/5] bg-primary">
+            <img src="/images/mina-profile.webp" alt="مینا بیگی" class="w-full h-full object-cover" onerror="this.style.display='none'" />
+          </div>
+        </div>
+        <div class="space-y-7">
+          <div>
+            <h2 class="text-3xl font-bold text-ivory mb-4">همراهی حرفه‌ای میان ایران و ترکیه</h2>
+            <p>مینا بیگی در حوزه امور مهاجرتی، ترجمه رسمی، سرمایه‌گذاری، ثبت شرکت و هماهنگی درخواست‌ها فعالیت می‌کند. شیوه همکاری بر بررسی وضعیت پرونده، مشخص‌کردن مدارک و مراحل لازم و ایجاد یک مسیر روشن برای ادامه کار متمرکز است.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">وکیل پایه یک دادگستری</strong><span class="text-sm">عنوان درج‌شده در معرفی حرفه‌ای ایشان.</span></div>
+            <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">وکیل مهاجرت در ترکیه</strong><span class="text-sm">عنوان مورد استفاده در بیوگرافی اینستاگرام.</span></div>
+            <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">مترجم رسمی در ترکیه</strong><span class="text-sm">ترجمه رسمی فارسی و ترکی و همراهی در امور اداری.</span></div>
+            <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">عضو اتاق بازرگانی ایران–ایتالیا</strong><span class="text-sm">ارتباط با فضای تجارت و سرمایه‌گذاری بین‌المللی.</span></div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-ivory mb-3">روش همکاری</h2>
+            <p>هر درخواست ابتدا از نظر هدف، مدارک موجود، نوع فرآیند و زمان‌بندی بررسی می‌شود. سپس مراحل لازم، موارد ناقص و نکات مهم به‌صورت شفاف توضیح داده می‌شود تا متقاضی با تصویر روشن‌تری تصمیم بگیرد و اقدام کند.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-ivory mb-3">مخاطبان خدمات</h2>
+            <p>سرمایه‌گذاران و کارآفرینان ایرانی، متقاضیان ثبت شرکت و خرید ملک در ترکیه، افراد نیازمند خدمات اقامتی و کاری و همچنین اشخاصی که برای امور رسمی به ترجمه فارسی–ترکی نیاز دارند.</p>
+          </div>
+
+          <div class="pt-2">
+            <a href="/fa/contact/" class="inline-flex bg-brand text-white font-semibold px-7 py-3 rounded hover:bg-[#A33850] transition-colors">درخواست مشاوره</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>
