@@ -1,6 +1,14 @@
 ---
 const { lang } = Astro.props;
 const isTr = lang === 'tr';
+
+const trPhone = '+905392425624';
+const irPhone = '+989125102088';
+const trPhoneFormatted = '+90 539 2425 624';
+const irPhoneFormatted = '+98 912 510 20 88';
+
+const phone1 = isTr ? { tel: trPhone, fmt: trPhoneFormatted } : { tel: irPhone, fmt: irPhoneFormatted };
+const phone2 = isTr ? { tel: irPhone, fmt: irPhoneFormatted } : { tel: trPhone, fmt: trPhoneFormatted };
 ---
 <footer class="bg-[#0a0f1c] pt-12 pb-6 border-t border-white/10 text-gray-400 text-sm">
   <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 mb-8" dir={isTr ? "ltr" : "rtl"}>
@@ -11,8 +19,8 @@ const isTr = lang === 'tr';
     <div>
       <h3 class="text-white text-lg font-semibold mb-4">{isTr ? 'İletişim' : 'تماس با ما'}</h3>
       <p class="mb-2 text-start">📍 Pendik, İstanbul / Türkiye</p>
-      <p class="mb-2 text-start" dir="ltr">📞 <a href="tel:+905392425624" class="hover:text-[#D4AF37]">+90 539 2425 624</a></p>
-      <p class="mb-2 text-start" dir="ltr">📞 <a href="tel:+989125102088" class="hover:text-[#D4AF37]">+98 912 510 20 88</a></p>
+      <p class="mb-2 text-start" dir="ltr">📞 <a href={`tel:${phone1.tel}`} class="hover:text-[#D4AF37]">{phone1.fmt}</a></p>
+      <p class="mb-2 text-start" dir="ltr">📞 <a href={`tel:${phone2.tel}`} class="hover:text-[#D4AF37]">{phone2.fmt}</a></p>
     </div>
     <div>
       <h3 class="text-white text-lg font-semibold mb-4">{isTr ? 'Sosyal Medya' : 'شبکه‌های اجتماعی'}</h3>
@@ -22,4 +30,4 @@ const isTr = lang === 'tr';
   <div class="container mx-auto px-4 text-center border-t border-white/10 pt-6">
     <p>&copy; {new Date().getFullYear()} Mina Beigi. {isTr ? 'Tüm hakları saklıdır.' : 'تمامی حقوق محفوظ است.'}</p>
   </div>
-</footer>\n
+</footer>
