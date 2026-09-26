@@ -1,0 +1,226 @@
+const fs = require('fs');
+const path = require('path');
+
+const baseDir = __dirname;
+
+function replaceColors(dir) {
+  const files = fs.readdirSync(dir);
+  for (const file of files) {
+    const fullPath = path.join(dir, file);
+    if (fs.statSync(fullPath).isDirectory()) {
+      replaceColors(fullPath);
+    } else if (fullPath.endsWith('.astro') || fullPath.endsWith('.css')) {
+      let content = fs.readFileSync(fullPath, 'utf8');
+      content = content.replace(/#0F172A/gi, '#1C1C1E'); // Elegant Dark Graphite
+      content = content.replace(/#D4AF37/gi, '#C29B62'); // Premium Warm Bronze
+      content = content.replace(/#0c1222/gi, '#141415'); // Deeper background
+      content = content.replace(/#334155/gi, '#2C2C2E'); // Card backgrounds
+      content = content.replace(/#0a0f1c/gi, '#111112'); // Footer
+      fs.writeFileSync(fullPath, content);
+    }
+  }
+}
+
+replaceColors(path.join(baseDir, 'src'));
+
+// Update TR Index
+const trIndexPath = path.join(baseDir, 'src', 'pages', 'tr', 'index.astro');
+const trContent = `---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+<BaseLayout title="Ana Sayfa" description="Türkiye'de Hukuk, İkamet ve Yatırım Süreçlerinde Profesyonel Destek" lang="tr">
+  <section class="relative py-24 md:py-32 bg-[#1C1C1E] overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 opacity-20 bg-[url('/images/hero-office.webp')] bg-cover bg-center object-cover"></div>
+    <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
+        Türkiye'de İkamet, Yatırım ve <span class="text-[#C29B62]">Danışmanlık Süreçlerinde</span> Profesyonel Destek
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+        Çalışma izni, ikamet, şirket kuruluşu, yatırım ve resmî işlemleriniz için İstanbul & Tahran merkezli profesyonel danışmanlık.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://wa.me/905392425624" class="bg-[#C29B62] text-[#1C1C1E] font-bold py-3 px-8 rounded hover:bg-yellow-600 transition-colors">
+          WhatsApp'tan İletişime Geçin
+        </a>
+        <a href="#iletisim" class="border border-white/30 text-white font-medium py-3 px-8 rounded hover:bg-white/10 transition-colors">
+          Danışmanlık Talebi Oluşturun
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profil / Hakkımızda Bölümü -->
+  <section class="py-20 bg-[#141415] border-b border-white/5">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="w-full md:w-1/3 flex justify-center">
+          <div class="w-64 h-64 md:w-72 md:h-80 rounded-2xl overflow-hidden border border-[#C29B62]/30 relative bg-[#2C2C2E]">
+            <img src="/images/mina-profile.webp" alt="Mina Beigi" class="w-full h-full object-cover object-center" onerror="this.style.display='none'" />
+            <div class="absolute inset-0 flex items-center justify-center text-gray-500 text-sm" style="z-index:-1;">Fotoğraf Alanı</div>
+          </div>
+        </div>
+        <div class="w-full md:w-2/3">
+          <h2 class="text-3xl font-bold mb-2 text-white">Mina Beigi</h2>
+          <h3 class="text-[#C29B62] text-xl font-medium mb-6">Uluslararası Danışman & Resmî Tercüman</h3>
+          <ul class="space-y-4 text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="text-[#C29B62] mt-1">⚖️</span>
+              <span><strong>İran'da</strong> Birinci Derece Lisanslı Avukat (وکیل پایه یک دادگستری)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#C29B62] mt-1">📜</span>
+              <span><strong>Türkiye'de</strong> Resmî Yeminli Tercüman</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#C29B62] mt-1">🛂</span>
+              <span>Türkiye Göçmenlik ve İkamet Süreçleri Danışmanlığı</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#C29B62] mt-1">🤝</span>
+              <span>İran - İtalya Ticaret Odası Üyesi</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#C29B62] mt-1">📍</span>
+              <span>Ofisler: Tahran & İstanbul</span>
+            </li>
+          </ul>
+          <p class="mt-6 text-sm text-gray-500 italic">* Not: Türkiye'de avukatlık faaliyeti yürütülmemekte olup, hizmetlerimiz resmi danışmanlık, süreç takibi ve yeminli tercümanlık kapsamındadır.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-[#1C1C1E]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-12 text-white">Hizmetlerimiz</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {t: 'Çalışma İzni Süreçleri', d: 'Türkiye’de çalışma izni başvurularının mevzuata uygun şekilde, profesyonel dosya yönetimiyle yürütülmesi.'},
+          {t: 'Şirket Kuruluşu', d: 'İranlı ve yabancı yatırımcılar için şirket kuruluş ve ticaret odası kayıt süreçlerinin koordinasyonu.'},
+          {t: 'Gayrimenkul ve İkamet', d: 'Yatırım yoluyla ikamet ve vatandaşlık dosyalarının ön değerlendirmesi ve resmi başvuru takibi.'},
+          {t: 'Deport & Ret Süreçleri', d: 'Göçmenlik süreçlerinde karşılaşılan ret durumlarında danışmanlık ve itiraz süreçlerinin takibi.'},
+          {t: 'Uluslararası Banka İşlemleri', d: 'Yabancılar için banka hesabı açılış süreçleri ve ticari gereksinimlerin yönetimi.'},
+          {t: 'Yeminli Tercümanlık', d: 'Resmi makamlarda geçerli tercüme, noter onaylı belge hizmetleri ve sözlü çeviri.'}
+        ].map(s => (
+          <div class="bg-[#141415] p-8 rounded-lg border border-white/5 hover:border-[#C29B62]/50 transition-colors text-start">
+            <h3 class="text-xl font-bold text-[#C29B62] mb-3">{s.t}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{s.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim" class="py-20 bg-[#141415]">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-4 text-white">İletişime Geçin</h2>
+      <p class="text-center text-gray-400 mb-12 max-w-xl mx-auto">Dosya değerlendirmesi ve profesyonel destek için formumuzu doldurun, size en kısa sürede dönüş yapalım.</p>
+      <ContactForm lang="tr" />
+    </div>
+  </section>
+</BaseLayout>`;
+
+fs.writeFileSync(trIndexPath, trContent);
+
+// Update FA Index
+const faIndexPath = path.join(baseDir, 'src', 'pages', 'fa', 'index.astro');
+const faContent = `---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+<BaseLayout title="خانه" description="پشتیبانی حرفه‌ای در فرآیندهای اقامت، سرمایه‌گذاری و مشاوره در ترکیه" lang="fa">
+  <section class="relative py-24 md:py-32 bg-[#1C1C1E] overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 opacity-20 bg-[url('/images/hero-office.webp')] bg-cover bg-center object-cover"></div>
+    <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
+        پشتیبانی حرفه‌ای در فرآیندهای اقامت، <span class="text-[#C29B62]">سرمایه‌گذاری و مشاوره</span> در ترکیه
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+        مشاوره حرفه‌ای مستقر در استانبول و تهران برای مجوز کار، اقامت، ثبت شرکت، سرمایه‌گذاری و امور رسمی شما.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://wa.me/989125102088" class="bg-[#C29B62] text-[#1C1C1E] font-bold py-3 px-8 rounded hover:bg-yellow-600 transition-colors">
+          ارتباط از طریق واتساپ
+        </a>
+        <a href="#contact" class="border border-white/30 text-white font-medium py-3 px-8 rounded hover:bg-white/10 transition-colors">
+          ثبت درخواست مشاوره
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profil / Hakkımızda Bölümü FA -->
+  <section class="py-20 bg-[#141415] border-b border-white/5">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="w-full md:w-1/3 flex justify-center">
+          <div class="w-64 h-64 md:w-72 md:h-80 rounded-2xl overflow-hidden border border-[#C29B62]/30 relative bg-[#2C2C2E]">
+            <img src="/images/mina-profile.webp" alt="مینا بیگی" class="w-full h-full object-cover object-center" onerror="this.style.display='none'" />
+            <div class="absolute inset-0 flex items-center justify-center text-gray-500 text-sm" style="z-index:-1;">جایگاه عکس</div>
+          </div>
+        </div>
+        <div class="w-full md:w-2/3">
+          <h2 class="text-3xl font-bold mb-2 text-white">مینا بیگی</h2>
+          <h3 class="text-[#C29B62] text-xl font-medium mb-6">مشاور بین‌المللی و مترجم رسمی</h3>
+          <ul class="space-y-4 text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="text-[#C29B62] mt-1">⚖️</span>
+              <span><strong>در ایران:</strong> وکیل پایه یک دادگستری</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#C29B62] mt-1">📜</span>
+              <span><strong>در ترکیه:</strong> مترجم رسمی و تایید شده</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#C29B62] mt-1">🛂</span>
+              <span>مشاور فرآیندهای مهاجرتی و اقامتی ترکیه</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#C29B62] mt-1">🤝</span>
+              <span>عضو اتاق بازرگانی ایران و ایتالیا</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-[#C29B62] mt-1">📍</span>
+              <span>دفاتر ارتباطی: تهران و استانبول</span>
+            </li>
+          </ul>
+          <p class="mt-6 text-sm text-gray-500 italic">* توجه: خدمات در ترکیه شامل مشاوره حقوقی مهاجرت، پیگیری پرونده‌ها و ترجمه رسمی می‌باشد و شامل وکالت در دادگاه‌های ترکیه نمی‌شود.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-[#1C1C1E]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-12 text-white">خدمات ما</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {t: 'فرآیندهای مجوز کار', d: 'مدیریت حرفه‌ای پرونده‌های درخواست مجوز کار در ترکیه کاملاً مطابق با قوانین.'},
+          {t: 'ثبت شرکت', d: 'هماهنگی فرآیندهای ثبت شرکت و ثبت در اتاق بازرگانی برای سرمایه‌گذاران خارجی.'},
+          {t: 'املاک و اقامت', d: 'ارزیابی اولیه پرونده‌های اقامت و شهروندی از طریق سرمایه‌گذاری و پیگیری رسمی.'},
+          {t: 'فرآیندهای دیپورت و ریجکت', d: 'مشاوره در موارد رد درخواست‌های مهاجرتی و پیگیری فرآیندهای اعتراض.'},
+          {t: 'امور بانکی بین‌المللی', d: 'راهنمایی در فرآیندهای افتتاح حساب بانکی برای اتباع خارجی.'},
+          {t: 'خدمات ترجمه رسمی', d: 'خدمات ترجمه معتبر برای مراجع رسمی، مدارک تایید شده و ترجمه شفاهی.'}
+        ].map(s => (
+          <div class="bg-[#141415] p-8 rounded-lg border border-white/5 hover:border-[#C29B62]/50 transition-colors text-start">
+            <h3 class="text-xl font-bold text-[#C29B62] mb-3">{s.t}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{s.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-20 bg-[#141415]">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-4 text-white">تماس با ما</h2>
+      <p class="text-center text-gray-400 mb-12 max-w-xl mx-auto">برای ارزیابی پرونده و دریافت پشتیبانی حرفه‌ای، فرم زیر را پر کنید تا در اسرع وقت با شما تماس بگیریم.</p>
+      <ContactForm lang="fa" />
+    </div>
+  </section>
+</BaseLayout>`;
+
+fs.writeFileSync(faIndexPath, faContent);
+
+console.log('Update script finished successfully.');

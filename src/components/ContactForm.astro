@@ -2,26 +2,26 @@
 const { lang } = Astro.props;
 const isTr = lang === 'tr';
 ---
-<form id="contactForm" class="max-w-xl mx-auto bg-[#334155]/30 p-8 rounded-lg border border-white/5" method="POST" action="/api/contact" dir={isTr ? "ltr" : "rtl"}>
+<form id="contactForm" class="max-w-xl mx-auto bg-[#2C2C2E]/30 p-8 rounded-lg border border-white/5" method="POST" action="/api/contact" dir={isTr ? "ltr" : "rtl"}>
   <!-- Honeypot -->
   <input type="text" name="b_name" class="hidden" tabindex="-1" autocomplete="off" />
   
   <div class="mb-4">
     <label class="block mb-2 text-sm text-gray-300 text-start">{isTr ? 'Ad Soyad' : 'نام و نام خانوادگی'}</label>
-    <input type="text" name="name" required class="w-full bg-[#0F172A] border border-white/20 rounded p-3 text-white outline-none" />
+    <input type="text" name="name" required class="w-full bg-[#1C1C1E] border border-white/20 rounded p-3 text-white outline-none" />
   </div>
   
   <div class="mb-4">
     <label class="block mb-2 text-sm text-gray-300 text-start">{isTr ? 'Telefon' : 'تلفن'}</label>
-    <input type="tel" name="phone" required class="w-full bg-[#0F172A] border border-white/20 rounded p-3 text-white outline-none" dir="ltr" />
+    <input type="tel" name="phone" required class="w-full bg-[#1C1C1E] border border-white/20 rounded p-3 text-white outline-none" dir="ltr" />
   </div>
   
   <div class="mb-4">
     <label class="block mb-2 text-sm text-gray-300 text-start">{isTr ? 'Mesajınız' : 'پیام شما'}</label>
-    <textarea name="message" rows="4" required class="w-full bg-[#0F172A] border border-white/20 rounded p-3 text-white outline-none"></textarea>
+    <textarea name="message" rows="4" required class="w-full bg-[#1C1C1E] border border-white/20 rounded p-3 text-white outline-none"></textarea>
   </div>
   
-  <button type="submit" class="w-full bg-[#D4AF37] text-[#0F172A] font-bold py-3 px-4 rounded hover:bg-yellow-500 transition-colors">
+  <button type="submit" class="w-full bg-[#C29B62] text-[#1C1C1E] font-bold py-3 px-4 rounded hover:bg-yellow-500 transition-colors">
     {isTr ? 'Gönder' : 'ارسال'}
   </button>
   
