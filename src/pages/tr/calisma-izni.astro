@@ -2,12 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL } from '../../consts';
 ---
-<BaseLayout title="Çalışma İzni Süreçleri | Mina Beigi" description="Yabancılar için çalışma izni uygunluk değerlendirmesi, belge hazırlığı ve başvuru koordinasyonu." lang="tr">
+<BaseLayout title="Türkiye’de Çalışma İzni Danışmanlığı | İranlılar ve Yabancılar" description="Türkiye’de çalışma izni başvurusu, yenileme, belge hazırlığı ve süreç koordinasyonu. İranlı çalışanlar, yabancı şirket ortakları ve işverenler için dosya bazlı çalışma izni danışmanlığı." lang="tr">
   <Fragment slot="head">
     <link rel="canonical" href={SITE_URL + "/tr/calisma-izni/"} />
     <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/calisma-izni/"} />
     <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/work-permit/"} />
     <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/calisma-izni/"} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"İran vatandaşları Türkiye’de çalışma izni alabilir mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. İran vatandaşları da Türkiye’de çalışma izni başvurusu yapabilir. Başvuru koşulları kişinin statüsü, işveren yapısı, meslek ve güncel değerlendirme kriterlerine göre incelenir."}},
+        {"@type":"Question","name":"Türkiye’de çalışma izni ne kadar sürede sonuçlanır?","acceptedAnswer":{"@type":"Answer","text":"Süre başvuru türü, dosya kapsamı, ek belge ihtiyacı ve yetkili makamın değerlendirmesine göre değişebilir. Mina Beigi’nin tanıtım materyalinde '1 aydan kısa sürede, garantili' ifadesi yer almaktadır; resmî sonuç ve süre kurum değerlendirmesine bağlıdır."}},
+        {"@type":"Question","name":"Şirket ortağı olmak çalışma izni verir mi?","acceptedAnswer":{"@type":"Answer","text":"Şirket ortaklığı tek başına otomatik çalışma hakkı sağlamaz; çalışma izni ayrıca değerlendirilir."}},
+        {"@type":"Question","name":"İkamet izni çalışma hakkı sağlar mı?","acceptedAnswer":{"@type":"Answer","text":"Her ikamet türü çalışma hakkı sağlamaz. Çalışma hakkı kişinin statüsüne ve ilgili çalışma izni kurallarına göre ayrıca değerlendirilir."}}
+      ]
+    })} />
   </Fragment>
 
   <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
@@ -30,7 +40,7 @@ import { SITE_URL } from '../../consts';
 <section>
   <div class="mb-6 rounded-2xl border border-brand/40 bg-surface p-5">
     <h2 class="text-2xl font-bold text-ivory mb-2">Türkiye’de çalışma izni</h2>
-    <p class="text-ivory/75">Tanıtım materyallerinde “1 aydan kısa sürede, garantili” ifadesi kullanılmıştır. Fiilî işlem süresi ve sonuç, başvuru türüne ve yetkili kurumun değerlendirmesine bağlıdır.</p>
+    <p class="text-ivory/75"><strong class="text-ivory">“1 aydan kısa sürede, garantili”</strong> ifadesi Mina Beigi’nin kendi tanıtım materyalinde çalışma izni hizmeti için kullandığı ifadedir. Başvurunun resmî sonucu ve işlem süresi ise dosyanın statüsüne, işveren koşullarına ve yetkili makamın değerlendirmesine göre belirlenir.</p>
   </div>
   <h2 class="text-3xl font-bold text-ivory mb-4">Çalışma izninde doğru dosya kurgusu</h2>
   <p>Çalışma izni koşulları; başvuran kişinin statüsüne, işveren yapısına, şirketin faaliyetlerine ve güncel değerlendirme kriterlerine göre değişebilir. Bu nedenle başvuru öncesinde uygunluk ve belge kontrolü yapılması önemlidir.</p>
