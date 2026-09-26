@@ -1,0 +1,19 @@
+<button id="backToTop" class="fixed bottom-5 right-5 md:bottom-6 md:right-6 z-50 w-12 h-12 rounded-full border border-brand/60 bg-surface/95 text-brand shadow-xl backdrop-blur inline-flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-300 hover:bg-brand hover:text-white" aria-label="Yukarı çık">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+<script>
+  const backToTop = document.getElementById('backToTop');
+  const updateBackToTop = () => {
+    if (!backToTop) return;
+    if (window.scrollY > 360) {
+      backToTop.classList.remove('opacity-0','pointer-events-none','translate-y-2');
+      backToTop.classList.add('opacity-100');
+    } else {
+      backToTop.classList.add('opacity-0','pointer-events-none','translate-y-2');
+      backToTop.classList.remove('opacity-100');
+    }
+  };
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  window.addEventListener('load', updateBackToTop);
+  backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
