@@ -1,16 +1,51 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Hakkımızda | Mina Beigi" description="Mina Beigi, İran'da lisanslı avukat olup Türkiye'de resmî tercümanlık, göçmenlik süreçleri danışmanlığı, başvuru koordinasyonu ve yatırım süreçleri alanlarında profesyonel destek sunmaktadır." lang="tr">
-  <div class="py-24 bg-surface border-b border-primary">
+<BaseLayout title="Hakkımızda | Mina Beigi" description="Mina Beigi; Türkiye ve İran arasında göçmenlik, resmî tercümanlık, yatırım ve başvuru süreçlerinde profesyonel destek sunmaktadır." lang="tr">
+  <div class="py-16 md:py-20 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">Hakkımızda</h1>
-      <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
+      <p class="text-brand font-semibold mb-3">İstanbul • Tahran</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">Hakkımızda</h1>
+      <p class="text-ivory/70 max-w-2xl mx-auto">Göçmenlik, resmî tercümanlık, yatırım ve ticari süreçlerde iki ülke arasındaki işlemleri daha anlaşılır ve düzenli hâle getiren butik çalışma modeli.</p>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="ltr">
-      <p>Mina Beigi, İran'da lisanslı avukat olup Türkiye'de resmî tercümanlık, göçmenlik süreçleri danışmanlığı, başvuru koordinasyonu ve yatırım süreçleri alanlarında profesyonel destek sunmaktadır.</p>
+
+  <div class="py-14 md:py-16 bg-primary">
+    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed">
+      <div class="grid md:grid-cols-[0.8fr_1.2fr] gap-10 md:gap-14 items-start">
+        <div class="bg-surface rounded-2xl border border-primary overflow-hidden">
+          <div class="aspect-[4/5] bg-primary">
+            <img src="/images/mina-profile.webp" alt="Mina Beigi" class="w-full h-full object-cover" onerror="this.style.display='none'" />
+          </div>
+        </div>
+        <div class="space-y-7">
+          <div>
+            <h2 class="text-3xl font-bold text-ivory mb-4">Türkiye ve İran arasında profesyonel süreç yönetimi</h2>
+            <p>Mina Beigi, bireysel ve ticari işlemlerde başvuru hazırlığı, resmî tercümanlık, göçmenlik, yatırım ve şirket kuruluş süreçlerinde profesyonel destek sunar. Çalışma modeli; dosyanın mevcut durumunu anlamak, gerekli hazırlıkları netleştirmek ve süreci baştan sona düzenli biçimde koordine etmek üzerine kuruludur.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">وکیل پایه یک دادگستری</strong><span class="text-sm">Profesyonel biyografisinde kullandığı unvan.</span></div>
+            <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">Türkiye’de Göçmenlik Avukatı</strong><span class="text-sm">Instagram biyografisindeki “وکیل مهاجرت در ترکیه” ifadesinin Türkçe karşılığı.</span></div>
+            <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">Türkiye’de Resmî Tercüman</strong><span class="text-sm">Farsça–Türkçe belge ve resmî işlem desteği.</span></div>
+            <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">İran–İtalya Ticaret Odası Üyesi</strong><span class="text-sm">Uluslararası ticaret ve iş dünyası ağı.</span></div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-ivory mb-3">Nasıl çalışıyoruz?</h2>
+            <p>Her talep; hedef, mevcut belgeler, başvuru türü ve zamanlama açısından değerlendirilir. Ardından gerekli adımlar, eksik hazırlıklar ve süreçte dikkat edilmesi gereken noktalar açık biçimde paylaşılır. Amaç, farklı kurumlar ve belgeler arasında dağılmadan kontrollü bir yol haritası oluşturmaktır.</p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold text-ivory mb-3">Kimlerle çalışıyoruz?</h2>
+            <p>Türkiye’de yatırım yapmak, şirket kurmak, gayrimenkul edinmek, ikamet veya çalışma süreçlerini planlamak isteyen İranlı ve diğer yabancı girişimciler ile resmî tercüme ve başvuru desteğine ihtiyaç duyan bireylerle çalışıyoruz.</p>
+          </div>
+
+          <div class="pt-2">
+            <a href="/tr/iletisim/" class="inline-flex bg-brand text-white font-semibold px-7 py-3 rounded hover:bg-[#A33850] transition-colors">Danışmanlık Talebi Oluştur</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>
