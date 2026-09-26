@@ -1,16 +1,88 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="Çalışma İzni Süreçleri" description="Çalışma İzni Süreçleri - Mina Beigi" lang="tr">
+<BaseLayout title="Çalışma İzni Süreçleri | Mina Beigi" description="Türkiye çalışma izni danışmanlığı ve başvuru koordinasyonu. Yabancılar için çalışma izni süreci, gerekli belgeler ve dosya değerlendirmesi." lang="tr">
+  <Fragment slot="head">
+    <link rel="canonical" href="https://minabeigi.com/tr/calisma-izni" />
+    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/calisma-izni" />
+    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/calisma-izni" />
+    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/calisma-izni" />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">Çalışma İzni Süreçleri</h1>
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="ltr">
+        <a href="/tr/" class="hover:text-brand transition-colors">Ana Sayfa</a>
+        <span>/</span>
+        <a href="/tr/hizmetler" class="hover:text-brand transition-colors">Hizmetler</a>
+        <span>/</span>
+        <span class="text-ivory/60" aria-current="page">Çalışma İzni Süreçleri</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">Çalışma İzni Süreçleri</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="ltr">
-      <p>Türkiye’de çalışma izni başvuru koordinasyonu, dosya hazırlığı ve mevzuata uygun süreç takibi.</p>
+  
+  <div class="py-20 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="ltr">
+      
+      <section>
+        <p class="mb-4">Türkiye'de yabancı uyruklu kişilerin yasal olarak çalışabilmesi için mevzuata uygun şekilde çalışma izni (Work Permit) alınması zorunludur. Çalışma izni başvuruları, şirket sahipliği veya bir işveren yanında çalışma durumuna göre farklılık gösterir. Sürecin uzman kişilerce yönetilmesi, başvurunun olumlu sonuçlanması açısından kritik öneme sahiptir.</p>
+        <p>Ekibimiz, Türkiye'de çalışma izni danışmanlığı kapsamında dosya değerlendirmesi, başvuru koordinasyonu ve süreç takibi hizmetleri sunarak bürokratik engelleri aşmanızı sağlar.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Kimler İçin Uygun?</h2>
+        <ul class="list-disc list-inside space-y-2 text-ivory/70">
+          <li>Türkiye'de şirket kurmuş veya kurmayı planlayan yabancı yatırımcılar</li>
+          <li>Türkiye'deki bir şirket tarafından istihdam edilecek profesyoneller</li>
+          <li>Bağımsız çalışma izni şartlarını taşıyan nitelikli uzmanlar</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Süreç Nasıl İşler?</h2>
+        <ol class="list-decimal list-inside space-y-2 text-ivory/70">
+          <li><strong>Ön Değerlendirme:</strong> Şirketinizin ve personelinizin çalışma izni kriterlerini (sermaye, istihdam kotası vb.) karşılayıp karşılamadığının analizi.</li>
+          <li><strong>Belge Hazırlığı:</strong> Gerekli tüm resmi evrakların eksiksiz toplanması ve yeminli tercüme / noter onaylarının koordinasyonu.</li>
+          <li><strong>Sistem Başvurusu:</strong> İlgili bakanlık sistemleri üzerinden elektronik başvurunun yapılması.</li>
+          <li><strong>Süreç Takibi:</strong> Başvurunun neticelendirilmesine kadar geçen süreçte bakanlık ile iletişimin yürütülmesi.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Gerekli Belgeler / Genel Hazırlık</h2>
+        <p class="mb-4">Sürece başlamadan önce pasaport, diploma denklikleri, biyometrik fotoğraf ve şirkete ait mali verilerin hazır olması gerekir. Başvuru türüne göre ek belgeler talep edilecektir. Detaylı evrak listesi, ön değerlendirme sonrası size özel olarak sunulur.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Dikkat Edilmesi Gerekenler</h2>
+        <p>Mevzuat gereği her bir yabancı çalışan için işverenin belirli sayıda Türk vatandaşı istihdam etme (kota) zorunluluğu bulunmaktadır. Ayrıca şirketin ödenmiş sermayesi gibi kriterler bakanlık tarafından titizlikle incelenir. Hatalı başvurular ret ile sonuçlanabilir.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Sıkça Sorulan Sorular</h2>
+        <div class="space-y-4">
+          <div class="bg-surface/50 p-4 rounded-lg border border-surface">
+            <h3 class="font-semibold text-brand mb-2">Çalışma izni kaç günde çıkar?</h3>
+            <p class="text-sm">Eksiksiz yapılan başvurular genellikle 30-45 gün içerisinde bakanlık tarafından sonuçlandırılır.</p>
+          </div>
+          <div class="bg-surface/50 p-4 rounded-lg border border-surface">
+            <h3 class="font-semibold text-brand mb-2">Şirket sahibi olmadan çalışma izni alabilir miyim?</h3>
+            <p class="text-sm">Evet, bir işveren sizin adınıza Çalışma ve Sosyal Güvenlik Bakanlığı'na başvuru yaparak çalışma izni alabilir.</p>
+          </div>
+        </div>
+      </section>
+    
+      
+      <div class="mt-16 pt-16 border-t border-surface">
+        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">Profesyonel Destek Alın</h2>
+          <p class="text-center mb-8">Sürecinizle ilgili ön değerlendirme yapmak ve danışmanlık talep etmek için formu doldurun.</p>
+          <ContactForm lang="tr" />
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>

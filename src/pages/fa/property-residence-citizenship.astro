@@ -1,16 +1,49 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="اقامت و شهروندی از طریق ملک" description="اقامت و شهروندی از طریق ملک - Mina Beigi" lang="fa">
+<BaseLayout title="اقامت و شهروندی از طریق ملک | Mina Beigi" description="اخذ اقامت ترکیه با خرید ملک و فرآیند شهروندی از طریق سرمایه‌گذاری. ارزیابی پرونده و هماهنگی درخواست." lang="fa">
+  <Fragment slot="head">
+    <link rel="canonical" href="https://minabeigi.com/fa/property-residence-citizenship" />
+    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/property-residence-citizenship" />
+    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/property-residence-citizenship" />
+    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/property-residence-citizenship" />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">اقامت و شهروندی از طریق ملک</h1>
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="rtl">
+        <a href="/fa/" class="hover:text-brand transition-colors">خانه</a>
+        <span>/</span>
+        <a href="/fa/services" class="hover:text-brand transition-colors">خدمات</a>
+        <span>/</span>
+        <span class="text-ivory/60" aria-current="page">اقامت و شهروندی از طریق ملک</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">اقامت و شهروندی از طریق ملک</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="rtl">
-      <p>ارزیابی اولیه و پیگیری حرفه‌ای پرونده‌های اقامت و شهروندی از طریق سرمایه‌گذاری ملکی.</p>
+  
+  <div class="py-20 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
+      
+      <section>
+        <p class="mb-4">دریافت اجازه اقامت یا شهروندی ترکیه از طریق سرمایه‌گذاری یا خرید ملک امکان‌پذیر است. با توجه به تغییرات مداوم قوانین مهاجرتی، ارزیابی حرفه‌ای پیش از اقدام به سرمایه‌گذاری امری ضروری است.</p>
+        <p>ما در مسیر شهروندی و اقامت از طریق سرمایه‌گذاری، مشاوره‌ای شفاف در زمینه ارزیابی ملک، هماهنگی امور سند و پیگیری درخواست‌های رسمی ارائه می‌دهیم.</p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">نکات مهم</h2>
+        <p>هر ملکی برای شهروندی یا اقامت مناسب نیست. تطابق ارزش اعلام شده در سند با گزارش کارشناسی و تنظیم صحیح برگه خرید ارز (Döviz Alım Belgesi) الزامی است. اقدام بدون مشاوره حرفه‌ای می‌تواند منجر به از دست رفتن حق درخواست شود.</p>
+      </section>
+    
+      
+      <div class="mt-16 pt-16 border-t border-surface">
+        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">دریافت پشتیبانی حرفه‌ای</h2>
+          <p class="text-center mb-8">برای ارزیابی اولیه پرونده خود و درخواست مشاوره، فرم زیر را پر کنید.</p>
+          <ContactForm lang="fa" />
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>

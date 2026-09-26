@@ -1,16 +1,45 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="مشاوره فرآیندهای دیپورت و ریجکت" description="مشاوره فرآیندهای دیپورت و ریجکت - Mina Beigi" lang="fa">
+<BaseLayout title="مشاوره دیپورت و ریجکت | Mina Beigi" description="مشاوره فرآیند دیپورت و ارزیابی پرونده‌های رد شده اقامت. پیگیری مراحل رفع منع ورود." lang="fa">
+  <Fragment slot="head">
+    <link rel="canonical" href="https://minabeigi.com/fa/deport-rejection" />
+    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/deport-rejection" />
+    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/deport-rejection" />
+    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/deport-rejection" />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">مشاوره فرآیندهای دیپورت و ریجکت</h1>
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="rtl">
+        <a href="/fa/" class="hover:text-brand transition-colors">خانه</a>
+        <span>/</span>
+        <a href="/fa/services" class="hover:text-brand transition-colors">خدمات</a>
+        <span>/</span>
+        <span class="text-ivory/60" aria-current="page">مشاوره دیپورت و ریجکت</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">مشاوره دیپورت و ریجکت</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="rtl">
-      <p>ارائه مشاوره و مدیریت مراحل اعتراض به رد درخواست‌های مهاجرتی یا احکام اخراج.</p>
+  
+  <div class="py-20 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
+      
+      <section>
+        <p class="mb-4">رد شدن درخواست‌های اقامت ترکیه (مانند کدهای محدودیت G-87، V-84) یا احکام اخراج (دیپورت)، فرآیندهای پیچیده و استرس‌زایی برای اتباع خارجی هستند.</p>
+        <p>ما با همکاری شرکای متخصص خود، پرونده‌های رد شده را ارزیابی کرده و هماهنگی‌های لازم جهت اعتراض اداری و درخواست ویزای ویژه (Meşruhatlı Vize) برای رفع منع ورود را مدیریت می‌کنیم.</p>
+      </section>
+    
+      
+      <div class="mt-16 pt-16 border-t border-surface">
+        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">دریافت پشتیبانی حرفه‌ای</h2>
+          <p class="text-center mb-8">برای ارزیابی اولیه پرونده خود و درخواست مشاوره، فرم زیر را پر کنید.</p>
+          <ContactForm lang="fa" />
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>

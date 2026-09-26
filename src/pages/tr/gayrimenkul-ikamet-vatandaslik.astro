@@ -1,16 +1,68 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="Gayrimenkul ile İkamet ve Vatandaşlık" description="Gayrimenkul ile İkamet ve Vatandaşlık - Mina Beigi" lang="tr">
+<BaseLayout title="İkamet ve Vatandaşlık | Mina Beigi" description="Türkiye ikamet izni, gayrimenkul ile ikamet ve yatırım yoluyla vatandaşlık süreci danışmanlığı. Dosya ön değerlendirmesi ve başvuru takibi." lang="tr">
+  <Fragment slot="head">
+    <link rel="canonical" href="https://minabeigi.com/tr/gayrimenkul-ikamet-vatandaslik" />
+    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/gayrimenkul-ikamet-vatandaslik" />
+    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/gayrimenkul-ikamet-vatandaslik" />
+    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/gayrimenkul-ikamet-vatandaslik" />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">Gayrimenkul ile İkamet ve Vatandaşlık</h1>
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="ltr">
+        <a href="/tr/" class="hover:text-brand transition-colors">Ana Sayfa</a>
+        <span>/</span>
+        <a href="/tr/hizmetler" class="hover:text-brand transition-colors">Hizmetler</a>
+        <span>/</span>
+        <span class="text-ivory/60" aria-current="page">İkamet ve Vatandaşlık</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">İkamet ve Vatandaşlık</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="ltr">
-      <p>Yatırım yoluyla ikamet ve vatandaşlık süreçlerinin ön değerlendirmesi ve profesyonel başvuru takibi.</p>
+  
+  <div class="py-20 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="ltr">
+      
+      <section>
+        <p class="mb-4">Türkiye'de yatırım yaparak veya gayrimenkul satın alarak ikamet izni veya Türk vatandaşlığı statüsü elde etmek mümkündür. Sürekli değişen göç ve vatandaşlık mevzuatları nedeniyle, yatırıma karar vermeden önce profesyonel bir ön değerlendirme yapılması hayati önem taşır.</p>
+        <p>Yatırım yoluyla vatandaşlık ve ikamet süreçlerinde, gayrimenkulün uygunluk analizi, tapu işlemlerinin koordinasyonu ve resmi başvuruların takibi konularında şeffaf danışmanlık hizmeti sunuyoruz.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Kimler İçin Uygun?</h2>
+        <ul class="list-disc list-inside space-y-2 text-ivory/70">
+          <li>Türkiye'de mülk edinerek kendisi ve ailesi için oturum izni almak isteyenler</li>
+          <li>Bakanlıkça belirlenen sınırların üzerinde gayrimenkul veya fon yatırımı yaparak vatandaşlık statüsü hedefleyen yatırımcılar</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Süreç Nasıl İşler?</h2>
+        <ol class="list-decimal list-inside space-y-2 text-ivory/70">
+          <li><strong>Yatırım Analizi:</strong> Seçilen yatırımın (gayrimenkul vb.) mevzuattaki alt limitleri ve uygunluk kriterlerini karşılayıp karşılamadığının tespiti.</li>
+          <li><strong>Ekspertiz ve Değerleme:</strong> SPK onaylı eksperlerce raporların hazırlatılması ve tapu sürecinin koordinasyonu.</li>
+          <li><strong>Uygunluk Belgesi:</strong> İlgili bakanlıklardan yatırımın uygun olduğuna dair belgenin temin edilmesi.</li>
+          <li><strong>Dosya Hazırlığı:</strong> İkamet veya vatandaşlık başvurusu için gerekli kişisel belgelerin tercüme ve tasdik işlemlerinin tamamlanması.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Dikkat Edilmesi Gerekenler</h2>
+        <p>Her gayrimenkul vatandaşlık veya ikamet için uygun değildir. Tapuda beyan edilen değer ile ekspertiz değerinin uyuşması, döviz alım belgesinin usulüne uygun düzenlenmesi şarttır. Profesyonel destek almadan yapılan yatırımlarda başvuru hakkı kaybedilebilir.</p>
+      </section>
+    
+      
+      <div class="mt-16 pt-16 border-t border-surface">
+        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">Profesyonel Destek Alın</h2>
+          <p class="text-center mb-8">Sürecinizle ilgili ön değerlendirme yapmak ve danışmanlık talep etmek için formu doldurun.</p>
+          <ContactForm lang="tr" />
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>

@@ -1,16 +1,45 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="ترجمه رسمی و معتمد" description="ترجمه رسمی و معتمد - Mina Beigi" lang="fa">
+<BaseLayout title="ترجمه رسمی و معتمد | Mina Beigi" description="مترجم رسمی ترکی و فارسی در استانبول. ترجمه مدارک با تایید نوتر و ترجمه همزمان." lang="fa">
+  <Fragment slot="head">
+    <link rel="canonical" href="https://minabeigi.com/fa/translation" />
+    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/translation" />
+    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/translation" />
+    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/translation" />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">ترجمه رسمی و معتمد</h1>
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="rtl">
+        <a href="/fa/" class="hover:text-brand transition-colors">خانه</a>
+        <span>/</span>
+        <a href="/fa/services" class="hover:text-brand transition-colors">خدمات</a>
+        <span>/</span>
+        <span class="text-ivory/60" aria-current="page">ترجمه رسمی و معتمد</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">ترجمه رسمی و معتمد</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="rtl">
-      <p>خدمات ترجمه کتبی رسمی و ترجمه همزمان شفاهی معتبر در مراجع قانونی.</p>
+  
+  <div class="py-20 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
+      
+      <section>
+        <p class="mb-4">برای انجام امور در مراجع رسمی ترکیه (اداره ثبت اسناد، نوتر، دادگاه‌ها و اتاق‌های بازرگانی)، ترجمه مدارک توسط مترجم رسمی و تایید آن توسط نوتر (دفترخانه) الزامی است.</p>
+        <p>مینا بیگی به عنوان مترجم رسمی و قسم‌خورده در ترکیه، خدمات ترجمه کتبی مدارک و ترجمه شفاهی همزمان در ادارات را با بالاترین استانداردهای کیفی در زبان‌های فارسی و ترکی ارائه می‌دهد.</p>
+      </section>
+    
+      
+      <div class="mt-16 pt-16 border-t border-surface">
+        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">دریافت پشتیبانی حرفه‌ای</h2>
+          <p class="text-center mb-8">برای ارزیابی اولیه پرونده خود و درخواست مشاوره، فرم زیر را پر کنید.</p>
+          <ContactForm lang="fa" />
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>

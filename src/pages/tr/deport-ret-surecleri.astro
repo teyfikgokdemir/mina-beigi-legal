@@ -1,16 +1,54 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="Deport / Ret Süreçleri Danışmanlığı" description="Deport / Ret Süreçleri Danışmanlığı - Mina Beigi" lang="tr">
+<BaseLayout title="Deport / Ret Danışmanlığı | Mina Beigi" description="Deport süreci danışmanlığı ve reddedilen ikamet dosyalarının değerlendirmesi. Giriş yasağı süreç takibi." lang="tr">
+  <Fragment slot="head">
+    <link rel="canonical" href="https://minabeigi.com/tr/deport-ret-surecleri" />
+    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/deport-ret-surecleri" />
+    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/deport-ret-surecleri" />
+    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/deport-ret-surecleri" />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">Deport / Ret Süreçleri Danışmanlığı</h1>
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="ltr">
+        <a href="/tr/" class="hover:text-brand transition-colors">Ana Sayfa</a>
+        <span>/</span>
+        <a href="/tr/hizmetler" class="hover:text-brand transition-colors">Hizmetler</a>
+        <span>/</span>
+        <span class="text-ivory/60" aria-current="page">Deport / Ret Danışmanlığı</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">Deport / Ret Danışmanlığı</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="ltr">
-      <p>Göçmenlik başvurularında alınan ret kararları veya sınır dışı işlemlerinde danışmanlık ve resmi itiraz süreçlerinin yönetimi.</p>
+  
+  <div class="py-20 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="ltr">
+      
+      <section>
+        <p class="mb-4">Türkiye'de ikamet izni başvurularının reddedilmesi (Örn: G-87, V-84 gibi tahdit kodları) veya sınır dışı (deport) kararları, yabancılar için karmaşık ve stresli süreçlerdir.</p>
+        <p>Reddedilen dosyaların değerlendirilmesi, idari itiraz süreçlerinin takibi ve giriş yasağının (deport) kaldırılmasına yönelik meşruhatlı vize başvurularının koordinasyonu konularında, uzman çözüm ortaklarımızla birlikte profesyonel dosya yönetimi sunuyoruz.</p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Süreç Nasıl İşler?</h2>
+        <ul class="list-disc list-inside space-y-2 text-ivory/70">
+          <li>Karar belgesinin (Tebliğ Formu) yasal süreler içinde detaylı incelenmesi</li>
+          <li>Ret veya tahdit kodunun gerekçesinin saptanması</li>
+          <li>İdari itiraz veya meşruhatlı vize (Özel amaçlı vize) stratejisinin belirlenmesi</li>
+          <li>Dosya hazırlığı ve takibi</li>
+        </ul>
+      </section>
+    
+      
+      <div class="mt-16 pt-16 border-t border-surface">
+        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">Profesyonel Destek Alın</h2>
+          <p class="text-center mb-8">Sürecinizle ilgili ön değerlendirme yapmak ve danışmanlık talep etmek için formu doldurun.</p>
+          <ContactForm lang="tr" />
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>

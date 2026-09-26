@@ -1,16 +1,54 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="Şirket Kuruluşu" description="Şirket Kuruluşu - Mina Beigi" lang="tr">
+<BaseLayout title="Şirket Kuruluşu | Mina Beigi" description="Yabancılar ve İranlılar için Türkiye'de şirket kuruluşu ve ticaret odası kayıt süreçleri. İstanbul şirket kuruluş danışmanlığı." lang="tr">
+  <Fragment slot="head">
+    <link rel="canonical" href="https://minabeigi.com/tr/sirket-kurulusu" />
+    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/sirket-kurulusu" />
+    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/sirket-kurulusu" />
+    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/sirket-kurulusu" />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">Şirket Kuruluşu</h1>
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="ltr">
+        <a href="/tr/" class="hover:text-brand transition-colors">Ana Sayfa</a>
+        <span>/</span>
+        <a href="/tr/hizmetler" class="hover:text-brand transition-colors">Hizmetler</a>
+        <span>/</span>
+        <span class="text-ivory/60" aria-current="page">Şirket Kuruluşu</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">Şirket Kuruluşu</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="ltr">
-      <p>İranlı ve yabancı yatırımcılar için Türkiye'de şirket kuruluş ve ticaret odası kayıt süreçleri.</p>
+  
+  <div class="py-20 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="ltr">
+      
+      <section>
+        <p class="mb-4">Türkiye'nin stratejik konumu ve dinamik pazar yapısı, uluslararası yatırımcılar için büyük fırsatlar barındırır. Yabancı uyruklu girişimciler, Türk vatandaşları ile aynı haklara sahip olarak Limited (LTD) veya Anonim Şirket (A.Ş.) kurabilirler.</p>
+        <p>İranlı ve yabancı yatırımcılar için Türkiye'de şirket kuruluşu, ticaret odası kayıtları, vergi dairesi işlemleri ve ruhsat başvuru koordinasyonunda profesyonel rehberlik sunuyoruz.</p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Süreç Nasıl İşler?</h2>
+        <ol class="list-decimal list-inside space-y-2 text-ivory/70">
+          <li><strong>Şirket Tipinin Belirlenmesi:</strong> Ticari hedeflerinize uygun (LTD, A.Ş. vb.) şirket yapısının seçilmesi ve unvan tespiti.</li>
+          <li><strong>Ana Sözleşme Hazırlığı:</strong> Şirket faaliyet alanlarına uygun ana sözleşmenin hazırlanması (Mersis girişi).</li>
+          <li><strong>Noter ve Tescil:</strong> Ortakların pasaport tercümeleri ve imza beyannamelerinin noterde onaylanması, Ticaret Sicil Müdürlüğü'nde tescil işleminin gerçekleştirilmesi.</li>
+          <li><strong>Vergi Levhası:</strong> Vergi dairesi açılış yoklamasının koordinasyonu ve vergi levhasının alınması.</li>
+        </ol>
+      </section>
+    
+      
+      <div class="mt-16 pt-16 border-t border-surface">
+        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">Profesyonel Destek Alın</h2>
+          <p class="text-center mb-8">Sürecinizle ilgili ön değerlendirme yapmak ve danışmanlık talep etmek için formu doldurun.</p>
+          <ContactForm lang="tr" />
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>

@@ -1,16 +1,52 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="Resmî / Yeminli Tercümanlık" description="Resmî / Yeminli Tercümanlık - Mina Beigi" lang="tr">
+<BaseLayout title="Resmî Tercümanlık | Mina Beigi" description="Farsça - Türkçe resmî tercümanlık, İstanbul noter tasdikli belge tercümesi ve sözlü tercümanlık." lang="tr">
+  <Fragment slot="head">
+    <link rel="canonical" href="https://minabeigi.com/tr/tercumanlik" />
+    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/tercumanlik" />
+    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/tercumanlik" />
+    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/tercumanlik" />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">Resmî / Yeminli Tercümanlık</h1>
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="ltr">
+        <a href="/tr/" class="hover:text-brand transition-colors">Ana Sayfa</a>
+        <span>/</span>
+        <a href="/tr/hizmetler" class="hover:text-brand transition-colors">Hizmetler</a>
+        <span>/</span>
+        <span class="text-ivory/60" aria-current="page">Resmî Tercümanlık</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">Resmî Tercümanlık</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="ltr">
-      <p>Resmi makamlarda geçerli, yeminli yazılı ve ardıl sözlü tercümanlık hizmetleri.</p>
+  
+  <div class="py-20 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="ltr">
+      
+      <section>
+        <p class="mb-4">Türkiye'deki resmi makamlarda yapılacak işlemlerde (Tapu, Noter, Mahkemeler, Ticaret Odaları) ibraz edilecek yabancı dildeki belgelerin yeminli tercüman tarafından çevrilmesi ve noter tarafından onaylanması yasal bir zorunluluktur.</p>
+        <p>Mina Beigi, Türkiye'de resmî yeminli tercüman statüsüyle, Farsça-Türkçe dillerinde yazılı belge çevirisi ve kurumlarda ardıl sözlü tercümanlık hizmetlerini yüksek kalite standartlarında sunmaktadır.</p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Hizmet Kapsamı</h2>
+        <ul class="list-disc list-inside space-y-2 text-ivory/70">
+          <li><strong>Yazılı Tercüme:</strong> Pasaport, vekaletname, diploma, ticaret sicil gazetesi, sözleşme gibi belgelerin yeminli ve noter onaylı tercümesi.</li>
+          <li><strong>Sözlü Tercüme:</strong> Tapu dairelerinde alım-satım işlemleri, noterliklerde vekalet/sözleşme işlemleri ve resmi kurumlardaki toplantılarda ardıl tercümanlık.</li>
+        </ul>
+      </section>
+    
+      
+      <div class="mt-16 pt-16 border-t border-surface">
+        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">Profesyonel Destek Alın</h2>
+          <p class="text-center mb-8">Sürecinizle ilgili ön değerlendirme yapmak ve danışmanlık talep etmek için formu doldurun.</p>
+          <ContactForm lang="tr" />
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>

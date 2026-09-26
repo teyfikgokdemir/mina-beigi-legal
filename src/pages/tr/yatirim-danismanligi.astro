@@ -1,16 +1,45 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="Yatırım Danışmanlığı" description="Yatırım Danışmanlığı - Mina Beigi" lang="tr">
+<BaseLayout title="Yatırım Danışmanlığı | Mina Beigi" description="Türkiye yatırım danışmanlığı ve yabancı yatırımcı süreçleri. Pazar konumlandırması ve stratejik rehberlik." lang="tr">
+  <Fragment slot="head">
+    <link rel="canonical" href="https://minabeigi.com/tr/yatirim-danismanligi" />
+    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/yatirim-danismanligi" />
+    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/yatirim-danismanligi" />
+    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/yatirim-danismanligi" />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">Yatırım Danışmanlığı</h1>
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="ltr">
+        <a href="/tr/" class="hover:text-brand transition-colors">Ana Sayfa</a>
+        <span>/</span>
+        <a href="/tr/hizmetler" class="hover:text-brand transition-colors">Hizmetler</a>
+        <span>/</span>
+        <span class="text-ivory/60" aria-current="page">Yatırım Danışmanlığı</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">Yatırım Danışmanlığı</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="ltr">
-      <p>Türkiye'deki ticari ve gayrimenkul yatırımlarınız için stratejik ve mevzuatsal danışmanlık.</p>
+  
+  <div class="py-20 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="ltr">
+      
+      <section>
+        <p class="mb-4">Türkiye pazarına girmek isteyen yabancı yatırımcıların yerel mevzuat, vergi dinamikleri ve pazar fırsatları hakkında doğru bilgiye erişmesi başarının anahtarıdır.</p>
+        <p>Yatırım öncesi risk analizi, doğru gayrimenkul / ticari varlık seçimi ve şirket birleşmeleri gibi konularda, ilgili yetkili profesyonellere (mali müşavir, eksper, gayrimenkul danışmanı) doğru şekilde yönlendirme yapıyor ve yatırım sürecinizi baştan sona koordine ediyoruz.</p>
+      </section>
+    
+      
+      <div class="mt-16 pt-16 border-t border-surface">
+        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">Profesyonel Destek Alın</h2>
+          <p class="text-center mb-8">Sürecinizle ilgili ön değerlendirme yapmak ve danışmanlık talep etmek için formu doldurun.</p>
+          <ContactForm lang="tr" />
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>

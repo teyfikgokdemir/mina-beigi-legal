@@ -1,16 +1,58 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="فرآیندهای مجوز کار" description="فرآیندهای مجوز کار - Mina Beigi" lang="fa">
+<BaseLayout title="فرآیندهای مجوز کار | Mina Beigi" description="مشاوره مجوز کار در ترکیه و هماهنگی درخواست‌ها. روند اخذ اجازه کار برای خارجی‌ها، مدارک لازم و بررسی پرونده." lang="fa">
+  <Fragment slot="head">
+    <link rel="canonical" href="https://minabeigi.com/fa/work-permit" />
+    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/work-permit" />
+    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/work-permit" />
+    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/work-permit" />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">فرآیندهای مجوز کار</h1>
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="rtl">
+        <a href="/fa/" class="hover:text-brand transition-colors">خانه</a>
+        <span>/</span>
+        <a href="/fa/services" class="hover:text-brand transition-colors">خدمات</a>
+        <span>/</span>
+        <span class="text-ivory/60" aria-current="page">فرآیندهای مجوز کار</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">فرآیندهای مجوز کار</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="rtl">
-      <p>هماهنگی و آماده‌سازی پرونده‌های مجوز کار در ترکیه و پیگیری مراحل مطابق با قوانین.</p>
+  
+  <div class="py-20 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
+      
+      <section>
+        <p class="mb-4">برای اشتغال قانونی اتباع خارجی در ترکیه، اخذ مجوز کار (Work Permit) مطابق با قوانین الزامی است. شرایط اخذ مجوز کار بسته به اینکه کارفرما باشید یا کارمند، متفاوت است. مدیریت این فرآیند توسط افراد متخصص برای موفقیت درخواست بسیار حیاتی است.</p>
+        <p>تیم ما با ارائه خدمات ارزیابی پرونده، هماهنگی درخواست و پیگیری مراحل، به شما در عبور از موانع اداری و اخذ مجوز کار در ترکیه کمک می‌کند.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">این خدمات برای چه کسانی مناسب است؟</h2>
+        <ul class="list-disc list-inside space-y-2 text-ivory/70">
+          <li>سرمایه‌گذاران خارجی که در ترکیه شرکت ثبت کرده‌اند یا قصد ثبت دارند.</li>
+          <li>نیروهای متخصصی که قرار است توسط یک شرکت ترکیه‌ای استخدام شوند.</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">مدارک لازم / آمادگی اولیه</h2>
+        <p class="mb-4">پیش از شروع کار، پاسپورت، معادل‌سازی مدارک تحصیلی، عکس بیومتریک و اطلاعات مالی شرکت باید آماده باشند. لیست دقیق مدارک پس از ارزیابی اولیه ارائه خواهد شد.</p>
+      </section>
+    
+      
+      <div class="mt-16 pt-16 border-t border-surface">
+        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">دریافت پشتیبانی حرفه‌ای</h2>
+          <p class="text-center mb-8">برای ارزیابی اولیه پرونده خود و درخواست مشاوره، فرم زیر را پر کنید.</p>
+          <ContactForm lang="fa" />
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>

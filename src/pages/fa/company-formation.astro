@@ -1,16 +1,45 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
-<BaseLayout title="ثبت شرکت" description="ثبت شرکت - Mina Beigi" lang="fa">
+<BaseLayout title="ثبت شرکت | Mina Beigi" description="ثبت شرکت در ترکیه برای ایرانیان و اتباع خارجی. مشاوره ثبت در اتاق بازرگانی استانبول." lang="fa">
+  <Fragment slot="head">
+    <link rel="canonical" href="https://minabeigi.com/fa/company-formation" />
+    <link rel="alternate" hreflang="tr" href="https://minabeigi.com/tr/company-formation" />
+    <link rel="alternate" hreflang="fa" href="https://minabeigi.com/fa/company-formation" />
+    <link rel="alternate" hreflang="x-default" href="https://minabeigi.com/tr/company-formation" />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">ثبت شرکت</h1>
+      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="rtl">
+        <a href="/fa/" class="hover:text-brand transition-colors">خانه</a>
+        <span>/</span>
+        <a href="/fa/services" class="hover:text-brand transition-colors">خدمات</a>
+        <span>/</span>
+        <span class="text-ivory/60" aria-current="page">ثبت شرکت</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">ثبت شرکت</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="rtl">
-      <p>مشاوره و مدیریت فرآیند ثبت شرکت و ثبت در اتاق بازرگانی برای سرمایه‌گذاران خارجی.</p>
+  
+  <div class="py-20 bg-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
+      
+      <section>
+        <p class="mb-4">موقعیت استراتژیک ترکیه فرصت‌های بی‌نظیری برای سرمایه‌گذاران بین‌المللی فراهم می‌کند. اتباع خارجی می‌توانند با حقوق برابر با شهروندان ترکیه اقدام به ثبت شرکت با مسئولیت محدود (LTD) یا سهامی خاص (A.Ş.) نمایند.</p>
+        <p>ما برای سرمایه‌گذاران ایرانی راهنمایی و هماهنگی حرفه‌ای در زمینه ثبت شرکت، ثبت در اتاق بازرگانی، امور اداره مالیات و دریافت مجوزهای لازم ارائه می‌کنیم.</p>
+      </section>
+    
+      
+      <div class="mt-16 pt-16 border-t border-surface">
+        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
+          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">دریافت پشتیبانی حرفه‌ای</h2>
+          <p class="text-center mb-8">برای ارزیابی اولیه پرونده خود و درخواست مشاوره، فرم زیر را پر کنید.</p>
+          <ContactForm lang="fa" />
+        </div>
+      </div>
     </div>
   </div>
 </BaseLayout>
