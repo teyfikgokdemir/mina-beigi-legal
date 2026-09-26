@@ -1,4 +1,13 @@
----
+const fs = require('fs');
+const path = require('path');
+
+// 1. Update Root index.astro
+let rootIdx = fs.readFileSync('src/pages/index.astro', 'utf8');
+rootIdx = rootIdx.replace('خدمات مشاوره، هماهنگی پرونده‌ها و امور رسمی میان ایران و ترکیه.', 'برای ایرانیانی که قصد سرمایه‌گذاری، ثبت شرکت یا اقامت در ترکیه را دارند');
+fs.writeFileSync('src/pages/index.astro', rootIdx);
+
+// 2. Rewrite fa/index.astro
+const faIndex = `---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactForm from '../../components/ContactForm.astro';
 ---
@@ -112,3 +121,7 @@ import ContactForm from '../../components/ContactForm.astro';
     </div>
   </section>
 </BaseLayout>
+`;
+fs.writeFileSync('src/pages/fa/index.astro', faIndex);
+
+console.log('Done script.');

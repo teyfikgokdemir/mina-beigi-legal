@@ -1,1 +1,1 @@
-export const SITE_URL = 'https://mina-beigi-legal.pages.dev'; // Değiştirilebilir merkezi URL
+export const SITE_URL = 'https://83101d88-mina-beigi-legal.tevfikgokdemir.workers.dev'; // Değiştirilebilir merkezi URL
