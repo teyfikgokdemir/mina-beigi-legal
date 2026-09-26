@@ -8,10 +8,11 @@ function writeFile(filepath, content) {
     fs.writeFileSync(fullPath, content);
 }
 
-function makePageContent(title, desc, lang, contentHtml, canonical) {
+function makePageContent(title, desc, lang, contentHtml, canonical, imgName) {
     const dir = lang === 'tr' ? "ltr" : "rtl";
     const hr_tr = canonical.replace('/fa/', '/tr/');
     const hr_fa = canonical.replace('/tr/', '/fa/');
+    const imgUrl = imgName ? `/images/${imgName}.webp` : `/images/hero-translation.webp`;
     
     return `---
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -26,8 +27,10 @@ import { SITE_URL } from '../../consts';
     <link rel="alternate" hreflang="x-default" href={SITE_URL + "${hr_tr}"} />
   </Fragment>
 
-  <div class="py-24 bg-surface border-b border-primary">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
+  <div class="relative py-32 bg-primary border-b border-primary overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary z-10"></div>
+    <div class="absolute inset-0 bg-cover bg-center object-cover opacity-40 mix-blend-luminosity" style="background-image: url('${imgUrl}');"></div>
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
       <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="${dir}">
         <a href="/${lang}/" class="hover:text-brand transition-colors">${lang === 'tr' ? 'Ana Sayfa' : 'خانه'}</a>
         <span>/</span>
