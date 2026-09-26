@@ -4,29 +4,32 @@ import { SITE_URL } from '../../consts';
 
 const services = [
   { link: '/fa/investment-consulting/', title: 'سرمایه‌گذاری در ترکیه', desc: 'مشاوره و راهنمایی تخصصی برای سرمایه‌گذاران ایرانی جهت ورود به بازار ترکیه و انتخاب بهترین گزینه‌ها.' },
-  { link: '/fa/company-formation/', title: 'ثبت شرکت در ترکیه', desc: 'صفر تا صد مراحل ثبت شرکت تجاری، دریافت کد اقتصادی و امور اتاق بازرگانی برای اتباع خارجی.' },
-  { link: '/fa/property-residence-citizenship/', title: 'خرید ملک / اقامت / شهروندی', desc: 'همراهی در خرید امن املاک، اخذ اقامت ترکیه و پیگیری پرونده‌های شهروندی از طریق سرمایه‌گذاری.' },
-  { link: '/fa/work-permit/', title: 'مجوز کار', desc: 'هماهنگی و اقدام برای اخذ چالیشما ایزنی (مجوز کار) ویژه مدیران، پرسنل و شرکای تجاری.' },
+  { link: '/fa/company-formation/', title: 'ثبت شرکت در ترکیه', desc: 'بررسی ساختار شرکت، آماده‌سازی مدارک، ثبت تجاری و هماهنگی شروع فعالیت برای اتباع خارجی.' },
+  { link: '/fa/property-residence-citizenship/', title: 'خرید ملک / اقامت / شهروندی', desc: 'بررسی ملک، مدارک و هماهنگی فرآیندهای اقامت و شهروندی از طریق سرمایه‌گذاری.' },
+  { link: '/fa/work-permit/', title: 'مجوز کار', desc: 'بررسی شرایط، آماده‌سازی مدارک و هماهنگی درخواست مجوز کار برای مدیران، کارکنان و شرکای تجاری.' },
   { link: '/fa/student-residence/', title: 'اقامت تحصیلی', desc: 'مشاوره و هماهنگی دریافت اقامت دانشجویی برای پذیرفته‌شدگان دانشگاه‌های ترکیه.' },
   { link: '/fa/translation/', title: 'ترجمه رسمی', desc: 'ترجمه رسمی، تایید نوتر (دفتر اسناد رسمی) و سفارت برای تمامی مدارک هویتی و تجاری.' },
-  { link: '/fa/deport-rejection/', title: 'بررسی اولیه پرونده‌های دیپورت', desc: 'ارزیابی دلایل ریجکتی یا منع ورود، و هماهنگی برای ارجاع به وکلای مجاز و متخصص در ترکیه.' }
+  { link: '/fa/deport-rejection/', title: 'بررسی اولیه پرونده‌های دیپورت', desc: 'ارزیابی اولیه دلایل ریجکتی، محدودیت یا منع ورود و توضیح مسیرهای قابل پیگیری.' },
+  { link: '/fa/banking-tax-financial-processes/', title: 'حساب بانکی، مالیات و امور مالی', desc: 'راهنمایی برای شماره مالیاتی، حساب بانکی شخصی و شرکتی، KYC و آماده‌سازی مدارک مالی در ترکیه.' }
 ];
 ---
-<BaseLayout title="خدمات | Mina Beigi" description="خدمات مشاوره سرمایه‌گذاری، اقامت و امور رسمی در ترکیه" lang="fa">
+<BaseLayout title="خدمات ایرانیان در ترکیه: سرمایه‌گذاری، ثبت شرکت، اقامت و اجازه کار" description="خدمات ایرانیان در ترکیه شامل سرمایه‌گذاری، ثبت شرکت، اجازه کار، اقامت تحصیلی، خرید ملک، ترجمه رسمی، حساب بانکی، مالیات و بررسی پرونده‌های دیپورت و ریجکت." lang="fa">
   <Fragment slot="head">
     <link rel="canonical" href={SITE_URL + "/fa/services"} />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Mina Beigi International Consulting",
-        "description": "خدمات مشاوره سرمایه‌گذاری، اقامت و امور رسمی در ترکیه برای سرمایه‌گذاران ایرانی.",
-        "url": "{SITE_URL}/fa/services"
-      }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "خدمات مینا بیگی برای ایرانیان در ترکیه",
+      "itemListElement": services.map((service, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": service.title,
+        "url": SITE_URL + service.link
+      }))
+    })} />
   </Fragment>
 
-  <div class="relative py-32 bg-primary border-b border-primary overflow-hidden">
+  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center object-cover opacity-80 z-0" style="background-image: url('/images/hero-company.webp');"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent z-10"></div>
     <div class="container mx-auto px-4 max-w-4xl text-center relative z-20" dir="rtl">
@@ -37,17 +40,17 @@ const services = [
       </nav>
       <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6 leading-tight">خدمات مشاوره <span class="text-brand">سرمایه‌گذاری</span>، اقامت و امور رسمی در ترکیه</h1>
       <p class="text-lg text-ivory/80 max-w-2xl mx-auto leading-relaxed">
-        مدیریت یکپارچه تمامی نیازهای حقوقی، ثبتی و سرمایه‌گذاری شما. برای مشاهده جزئیات هر خدمت، روی آن کلیک کنید.
+        همراهی حرفه‌ای در سرمایه‌گذاری، ثبت شرکت، اقامت، ترجمه رسمی و هماهنگی امور در ترکیه. برای مشاهده جزئیات هر خدمت، روی آن کلیک کنید.
       </p>
     </div>
   </div>
 
   <div class="py-24 bg-primary">
     <div class="container mx-auto px-4 max-w-6xl" dir="rtl">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
         {services.map(s => (
-          <div class="bg-surface border border-primary rounded-xl p-8 hover:-translate-y-2 hover:border-brand transition-all duration-300 shadow-lg flex flex-col text-start">
-            <h3 class="text-2xl font-bold text-ivory mb-4">{s.title}</h3>
+          <div class="bg-surface border border-primary rounded-2xl p-7 hover:-translate-y-1.5 hover:border-brand hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 flex flex-col text-start min-h-[250px]">
+            <h3 class="text-xl xl:text-2xl font-bold text-ivory mb-4 leading-snug">{s.title}</h3>
             <p class="text-ivory/70 leading-relaxed mb-8 flex-grow">{s.desc}</p>
             <a href={s.link} class="inline-flex items-center gap-2 text-brand font-semibold hover:text-bronze transition-colors mt-auto w-fit">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -56,6 +59,23 @@ const services = [
           </div>
         ))}
       </div>
+
+      <section class="mt-12 bg-surface/70 border border-primary rounded-2xl p-6 md:p-8" dir="rtl">
+        <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-5 text-center">دامنه خدمات</h2>
+        <div class="grid md:grid-cols-2 gap-3 text-ivory/75">
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">اجازه کار در ترکیه</strong><br><span class="text-sm">آماده‌سازی پرونده، تمدید، بررسی مدارک و هماهنگی مراحل درخواست.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">اقامت تحصیلی در ترکیه</strong><br><span class="text-sm">آماده‌سازی مدارک دانشجویی و هماهنگی فرآیند اقامت.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">ترجمه رسمی فارسی–ترکی</strong><br><span class="text-sm">ترجمه اسناد و همراهی در امور رسمی و نوتر.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">خرید ملک، اقامت و شهروندی</strong><br><span class="text-sm">بررسی ملک، ارزش‌گذاری، تاپو و هماهنگی پرونده اقامت یا شهروندی.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">ثبت شرکت در ترکیه</strong><br><span class="text-sm">ساختار شرکت، ثبت تجاری، اتاق بازرگانی و شروع عملیات.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">مشاوره سرمایه‌گذاری</strong><br><span class="text-sm">ورود به بازار، ساختار تجاری، سرمایه‌گذاری و برنامه اجرایی.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">کارت بازرگانی / امور تجاری</strong><br><span class="text-sm">هماهنگی ثبت‌ها، کارت‌ها و مجوزهای لازم متناسب با نوع فعالیت.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">راه‌اندازی کارخانه و کارگاه تولیدی در استانبول و سراسر ترکیه</strong><br><span class="text-sm">برنامه‌ریزی برای استقرار صنعتی، کارگاه و فعالیت تولیدی در مناطق صنعتی ترکیه.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">دریافت مجوزهای لازم</strong><br><span class="text-sm">هماهنگی مجوز، پروانه و مراحل رسمی مرتبط با نوع فعالیت.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">افتتاح حساب بانکی بین‌المللی</strong><br><span class="text-sm">آماده‌سازی مدارک KYC، مالیاتی و شرکتی برای حساب شخصی یا شرکتی.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4 md:col-span-2"><strong class="text-ivory">پرونده‌های دیپورت، ریجکت و منع ورود</strong><br><span class="text-sm">بررسی وضعیت پرونده و هماهنگی مسیرهای اداری و حقوقی قابل پیگیری.</span></div>
+        </div>
+      </section>
     </div>
   </div>
 </BaseLayout>

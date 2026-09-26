@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 260" role="img" aria-labelledby="title desc">
+  <title id="title">Mina Beigi International Consulting</title>
+  <desc id="desc">Mina Beigi International Consulting gold and burgundy logo</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4D9A6"/>
+      <stop offset="0.45" stop-color="#C9A46C"/>
+      <stop offset="1" stop-color="#F2DEB7"/>
+    </linearGradient>
+    <linearGradient id="burgundy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6E1930"/>
+      <stop offset="1" stop-color="#A93450"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(22 20)">
+    <text x="0" y="180" font-family="Georgia,Times New Roman,serif" font-size="215" font-weight="700" fill="url(#gold)">M</text>
+    <path d="M38 83 C88 130 126 120 168 151 C191 168 211 192 227 215" fill="none" stroke="url(#burgundy)" stroke-width="23" stroke-linecap="round"/>
+    <path d="M40 78 C87 124 127 113 170 144 C194 162 214 185 232 208" fill="none" stroke="#E2C18B" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+  </g>
+  <g transform="translate(305 0)">
+    <text x="0" y="135" font-family="Arial,Helvetica,sans-serif" font-size="88" letter-spacing="13" fill="url(#gold)">MINA BEIGI</text>
+    <line x1="0" y1="170" x2="230" y2="170" stroke="#C9A46C" stroke-width="2"/>
+    <rect x="248" y="162" width="15" height="15" transform="rotate(45 255.5 169.5)" fill="#8A2F43"/>
+    <line x1="280" y1="170" x2="545" y2="170" stroke="#C9A46C" stroke-width="2"/>
+    <text x="0" y="221" font-family="Arial,Helvetica,sans-serif" font-size="31" letter-spacing="10" fill="#E8D1A6">INTERNATIONAL CONSULTING</text>
+  </g>
+</svg>

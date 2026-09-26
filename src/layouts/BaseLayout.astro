@@ -3,6 +3,8 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppBtn from '../components/WhatsAppBtn.astro';
+import BackToTop from '../components/BackToTop.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import { SITE_URL } from '../consts';
 
 interface Props {
@@ -14,39 +16,78 @@ interface Props {
 const { title, description, lang } = Astro.props;
 const dir = lang === 'fa' ? 'rtl' : 'ltr';
 const currentUrl = new URL(Astro.request.url);
+const pageTitle = title.includes('Mina Beigi') ? title : `${title} | Mina Beigi`;
+const ogImage = SITE_URL + '/images/mina-beigi-logo.svg';
+
+const serviceCatalog = [
+  'Türkiye’de çalışma izni',
+  'Türkiye’de öğrenci ikameti',
+  'Türkiye’de resmî tercümanlık',
+  'Gayrimenkul alımı yoluyla ikamet ve vatandaşlık',
+  'Şirket kuruluşu',
+  'Yatırım danışmanlığı',
+  'Ticaret kartı ve ticari kart işlemleri',
+  'İstanbul ve Türkiye’de fabrika ve üretim atölyesi kurulumu',
+  'Faaliyete bağlı gerekli izin ve ruhsat süreçleri',
+  'Uluslararası banka hesabı açılışı ve finansal işlem hazırlığı',
+  'Türkiye’de deport, ret, tahdit ve giriş yasağı dosyalarının değerlendirilmesi'
+];
 ---
 <html lang={lang} dir={dir}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} | Mina Beigi</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={SITE_URL + currentUrl.pathname} />
-    <meta property="og:title" content={`${title} | Mina Beigi`} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:url" content={SITE_URL + currentUrl.pathname} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'fa' ? 'fa_IR' : 'tr_TR'} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       const currentLang = document.documentElement.lang;
       localStorage.setItem('mb_lang', currentLang);
     </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Mina Beigi",
-        "description": "Uluslararası danışmanlık, resmi tercümanlık ve göçmenlik süreçleri",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Pendik",
-          "addressRegion": "İstanbul",
-          "addressCountry": "TR"
-        },
-        "telephone": "+905392425624"
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Mina Beigi International Consulting",
+      "url": SITE_URL,
+      "description": lang === 'fa'
+        ? "مشاوره حرفه‌ای برای ایرانیان در ترکیه در حوزه سرمایه‌گذاری، ثبت شرکت، اقامت، اجازه کار، ترجمه رسمی، بانک و امور تجاری."
+        : "Türkiye ve İran ekseninde çalışma izni, ikamet, şirket kuruluşu, yatırım, resmî tercümanlık, bankacılık ve ticari süreç danışmanlığı.",
+      "telephone": "+905392425624",
+      "areaServed": [
+        { "@type": "Country", "name": "Türkiye" },
+        { "@type": "Country", "name": "Iran" },
+        { "@type": "City", "name": "İstanbul" },
+        { "@type": "City", "name": "Tehran" }
+      ],
+      "availableLanguage": ["tr", "fa"],
+      "sameAs": ["https://www.instagram.com/mina_beigi_lawyer"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pendik",
+        "addressRegion": "İstanbul",
+        "addressCountry": "TR"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Danışmanlık ve resmî süreç hizmetleri",
+        "itemListElement": serviceCatalog.map(name => ({
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": name }
+        }))
       }
-    </script>
+    })} />
   </head>
   <body class="flex flex-col min-h-screen bg-primary selection:bg-brand selection:text-white">
     <Header lang={lang} />
@@ -55,5 +96,7 @@ const currentUrl = new URL(Astro.request.url);
     </main>
     <Footer lang={lang} />
     <WhatsAppBtn lang={lang} />
+    <BackToTop />
+    <CookieBanner lang={lang} />
   </body>
 </html>

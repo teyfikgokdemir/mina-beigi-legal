@@ -1,0 +1,47 @@
+---
+const { lang } = Astro.props;
+const isTr = lang === "tr";
+---
+<div id="cookieBanner" class="fixed left-4 right-4 bottom-4 md:left-1/2 md:right-auto md:-translate-x-1/2 z-[60] hidden max-w-4xl bg-surface/95 backdrop-blur border border-primary rounded-2xl shadow-2xl">
+  <div class="p-4 md:p-5 flex flex-col md:flex-row md:items-center gap-4">
+    <div class="flex-1" dir={isTr ? "ltr" : "rtl"}>
+      <h2 class="text-ivory font-semibold mb-1">{isTr ? "Çerez Tercihleri" : "تنظیمات کوکی"}</h2>
+      <p class="text-sm text-ivory/65 leading-relaxed">
+        {isTr
+          ? "Site deneyimini geliştirmek ve kullanım istatistiklerini analiz etmek için çerezlerden yararlanıyoruz. Tercihinizi seçebilirsiniz."
+          : "برای بهبود تجربه سایت و تحلیل آمار استفاده از کوکی‌ها استفاده می‌کنیم. می‌توانید انتخاب خود را مشخص کنید."}
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-2 md:justify-end" dir={isTr ? "ltr" : "rtl"}>
+      <button id="cookieReject" class="px-4 py-2 rounded-lg border border-primary text-ivory/80 hover:border-brand hover:text-ivory transition-colors text-sm">
+        {isTr ? "Reddet" : "رد"}
+      </button>
+      <button id="cookieAccept" class="px-4 py-2 rounded-lg bg-brand text-white hover:bg-[#A33850] transition-colors text-sm font-semibold">
+        {isTr ? "Kabul Et" : "قبول"}
+      </button>
+      <button id="cookieClose" class="px-3 py-2 rounded-lg border border-primary text-ivory/60 hover:text-ivory transition-colors text-sm" aria-label={isTr ? "Kapat" : "بستن"}>
+        ✕
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('cookieBanner');
+  const accept = document.getElementById('cookieAccept');
+  const reject = document.getElementById('cookieReject');
+  const close = document.getElementById('cookieClose');
+
+  const saveChoice = (value) => {
+    localStorage.setItem('mb_cookie_choice', value);
+    banner?.classList.add('hidden');
+  };
+
+  if (!localStorage.getItem('mb_cookie_choice')) {
+    banner?.classList.remove('hidden');
+  }
+
+  accept?.addEventListener('click', () => saveChoice('accepted'));
+  reject?.addEventListener('click', () => saveChoice('rejected'));
+  close?.addEventListener('click', () => saveChoice('closed'));
+</script>

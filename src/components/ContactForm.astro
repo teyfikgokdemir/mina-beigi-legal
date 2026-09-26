@@ -2,41 +2,46 @@
 const { lang } = Astro.props;
 const isTr = lang === "tr";
 ---
-<form id="contactForm" class="max-w-xl mx-auto bg-surface p-10 rounded-2xl border border-primary shadow-2xl" method="POST" action="/api/contact" dir={isTr ? "ltr" : "rtl"}>
+<form id="contactForm" class="max-w-lg mx-auto bg-surface p-7 md:p-8 rounded-2xl border border-primary shadow-xl" method="POST" action="/api/contact" dir={isTr ? "ltr" : "rtl"}>
   <input type="text" name="b_name" class="hidden" tabindex="-1" autocomplete="off" />
-  <div class="mb-6">
+  <div class="mb-4">
     <label class="block mb-2 text-sm font-medium text-ivory/80 text-start">{isTr ? "Ad Soyad" : "نام و نام خانوادگی"}</label>
-    <input type="text" name="name" required class="w-full bg-primary border border-surface rounded-lg p-4 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all" />
+    <input type="text" name="name" required class="w-full bg-primary border border-surface rounded-lg px-4 py-3 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all" />
   </div>
-  <div class="mb-6">
+  <div class="mb-4">
     <label class="block mb-2 text-sm font-medium text-ivory/80 text-start">{isTr ? "Telefon" : "شماره تماس"}</label>
-    <input type="tel" name="phone" required class="w-full bg-primary border border-surface rounded-lg p-4 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all" dir="ltr" />
+    <input type="tel" name="phone" required class="w-full bg-primary border border-surface rounded-lg px-4 py-3 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all" dir="ltr" />
   </div>
-  <div class="mb-6">
+  <div class="mb-4">
     <label class="block mb-2 text-sm font-medium text-ivory/80 text-start">{isTr ? "E-posta" : "ایمیل"}</label>
-    <input type="email" name="email" required class="w-full bg-primary border border-surface rounded-lg p-4 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all" dir="ltr" />
+    <input type="email" name="email" required class="w-full bg-primary border border-surface rounded-lg px-4 py-3 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all" dir="ltr" />
   </div>
-  <div class="mb-6">
+  <div class="mb-4">
     <label class="block mb-2 text-sm font-medium text-ivory/80 text-start">{isTr ? "Hizmet Türü" : "نوع خدمت"}</label>
-    <select name="service" required class="w-full bg-primary border border-surface rounded-lg p-4 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all">
+    <select name="service" required class="w-full bg-primary border border-surface rounded-lg px-4 py-3 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all">
       <option value="">{isTr ? "Seçiniz" : "انتخاب کنید"}</option>
-      <option value="immigration">{isTr ? "Göçmenlik & İkamet" : "مهاجرت و اقامت"}</option>
+      <option value="work-permit">{isTr ? "Çalışma İzni" : "مجوز کار"}</option>
+      <option value="student-residence">{isTr ? "Öğrenci İkameti" : "اقامت تحصیلی"}</option>
+      <option value="property">{isTr ? "Gayrimenkul / İkamet / Vatandaşlık" : "ملک / اقامت / شهروندی"}</option>
       <option value="company">{isTr ? "Şirket Kuruluşu" : "ثبت شرکت"}</option>
-      <option value="translation">{isTr ? "Yeminli Tercümanlık" : "ترجمه رسمی"}</option>
+      <option value="investment">{isTr ? "Yatırım Danışmanlığı" : "مشاوره سرمایه‌گذاری"}</option>
+      <option value="deport">{isTr ? "Deport / Ret Süreçleri" : "دیپورت / ریجکت"}</option>
+      <option value="translation">{isTr ? "Resmî Tercümanlık" : "ترجمه رسمی"}</option>
+      <option value="banking">{isTr ? "Banka / Vergi / Finansal Süreçler" : "بانک / مالیات / امور مالی"}</option>
       <option value="other">{isTr ? "Diğer" : "سایر"}</option>
     </select>
   </div>
-  <div class="mb-8">
+  <div class="mb-5">
     <label class="block mb-2 text-sm font-medium text-ivory/80 text-start">{isTr ? "Mesajınız" : "پیام شما"}</label>
-    <textarea name="message" rows="4" required class="w-full bg-primary border border-surface rounded-lg p-4 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all"></textarea>
+    <textarea name="message" rows="3" required class="w-full bg-primary border border-surface rounded-lg px-4 py-3 text-ivory focus:border-brand focus:ring-1 focus:ring-brand outline-none transition-all"></textarea>
   </div>
-  <div class="mb-6 flex items-start gap-3 text-start">
+  <div class="mb-5 flex items-start gap-3 text-start">
     <input type="checkbox" id="kvkk" name="kvkk" required class="mt-1 accent-brand" />
     <label for="kvkk" class="text-xs text-ivory/70 leading-relaxed">
       {isTr ? "Kişisel verilerimin işlenmesine ilişkin Aydınlatma Metni ni okudum ve kabul ediyorum." : "من متن مربوط به پردازش داده‌های شخصی را خوانده‌ام و قبول دارم."}
     </label>
   </div>
-  <button type="submit" class="w-full bg-brand text-white font-bold py-4 px-4 rounded-lg hover:bg-[#A33850] transition-colors shadow-lg">
+  <button type="submit" class="w-full bg-brand text-white font-bold py-3.5 px-4 rounded-lg hover:bg-[#A33850] transition-colors shadow-lg">
     {isTr ? "Danışmanlık Talebi Gönder" : "ارسال درخواست مشاوره"}
   </button>
   <p id="formStatus" class="mt-6 text-center hidden font-medium"></p>

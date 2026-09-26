@@ -1,48 +1,50 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContactForm from '../../components/ContactForm.astro';
 import { SITE_URL } from '../../consts';
 ---
-<BaseLayout title="ثبت شرکت در ترکیه برای ایرانیان | Mina Beigi" description="راه‌اندازی کسب و کار در ترکیه برای ایرانیان و اتباع خارجی. مشاوره ثبت در اتاق بازرگانی استانبول." lang="fa">
+<BaseLayout title="ثبت شرکت در ترکیه برای ایرانیان | Mina Beigi" description="ثبت شرکت، آماده‌سازی مدارک، هماهنگی ثبت تجاری و برنامه شروع فعالیت در ترکیه." lang="fa">
   <Fragment slot="head">
-    <link rel="canonical" href={SITE_URL + "/fa/company-formation"} />
-    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/company-formation"} />
-    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/company-formation"} />
-    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/company-formation"} />
+    <link rel="canonical" href={SITE_URL + "/fa/company-formation/"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/sirket-kurulusu/"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/company-formation/"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/sirket-kurulusu/"} />
   </Fragment>
 
-  <div class="relative py-32 bg-primary border-b border-primary overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center object-cover opacity-80 z-0" style="background-image: url('/images/hero-translation.webp');"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent z-10"></div>
-    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
-      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="rtl">
-        <a href="/fa/" class="hover:text-brand transition-colors">خانه</a>
-        <span>/</span>
-        <a href="/fa/services" class="hover:text-brand transition-colors">خدمات</a>
-        <span>/</span>
+  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-75 z-0" style="background-image: url('/images/hero-company-formation.webp');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/35 to-primary/10 z-10"></div>
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20" dir="rtl">
+      <nav class="text-sm text-bronze/80 mb-5 flex items-center justify-center gap-2" aria-label="Breadcrumb">
+        <a href="/fa/" class="hover:text-brand">خانه</a><span>/</span>
+        <a href="/fa/services/" class="hover:text-brand">خدمات</a><span>/</span>
         <span class="text-ivory/60" aria-current="page">ثبت شرکت در ترکیه برای ایرانیان</span>
       </nav>
-      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">ثبت شرکت در ترکیه برای ایرانیان</h1>
-      <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">ثبت شرکت در ترکیه برای ایرانیان</h1>
+      <p class="text-ivory/75 max-w-2xl mx-auto">ثبت شرکت، آماده‌سازی مدارک، هماهنگی ثبت تجاری و برنامه شروع فعالیت در ترکیه.</p>
     </div>
   </div>
-  
-  <div class="py-20 bg-primary">
-    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
+
+  <main class="py-12 md:py-16 bg-primary">
+    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
       
-      <section>
-        <p class="mb-4">موقعیت استراتژیک ترکیه فرصت‌های بی‌نظیری برای سرمایه‌گذاران بین‌المللی فراهم می‌کند. اتباع خارجی می‌توانند با حقوق برابر با شهروندان ترکیه اقدام به ثبت شرکت با مسئولیت محدود (LTD) یا سهامی خاص (A.Ş.) نمایند. اگر قصد <strong>ثبت شرکت در ترکیه برای ایرانیان</strong> را دارید، ما تمامی مراحل را برای شما تسریع می‌کنیم.</p>
-        <p>ما برای سرمایه‌گذاران ایرانی راهنمایی و هماهنگی حرفه‌ای در زمینه <strong>راه اندازی کسب و کار در ترکیه</strong>، ثبت در اتاق بازرگانی، امور اداره مالیات و دریافت مجوزهای لازم ارائه می‌کنیم. مدیریت یکپارچه امور حقوقی و ثبتی، کلید موفقیت در بازارهای بین‌المللی است.</p>
-      </section>
-    
+<section><div class="mb-6 rounded-2xl border border-brand/40 bg-surface p-5"><h2 class="text-2xl font-bold text-ivory mb-3">ثبت شرکت و ساختار تجاری در ترکیه</h2><ul class="space-y-2 text-ivory/75"><li>• ثبت شرکت در ترکیه</li><li>• کارت بازرگانی و امور تجاری</li><li>• راه‌اندازی کارخانه و کارگاه تولیدی در استانبول و سراسر ترکیه</li><li>• هماهنگی مجوزها و پروانه‌های لازم متناسب با نوع فعالیت</li></ul></div><h2 class="text-3xl font-bold text-ivory mb-4">ثبت شرکت در ترکیه برای ایرانیان؛ ابتدا مدل کسب‌وکار را روشن کنید</h2><p>نوع شرکت، موضوع فعالیت، شرکا، سرمایه، آدرس، حسابداری و مجوزهای احتمالی باید پیش از ثبت با یکدیگر هماهنگ شوند. برای سرمایه‌گذاران ایرانی، برنامه انتقال وجه، بانک، قراردادها و ساختار عملیاتی نیز اهمیت ویژه دارد.</p></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">مناسب برای</h2><ul class="list-disc list-inside space-y-2 text-ivory/70"><li>کارآفرینانی که می‌خواهند در ترکیه فعالیت تجاری آغاز کنند</li><li>شرکت‌های ایرانی که قصد ورود به بازار ترکیه دارند</li><li>فعالان واردات، صادرات، خدمات، تولید یا مشاوره</li><li>افرادی که می‌خواهند فعالیت خود را در قالب یک شرکت جدید سازمان‌دهی کنند</li></ul></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">پیش از ثبت چه بررسی می‌شود؟</h2><p>موضوع فعالیت، تعداد شرکا، سرمایه، آدرس، اختیار امضا و نیاز به مجوزهای خاص مشخص می‌شود تا ساختار ثبت‌شده با مدل واقعی کسب‌وکار هماهنگ باشد.</p></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">مراحل کار</h2><ol class="space-y-3 text-ivory/70"><li><strong class="text-ivory">۱. انتخاب ساختار:</strong> LTD، A.Ş. یا ساختار مناسب بر اساس هدف تجاری بررسی می‌شود.</li><li><strong class="text-ivory">۲. آماده‌سازی مدارک:</strong> پاسپورت، آدرس، اطلاعات شرکا و ترجمه‌های لازم آماده می‌شود.</li><li><strong class="text-ivory">۳. هماهنگی ثبت:</strong> مراحل MERSİS، ثبت تجاری و نوتر در یک برنامه مشخص هماهنگ می‌شود.</li><li><strong class="text-ivory">۴. پس از ثبت:</strong> مالیات، حسابداری، بانک، مجوزها و شروع عملیات بررسی می‌شود.</li></ol></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">نکته مهم</h2><p>ثبت شرکت به‌تنهایی به معنای دریافت خودکار اقامت، اجازه کار یا مجوز فعالیت خاص نیست. این موارد باید جداگانه و متناسب با ساختار شرکت بررسی شوند.</p></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">سوالات متداول</h2><div class="space-y-3"><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا یک تبعه خارجی می‌تواند شرکت تک‌نفره ثبت کند؟</summary><p class="mt-3 text-sm">در بسیاری از ساختارها امکان‌پذیر است؛ انتخاب ساختار به فعالیت و برنامه مالکیت بستگی دارد.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا ثبت شرکت اقامت می‌دهد؟</summary><p class="mt-3 text-sm">خیر. اقامت و اجازه کار فرآیندهای جداگانه با شرایط مستقل هستند.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">برای ایرانیان چه موضوعی حساس‌تر است؟</summary><p class="mt-3 text-sm">بانک، انتقال وجه، قراردادها و ساختار عملیاتی باید از ابتدا با دقت برنامه‌ریزی شود.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">بعد از ثبت حسابداری لازم است؟</summary><p class="mt-3 text-sm">بله، تعهدات مالیاتی و حسابداری شرکت از زمان فعالیت و ثبت آغاز می‌شود.</p></details></div></section>
+
       
-      <div class="mt-16 pt-16 border-t border-surface">
-        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
-          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">دریافت پشتیبانی حرفه‌ای</h2>
-          <p class="text-center mb-8">برای ارزیابی اولیه پرونده خود و درخواست مشاوره، فرم زیر را پر کنید.</p>
-          <ContactForm lang="fa" />
+      <section class="pt-7 border-t border-surface">
+        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center" dir="rtl">
+          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">برای ارزیابی سریع با ما در تماس باشید</h2>
+          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">برای یک بررسی اولیه از طریق واتساپ پیام دهید یا برای ارسال اطلاعات کامل‌تر از صفحه تماس استفاده کنید.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-3">
+            <a href="https://wa.me/989125102088" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">واتساپ ایران</a>
+            <a href="/fa/contact/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">صفحه تماس</a>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
-  </div>
+  </main>
 </BaseLayout>

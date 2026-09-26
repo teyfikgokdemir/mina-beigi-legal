@@ -1,61 +1,68 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContactForm from '../../components/ContactForm.astro';
 import { SITE_URL } from '../../consts';
 ---
-<BaseLayout title="فرآیندهای مجوز کار | Mina Beigi" description="مشاوره مجوز کار در ترکیه و هماهنگی درخواست‌ها. روند اخذ اجازه کار برای خارجی‌ها، مدارک لازم و بررسی پرونده." lang="fa">
+<BaseLayout title="اجازه کار در ترکیه برای ایرانیان" description="اجازه کار در ترکیه برای ایرانیان؛ بررسی شرایط، آماده‌سازی مدارک، تمدید و هماهنگی درخواست برای کارکنان، مدیران و شرکای تجاری. بررسی شرایط، آماده‌سازی مدارک و هماهنگی درخواست مجوز کار برای اتباع خارجی." lang="fa">
   <Fragment slot="head">
-    <link rel="canonical" href={SITE_URL + "/fa/work-permit"} />
-    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/work-permit"} />
-    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/work-permit"} />
-    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/work-permit"} />
+    <link rel="canonical" href={SITE_URL + "/fa/work-permit/"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/calisma-izni/"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/work-permit/"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/calisma-izni/"} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"آیا ایرانیان می‌توانند در ترکیه اجازه کار بگیرند؟","acceptedAnswer":{"@type":"Answer","text":"بله. اتباع ایرانی نیز می‌توانند برای اجازه کار ترکیه درخواست دهند. شرایط بر اساس وضعیت متقاضی، کارفرما، شغل و معیارهای روز بررسی می‌شود."}},
+        {"@type":"Question","name":"اجازه کار ترکیه چقدر زمان می‌برد؟","acceptedAnswer":{"@type":"Answer","text":"زمان رسیدگی بسته به نوع درخواست، مدارک و ارزیابی مرجع ذی‌صلاح متفاوت است. «کمتر از یک ماه، تضمینی». نتیجه رسمی درخواست و زمان رسیدگی بر اساس وضعیت پرونده، شرایط کارفرما و ارزیابی مرجع ذی‌صلاح تعیین می‌شود."}},
+        {"@type":"Question","name":"آیا شریک شرکت بودن به‌تنهایی اجازه کار می‌دهد؟","acceptedAnswer":{"@type":"Answer","text":"خیر. شراکت در شرکت و اجازه کار دو موضوع جداگانه هستند و اجازه کار جداگانه بررسی می‌شود."}}
+      ]
+    })} />
   </Fragment>
 
-  <div class="relative py-32 bg-primary border-b border-primary overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center object-cover opacity-80 z-0" style="background-image: url('/images/hero-translation.webp');"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent z-10"></div>
-    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
-      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="rtl">
-        <a href="/fa/" class="hover:text-brand transition-colors">خانه</a>
-        <span>/</span>
-        <a href="/fa/services" class="hover:text-brand transition-colors">خدمات</a>
-        <span>/</span>
+  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-75 z-0" style="background-image: url('/images/hero-work-permit.webp');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/35 to-primary/10 z-10"></div>
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20" dir="rtl">
+      <nav class="text-sm text-bronze/80 mb-5 flex items-center justify-center gap-2" aria-label="Breadcrumb">
+        <a href="/fa/" class="hover:text-brand">خانه</a><span>/</span>
+        <a href="/fa/services/" class="hover:text-brand">خدمات</a><span>/</span>
         <span class="text-ivory/60" aria-current="page">فرآیندهای مجوز کار</span>
       </nav>
-      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">فرآیندهای مجوز کار</h1>
-      <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">اجازه کار در ترکیه برای ایرانیان</h1>
+      <p class="text-ivory/75 max-w-2xl mx-auto">بررسی شرایط، آماده‌سازی مدارک و هماهنگی درخواست مجوز کار برای اتباع خارجی.</p>
     </div>
   </div>
-  
-  <div class="py-20 bg-primary">
-    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
-      
-      <section>
-        <p class="mb-4">برای اشتغال قانونی اتباع خارجی در ترکیه، اخذ مجوز کار (Work Permit) مطابق با قوانین الزامی است. شرایط اخذ مجوز کار بسته به اینکه کارفرما باشید یا کارمند، متفاوت است. مدیریت این فرآیند توسط افراد متخصص برای موفقیت درخواست بسیار حیاتی است.</p>
-        <p>تیم ما با ارائه خدمات ارزیابی پرونده، هماهنگی درخواست و پیگیری مراحل، به شما در عبور از موانع اداری و اخذ مجوز کار در ترکیه کمک می‌کند.</p>
-      </section>
 
-      <section>
-        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">این خدمات برای چه کسانی مناسب است؟</h2>
-        <ul class="list-disc list-inside space-y-2 text-ivory/70">
-          <li>سرمایه‌گذاران خارجی که در ترکیه شرکت ثبت کرده‌اند یا قصد ثبت دارند.</li>
-          <li>نیروهای متخصصی که قرار است توسط یک شرکت ترکیه‌ای استخدام شوند.</li>
-        </ul>
-      </section>
-      
-      <section>
-        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">مدارک لازم / آمادگی اولیه</h2>
-        <p class="mb-4">پیش از شروع کار، پاسپورت، معادل‌سازی مدارک تحصیلی، عکس بیومتریک و اطلاعات مالی شرکت باید آماده باشند. لیست دقیق مدارک پس از ارزیابی اولیه ارائه خواهد شد.</p>
-      </section>
-    
-      
-      <div class="mt-16 pt-16 border-t border-surface">
-        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
-          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">دریافت پشتیبانی حرفه‌ای</h2>
-          <p class="text-center mb-8">برای ارزیابی اولیه پرونده خود و درخواست مشاوره، فرم زیر را پر کنید.</p>
-          <ContactForm lang="fa" />
-        </div>
+  <main class="py-12 md:py-16 bg-primary">
+    <div class="container mx-auto px-4 max-w-5xl mb-8" dir="rtl">
+      <div class="rounded-2xl border border-brand/40 bg-surface p-5 text-ivory/80 leading-relaxed">
+        <h2 class="text-2xl font-bold text-ivory mb-2">اجازه کار در ترکیه</h2>
+        <p><strong class="text-ivory">«کمتر از یک ماه، تضمینی»</strong> عبارتی است که در محتوای معرفی خود مینا بیگی برای خدمت اجازه کار استفاده شده است. نتیجه رسمی و زمان رسیدگی نهایی به وضعیت پرونده، شرایط کارفرما و ارزیابی مرجع ذی‌صلاح بستگی دارد.</p>
       </div>
     </div>
-  </div>
+    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
+      
+<section><h2 class="text-3xl font-bold text-ivory mb-4">مجوز کار؛ پرونده باید با وضعیت شخص و کارفرما هماهنگ باشد</h2><p>شرایط مجوز کار بر اساس وضعیت متقاضی، ساختار کارفرما، نوع فعالیت شرکت و معیارهای روز متفاوت است. بنابراین پیش از اقدام، بررسی وضعیت و مدارک اهمیت زیادی دارد.</p></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">مناسب برای</h2><ul class="list-disc list-inside space-y-2 text-ivory/70"><li>اتباع خارجی که برای یک کارفرمای ترکیه‌ای کار خواهند کرد</li><li>شرکای خارجی که در شرکت خود فعالیت عملی دارند</li><li>افرادی که قصد تمدید یا تغییر وضعیت مجوز خود را دارند</li></ul></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">مراحل</h2><ol class="space-y-3 text-ivory/70"><li><strong class="text-ivory">۱. ارزیابی اولیه:</strong> اطلاعات فرد و کارفرما با معیارهای جاری تطبیق داده می‌شود.</li><li><strong class="text-ivory">۲. مدارک:</strong> مدارک شخصی، شرکتی و ترجمه‌های لازم آماده می‌شود.</li><li><strong class="text-ivory">۳. هماهنگی درخواست:</strong> مسیر مناسب و ترتیب مراحل مشخص می‌شود.</li><li><strong class="text-ivory">۴. ادامه پرونده:</strong> در صورت نیاز به مدرک تکمیلی، پرونده مجدداً بررسی می‌شود.</li></ol></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">نکات مهم</h2><p>معیارهای مرتبط با کارفرما و متقاضی ممکن است تغییر کنند. نباید بر اساس سهمیه، سرمایه یا زمان نتیجه ثابت تصمیم گرفت؛ شرایط روز باید برای هر پرونده جداگانه بررسی شود.</p></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">سوالات متداول</h2><div class="space-y-3"><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا زمان نتیجه قطعی است؟</summary><p class="mt-3 text-sm">خیر. نوع درخواست، حجم کاری مرجع و نیاز به مدارک تکمیلی می‌تواند زمان را تغییر دهد.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا شریک شرکت بودن به‌تنهایی اجازه کار می‌دهد؟</summary><p class="mt-3 text-sm">خیر. شریک بودن و مجوز کار دو موضوع جداگانه هستند.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا اقامت به معنای اجازه کار است؟</summary><p class="mt-3 text-sm">هر نوع اقامت حق کار ایجاد نمی‌کند و وضعیت شخص باید جداگانه بررسی شود.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">مدارک خارجی چه می‌شوند؟</summary><p class="mt-3 text-sm">بسته به نوع درخواست، ترجمه رسمی و تایید نوتر ممکن است لازم باشد.</p></details></div></section>
+
+      
+      <section class="pt-7 border-t border-surface">
+        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center" dir="rtl">
+          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">برای ارزیابی سریع با ما در تماس باشید</h2>
+          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">برای یک بررسی اولیه از طریق واتساپ پیام دهید یا برای ارسال اطلاعات کامل‌تر از صفحه تماس استفاده کنید.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-3">
+            <a href="https://wa.me/989125102088" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">
+              واتساپ ایران
+            </a>
+            <a href="/fa/contact/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">
+              صفحه تماس
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
 </BaseLayout>

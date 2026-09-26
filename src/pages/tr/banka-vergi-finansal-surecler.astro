@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL } from '../../consts';
+
+const faq = [
+  {
+    q: 'Yabancılar Türkiye’de vergi numarası alabilir mi?',
+    a: 'Evet. Yabancılar için potansiyel vergi kimlik numarası başvurusu Gelir İdaresi Başkanlığı Dijital Vergi Dairesi üzerinden yapılabilir. Kişinin mevcut yabancı kimlik numarası ve işlem türüne göre kullanılacak kimlik bilgisi değişebilir.'
+  },
+  {
+    q: 'Yabancı biri Türkiye’de banka hesabı açabilir mi?',
+    a: 'Bankalar yabancı müşteriler için hesap açılışı yapabilir; ancak kabul kriterleri bankadan bankaya değişir. Pasaport, adres, vergi numarası, ikamet bilgisi ve fon kaynağına ilişkin ek belgeler talep edilebilir.'
+  },
+  {
+    q: 'Şirket hesabı ile kişisel hesap aynı süreç midir?',
+    a: 'Hayır. Şirket hesabında şirket tescil belgeleri, vergi bilgileri, imza yetkileri ve ortaklık yapısı gibi kurumsal belgeler ayrıca değerlendirilir.'
+  },
+  {
+    q: 'İran’dan Türkiye’ye para transferi için tek bir standart yöntem var mı?',
+    a: 'Hayır. Banka politikaları, işlem tarafları, para birimi, ticari ilişkinin niteliği ve uyum kontrolleri yöntemi etkileyebilir. İşlem öncesinde kullanılacak kanal ve belge seti netleştirilmelidir.'
+  },
+  {
+    q: 'Banka hesabı açılışı garanti edilebilir mi?',
+    a: 'Hayır. Nihai karar ilgili bankanın müşteri kabulü ve uyum politikalarına bağlıdır. Danışmanlık kapsamında başvuru öncesi belge hazırlığı ve süreç koordinasyonu yapılabilir.'
+  }
+];
+---
+<BaseLayout title="Banka Hesabı, Vergi Numarası ve Finansal Süreçler | Mina Beigi" description="Yabancılar ve İranlı yatırımcılar için Türkiye’de vergi numarası, banka hesabı, şirket hesabı, KYC ve finansal işlem hazırlığı danışmanlığı." lang="tr">
+  <Fragment slot="head">
+    <link rel="canonical" href={SITE_URL + "/tr/banka-vergi-finansal-surecler/"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/banka-vergi-finansal-surecler/"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/banking-tax-financial-processes/"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/banka-vergi-finansal-surecler/"} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faq.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": { "@type": "Answer", "text": item.a }
+      }))
+    })} />
+  </Fragment>
+
+  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/images/hero-banking-tax-finance.webp')] bg-cover bg-center opacity-75 z-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/35 to-primary/10 z-10"></div>
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
+      <nav class="text-sm text-bronze/80 mb-5 flex items-center justify-center gap-2" aria-label="Breadcrumb">
+        <a href="/tr/" class="hover:text-brand">Ana Sayfa</a><span>/</span>
+        <a href="/tr/hizmetler/" class="hover:text-brand">Hizmetler</a><span>/</span>
+        <span class="text-ivory/60">Banka, Vergi ve Finansal Süreçler</span>
+      </nav>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">Banka Hesabı, Vergi Numarası ve Finansal Süreçler</h1>
+      <p class="text-ivory/80 text-lg max-w-3xl mx-auto">Türkiye’de yatırım yapan, şirket kuran veya bireysel işlem gerçekleştiren yabancılar için vergi numarası, banka hesabı, şirket hesabı ve finansal belge hazırlığı.</p>
+    </div>
+  </div>
+
+  <main class="py-12 md:py-16 bg-primary">
+    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed text-lg space-y-10">
+      <section>
+        <div class="mb-6 rounded-2xl border border-brand/40 bg-surface p-5">
+          <h2 class="text-2xl font-bold text-ivory mb-2">Uluslararası banka hesabı açılması</h2>
+          <p class="text-ivory/75">Yabancılar ve şirketler için banka hesabı açılışı, KYC, vergi numarası, fon kaynağı ve finansal belge hazırlığı süreçlerinin koordinasyonu.</p>
+        </div>
+        <h2 class="text-3xl font-bold text-ivory mb-4">Yabancıların en çok zorlandığı alanlardan biri: bankacılık ve finansal hazırlık</h2>
+        <p class="mb-4">Türkiye’de şirket kuruluşu, gayrimenkul alımı, vergi ödemesi veya düzenli ticari faaliyet planlayan yabancıların çoğu erken aşamada vergi numarası, banka hesabı ve para transferi konularıyla karşılaşır. Bu işlemler birbirine bağlı görünse de her kurum kendi kimlik, adres ve uyum kontrollerini uygulayabilir.</p>
+        <p>Özellikle İranlı yatırımcılar açısından işlem başlamadan önce hangi hesabın kullanılacağı, hangi belgelerin hazırlanacağı ve ödemenin hangi ticari gerekçeyle yapılacağı netleştirilmelidir.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mb-4">Hangi konularda destek sağlıyoruz?</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">Vergi numarası</strong><span class="text-sm">Yabancılar için potansiyel vergi kimlik numarası başvuru hazırlığı ve işlem amacına göre belge kontrolü.</span></div>
+          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">Bireysel banka hesabı</strong><span class="text-sm">Pasaport, adres, vergi ve ikamet bilgileri açısından başvuru öncesi hazırlık.</span></div>
+          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">Şirket banka hesabı</strong><span class="text-sm">Şirket tescil belgeleri, imza yetkileri, ortaklık yapısı ve banka görüşmesi için dosya hazırlığı.</span></div>
+          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">Finansal işlem dosyası</strong><span class="text-sm">Yatırım, gayrimenkul veya ticari ödeme için işlem açıklaması, sözleşme ve destekleyici belgelerin düzenlenmesi.</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mb-4">Vergi numarası nasıl planlanır?</h2>
+        <p>Gelir İdaresi Başkanlığı Dijital Vergi Dairesi’nde yabancılar için potansiyel vergi kimlik numarası başvuru ekranı bulunmaktadır. Başvuruda kimlik, pasaport, iletişim ve adres bilgilerinin doğru ve birbiriyle tutarlı olması önemlidir. Türkiye’de yabancı kimlik numarası bulunan kişilerde kullanılacak kimlik bilgisi işlem türüne göre farklılaşabilir.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mb-4">Banka hesabında neden herkes aynı sonucu alamıyor?</h2>
+        <p class="mb-4">Bankaların yabancı müşteriler için müşteri kabulü ve KYC/uyum politikaları aynı değildir. Bir banka yalnızca pasaport ve vergi numarasıyla işlem yaparken başka bir banka adres kanıtı, ikamet kartı, gelir belgesi, şirket evrakı veya fon kaynağı hakkında ek bilgi isteyebilir.</p>
+        <p>Bu nedenle “hangi banka kesin hesap açar?” yaklaşımından çok, kişinin statüsüne ve işlem amacına uygun belge dosyası hazırlanması daha sağlıklı bir yöntemdir.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mb-4">İranlı yatırımcılar için özellikle dikkat edilmesi gerekenler</h2>
+        <ul class="list-disc list-inside space-y-2 text-ivory/70">
+          <li>Yatırımın veya ödemenin ticari gerekçesini gösteren sözleşme ve belgelerin hazır olması</li>
+          <li>Kişisel hesap ile şirket hesabının kullanım amacının birbirinden ayrılması</li>
+          <li>Fon kaynağı ve ödeme zincirinin açıklanabilir olması</li>
+          <li>Gayrimenkul, şirket sermayesi veya ticari ödeme ise işlem türüne uygun dekont ve açıklamaların kullanılması</li>
+          <li>Bankanın talep edebileceği ek KYC/uyum belgelerine hazırlıklı olunması</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mb-4">Süreç nasıl ilerler?</h2>
+        <ol class="space-y-3 text-ivory/70">
+          <li><strong class="text-ivory">1. İşlem amacının belirlenmesi:</strong> Bireysel hesap, şirket hesabı, yatırım, gayrimenkul veya ticari ödeme hedefi netleştirilir.</li>
+          <li><strong class="text-ivory">2. Belge kontrolü:</strong> Pasaport, adres, vergi bilgisi, şirket evrakı ve işlem destekleyici belgeler gözden geçirilir.</li>
+          <li><strong class="text-ivory">3. Başvuru hazırlığı:</strong> Banka veya ilgili kurumun talep ettiği formatlara göre dosya düzenlenir.</li>
+          <li><strong class="text-ivory">4. Sonraki işlemler:</strong> Hesap açılışı sonrasında internet bankacılığı, şirket yetkilendirmesi veya yatırım ödemesi gibi ihtiyaçlar ayrıca planlanır.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-ivory mb-4">Sık sorulan sorular</h2>
+        <div class="space-y-3">
+          {faq.map(item => (
+            <details class="bg-surface p-5 rounded-xl border border-primary">
+              <summary class="font-semibold text-ivory cursor-pointer">{item.q}</summary>
+              <p class="mt-3 text-sm">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      
+      <section class="pt-7 border-t border-surface">
+        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">Durumunuzu hızlıca değerlendirelim</h2>
+          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">Kısa bir ön görüşme için WhatsApp’tan yazabilir veya detaylı bilgi bırakmak için iletişim sayfasını kullanabilirsiniz.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-3">
+            <a href="https://wa.me/905392425624" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">
+              WhatsApp Türkiye
+            </a>
+            <a href="/tr/iletisim/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">
+              İletişim Sayfası
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</BaseLayout>

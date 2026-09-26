@@ -4,18 +4,17 @@ const isTr = lang === "tr";
 
 const nav = isTr ? [
   { name: "Ana Sayfa", href: "/tr/" },
-  { name: "Hakkımızda", href: "/tr/hakkimizda" },
-  { name: "Hizmetler", href: "/tr/hizmetler" },
-  { name: "İletişim", href: "/tr/iletisim" },
+  { name: "Hakkımızda", href: "/tr/hakkimizda/" },
+  { name: "Hizmetler", href: "/tr/hizmetler/" },
+  { name: "İletişim", href: "/tr/iletisim/" },
 ] : [
   { name: "خانه", href: "/fa/" },
-  { name: "درباره ما", href: "/fa/about" },
-  { name: "خدمات", href: "/fa/services" },
-  { name: "تماس با ما", href: "/fa/contact" },
+  { name: "درباره ما", href: "/fa/about/" },
+  { name: "خدمات", href: "/fa/services/" },
+  { name: "تماس با ما", href: "/fa/contact/" },
 ];
 
-const otherLang = isTr ? "fa" : "tr";
-const otherLangName = isTr ? "FA" : "TR";
+const otherLangLabel = isTr ? "Farsça" : "Türkçe";
 
 const routeMap = {
   "/tr/": "/fa/", "/fa/": "/tr/",
@@ -28,6 +27,7 @@ const routeMap = {
   "/tr/yatirim-danismanligi/": "/fa/investment-consulting/", "/fa/investment-consulting/": "/tr/yatirim-danismanligi/",
   "/tr/deport-ret-surecleri/": "/fa/deport-rejection/", "/fa/deport-rejection/": "/tr/deport-ret-surecleri/",
   "/tr/tercumanlik/": "/fa/translation/", "/fa/translation/": "/tr/tercumanlik/",
+  "/tr/banka-vergi-finansal-surecler/": "/fa/banking-tax-financial-processes/", "/fa/banking-tax-financial-processes/": "/tr/banka-vergi-finansal-surecler/",
   "/tr/sss/": "/fa/faq/", "/fa/faq/": "/tr/sss/",
   "/tr/iletisim/": "/fa/contact/", "/fa/contact/": "/tr/iletisim/",
   "/tr/gizlilik/": "/fa/privacy/", "/fa/privacy/": "/tr/gizlilik/"
@@ -40,30 +40,89 @@ const getOtherLangPath = () => {
 };
 ---
 <header class="sticky top-0 z-50 bg-primary/95 backdrop-blur-md border-b border-surface">
-  <div class="container mx-auto px-4 py-5 flex justify-between items-center">
-    <a href={`/${lang}/`} class="text-2xl font-bold text-ivory tracking-wide flex items-center gap-3 group">
-      <span class="text-brand group-hover:text-rose transition-colors duration-300">MINA BEIGI</span>
-      <span class="text-xs font-normal text-bronze hidden sm:inline-block border-s border-surface ps-3 ms-1 opacity-80">{isTr ? "International Consulting" : "مشاوره بین‌المللی"}</span>
+  <div class="container mx-auto px-4 py-4 md:py-5 grid grid-cols-[auto_1fr_auto] items-center gap-4">
+    <a href={`/${lang}/`} class="group inline-flex items-center justify-self-start" aria-label="Mina Beigi">
+      <img src="/images/mina-beigi-logo.svg" alt="Mina Beigi International Consulting" class="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.015]" />
     </a>
-    
-    <nav class="hidden md:flex gap-8 items-center" dir={isTr ? "ltr" : "rtl"}>
+
+    <nav class="hidden md:flex gap-8 items-center justify-self-center" dir={isTr ? "ltr" : "rtl"}>
       {nav.map(item => (
-        <a href={item.href} class="text-sm font-medium text-ivory hover:text-brand transition-colors">
-          {item.name}
-        </a>
+        <a href={item.href} class="text-sm font-medium text-ivory hover:text-brand transition-colors">{item.name}</a>
       ))}
-      <a href={getOtherLangPath()} class="px-4 py-1.5 text-xs font-semibold border border-surface text-bronze rounded hover:border-brand hover:text-brand transition-colors">
-        {otherLangName}
-      </a>
     </nav>
-    
-    <div class="md:hidden flex items-center gap-4">
-      <a href={getOtherLangPath()} class="px-3 py-1.5 text-xs font-semibold border border-surface text-bronze rounded">
-        {otherLangName}
+
+    <a href={getOtherLangPath()} aria-label={otherLangLabel} title={otherLangLabel}
+      class="hidden md:inline-flex justify-self-end items-center justify-center w-10 h-9 border border-surface rounded-lg hover:border-brand hover:bg-surface/70 transition-colors">
+      {isTr ? (
+        <svg viewBox="0 0 30 20" class="w-6 h-4 rounded-[2px] overflow-hidden shadow-sm" aria-hidden="true">
+          <rect width="30" height="6.67" y="0" fill="#239F40"/><rect width="30" height="6.66" y="6.67" fill="#fff"/><rect width="30" height="6.67" y="13.33" fill="#DA0000"/>
+          <circle cx="15" cy="10" r="2.2" fill="none" stroke="#DA0000" stroke-width=".8"/><path d="M15 7.3v5.4M12.3 10h5.4" stroke="#DA0000" stroke-width=".7"/>
+        </svg>
+      ) : (
+        <svg viewBox="0 0 30 20" class="w-6 h-4 rounded-[2px] overflow-hidden shadow-sm" aria-hidden="true">
+          <rect width="30" height="20" fill="#E30A17"/><circle cx="12" cy="10" r="5.2" fill="#fff"/><circle cx="13.8" cy="10" r="4.2" fill="#E30A17"/><polygon points="18.2,10 21,9.1 19.3,11.4 19.3,8.6 21,10.9" fill="#fff"/>
+        </svg>
+      )}
+    </a>
+
+    <div class="md:hidden flex items-center gap-3 justify-self-end">
+      <a href={getOtherLangPath()} aria-label={otherLangLabel} title={otherLangLabel}
+        class="inline-flex items-center justify-center w-9 h-9 border border-surface rounded-lg">
+        {isTr ? (
+          <svg viewBox="0 0 30 20" class="w-6 h-4 rounded-[2px] overflow-hidden shadow-sm" aria-hidden="true">
+            <rect width="30" height="6.67" y="0" fill="#239F40"/><rect width="30" height="6.66" y="6.67" fill="#fff"/><rect width="30" height="6.67" y="13.33" fill="#DA0000"/>
+            <circle cx="15" cy="10" r="2.2" fill="none" stroke="#DA0000" stroke-width=".8"/><path d="M15 7.3v5.4M12.3 10h5.4" stroke="#DA0000" stroke-width=".7"/>
+          </svg>
+        ) : (
+          <svg viewBox="0 0 30 20" class="w-6 h-4 rounded-[2px] overflow-hidden shadow-sm" aria-hidden="true">
+            <rect width="30" height="20" fill="#E30A17"/><circle cx="12" cy="10" r="5.2" fill="#fff"/><circle cx="13.8" cy="10" r="4.2" fill="#E30A17"/><polygon points="18.2,10 21,9.1 19.3,11.4 19.3,8.6 21,10.9" fill="#fff"/>
+          </svg>
+        )}
       </a>
-      <button class="text-ivory hover:text-brand transition-colors p-2 focus:outline-none" aria-label="Menu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+
+      <button id="mobileMenuToggle" class="text-ivory hover:text-brand transition-colors p-2 focus:outline-none" aria-label={isTr ? "Menüyü aç" : "باز کردن منو"} aria-expanded="false" aria-controls="mobileMenu">
+        <svg id="menuIconOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <svg id="menuIconClose" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" x2="18" y1="6" y2="18"/><line x1="18" x2="6" y1="6" y2="18"/></svg>
       </button>
     </div>
   </div>
+
+  <div id="mobileMenu" class="md:hidden hidden border-t border-surface bg-primary/98 backdrop-blur-xl">
+    <nav class="container mx-auto px-4 py-4 flex flex-col gap-1" dir={isTr ? "ltr" : "rtl"}>
+      {nav.map(item => (
+        <a href={item.href} class="mobile-menu-link flex items-center justify-between px-4 py-3 rounded-lg text-ivory hover:bg-surface hover:text-brand transition-colors font-medium">
+          <span>{item.name}</span><span class="text-bronze">{isTr ? "→" : "←"}</span>
+        </a>
+      ))}
+    </nav>
+  </div>
 </header>
+
+<script>
+  const toggle = document.getElementById('mobileMenuToggle');
+  const menu = document.getElementById('mobileMenu');
+  const openIcon = document.getElementById('menuIconOpen');
+  const closeIcon = document.getElementById('menuIconClose');
+
+  const closeMenu = () => {
+    menu?.classList.add('hidden');
+    openIcon?.classList.remove('hidden');
+    closeIcon?.classList.add('hidden');
+    toggle?.setAttribute('aria-expanded','false');
+  };
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      menu?.classList.remove('hidden');
+      openIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+      toggle?.setAttribute('aria-expanded','true');
+    }
+  });
+
+  document.querySelectorAll('.mobile-menu-link').forEach(link => link.addEventListener('click', closeMenu));
+  window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMenu(); });
+</script>

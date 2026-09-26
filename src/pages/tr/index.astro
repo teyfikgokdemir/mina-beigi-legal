@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContactForm from '../../components/ContactForm.astro';
 ---
 <BaseLayout title="Ana Sayfa" description="Türkiye'de Göçmenlik, Yatırım ve Resmî Süreçlerde Profesyonel Destek" lang="tr">
   <section class="relative py-28 md:py-40 bg-primary overflow-hidden">
@@ -15,10 +14,10 @@ import ContactForm from '../../components/ContactForm.astro';
         Türkiye'de Göçmenlik, Yatırım ve <span class="text-brand">Resmî Süreçlerde</span> Profesyonel Destek
       </h1>
       <p class="text-lg md:text-xl text-ivory/70 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-        İran ve Türkiye arasındaki hukuki, ticari ve resmî süreçlerde deneyimli danışmanlık ve dosya koordinasyonu.
+        İran ve Türkiye arasındaki göçmenlik, yatırım, ticari ve resmî süreçlerde profesyonel danışmanlık ve dosya koordinasyonu.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-5">
-        <a href="#iletisim" class="bg-brand text-white font-semibold py-4 px-10 rounded shadow-2xl hover:bg-[#A33850] hover:-translate-y-1 transition-all duration-300">
+        <a href="/tr/iletisim/" class="bg-brand text-white font-semibold py-4 px-10 rounded shadow-2xl hover:bg-[#A33850] hover:-translate-y-1 transition-all duration-300">
           Danışmanlık Talebi
         </a>
         <a href="https://wa.me/905392425624" class="bg-surface border border-primary text-ivory font-semibold py-4 px-10 rounded hover:bg-primary transition-all duration-300">
@@ -28,24 +27,19 @@ import ContactForm from '../../components/ContactForm.astro';
     </div>
   </section>
 
-  <section class="py-20 bg-surface border-y border-primary">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h2 class="text-2xl md:text-3xl font-light text-ivory leading-relaxed">
+  <section class="py-10 md:py-12 bg-surface border-y border-primary">
+    <div class="container mx-auto px-4 max-w-7xl text-center">
+      <h2 class="text-xl md:text-2xl xl:text-[1.65rem] font-light text-ivory leading-snug whitespace-normal xl:whitespace-nowrap">
         Sınırların ötesindeki işlemlerinizde <span class="text-bronze font-semibold">güvenilir, mevzuata uygun ve şeffaf</span> bir yol haritası çiziyoruz.
       </h2>
     </div>
   </section>
 
-  <section class="py-24 bg-primary">
+  <section class="py-14 md:py-20 bg-primary">
     <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-16">
-        <div class="max-w-2xl">
-          <h2 class="text-4xl font-bold text-ivory mb-4">Uzmanlık Alanlarımız</h2>
-          <p class="text-ivory/60 text-lg">Süreçlerinizin her aşamasında profesyonel ön değerlendirme, dosya hazırlığı ve resmi makamlar nezdinde koordinasyon sağlıyoruz.</p>
-        </div>
-        <a href="/tr/hizmetler" class="text-bronze hover:text-brand font-medium mt-6 md:mt-0 flex items-center gap-2 transition-colors">
-          Tüm Hizmetleri İncele <span aria-hidden="true">&rarr;</span>
-        </a>
+      <div class="max-w-3xl mx-auto text-center mb-8 md:mb-10">
+        <h2 class="text-4xl font-bold text-ivory mb-4">Uzmanlık Alanlarımız</h2>
+        <p class="text-ivory/60 text-base md:text-lg text-center mx-auto xl:w-fit xl:max-w-none xl:whitespace-nowrap">Süreçlerinizin her aşamasında profesyonel ön değerlendirme, dosya hazırlığı ve resmî süreç koordinasyonu sağlıyoruz.</p>
       </div>
       
       <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -54,7 +48,7 @@ import ContactForm from '../../components/ContactForm.astro';
           {l: '/tr/gayrimenkul-ikamet-vatandaslik', t: 'İkamet ve Vatandaşlık', d: 'Gayrimenkul ve yatırım yoluyla vatandaşlık dosyalarının ön değerlendirmesi.'},
           {l: '/tr/sirket-kurulusu', t: 'Şirket Kuruluşu', d: 'Ticaret odası kayıt süreçleri ve ticari izinlerin koordinasyonu.'},
           {l: '/tr/yatirim-danismanligi', t: 'Yatırım Danışmanlığı', d: 'Doğru ve stratejik pazar konumlandırması için rehberlik.'},
-          {l: '/tr/deport-ret-surecleri', t: 'Deport / Ret Danışmanlığı', d: 'Reddedilen dosyaların analizi ve idari itiraz süreçlerinin takibi.'},
+          {l: '/tr/deport-ret-surecleri', t: 'Deport / Ret Danışmanlığı', d: 'Reddedilen dosyaların ön değerlendirmesi ve izlenebilecek süreçlerin açıklanması.'},
           {l: '/tr/tercumanlik', t: 'Resmî Tercümanlık', d: 'Noter onaylı belge çevirisi ve kurumlarda ardıl sözlü tercümanlık.'}
         ].map(s => (
           <a href={s.l} class="group block p-8 bg-surface rounded-xl border border-primary hover:-translate-y-1 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-all duration-300">
@@ -63,12 +57,18 @@ import ContactForm from '../../components/ContactForm.astro';
           </a>
         ))}
       </div>
+
+      <div class="text-center mt-10">
+        <a href="/tr/hizmetler/" class="inline-flex items-center gap-2 text-bronze hover:text-brand font-medium transition-colors">
+          Tüm Hizmetleri İncele <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <section class="py-24 bg-surface border-y border-primary">
+  <section class="py-14 md:py-20 bg-surface border-y border-primary">
     <div class="container mx-auto px-4 max-w-6xl">
-      <div class="flex flex-col lg:flex-row items-center gap-16">
+      <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-14">
         <div class="w-full lg:w-5/12 relative">
           <div class="absolute -inset-4 bg-brand/10 rounded-3xl transform rotate-3"></div>
           <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-primary border border-surface">
@@ -84,29 +84,25 @@ import ContactForm from '../../components/ContactForm.astro';
           </p>
           <div class="bg-primary p-6 rounded-xl border border-surface mb-8">
             <ul class="space-y-4 text-ivory/90 font-medium">
-              <li class="flex items-center gap-4"><div class="w-2 h-2 rounded-full bg-brand"></div> <span>İran'da Birinci Derece Lisanslı Avukat</span></li>
+              <li class="flex items-center gap-4"><div class="w-2 h-2 rounded-full bg-brand"></div> <span>وکیل پایه یک دادگستری</span></li>
               <li class="flex items-center gap-4"><div class="w-2 h-2 rounded-full bg-accent"></div> <span>Türkiye'de Resmî Yeminli Tercüman</span></li>
-              <li class="flex items-center gap-4"><div class="w-2 h-2 rounded-full bg-rose"></div> <span>Türkiye Göçmenlik Süreçleri Danışmanı</span></li>
+              <li class="flex items-center gap-4"><div class="w-2 h-2 rounded-full bg-rose"></div> <span>Türkiye’de Göçmenlik Avukatı</span></li>
               <li class="flex items-center gap-4"><div class="w-2 h-2 rounded-full bg-bronze"></div> <span>İran-İtalya Ticaret Odası Üyesi</span></li>
             </ul>
           </div>
           <p class="text-sm text-ivory/50 bg-primary/30 p-4 rounded-lg border border-primary">
-            Mina Beigi, İran'da lisanslı avukat olup Türkiye'de resmî tercümanlık, göçmenlik süreçleri danışmanlığı, başvuru koordinasyonu ve yatırım süreçleri alanlarında profesyonel destek sunmaktadır.
+            Mina Beigi; resmî tercümanlık, göçmenlik, yatırım, şirket kuruluşu ve başvuru süreçlerinde Türkiye–İran ekseninde profesyonel destek sunmaktadır.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="iletisim" class="py-24 bg-primary relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="max-w-3xl mx-auto text-center mb-12">
-        <h2 class="text-4xl font-bold text-ivory mb-6">İletişime Geçin</h2>
-        <p class="text-ivory/70 text-lg">Dosya değerlendirmesi ve profesyonel başvuru desteği için formumuzu doldurun, ekibimiz size en kısa sürede dönüş yapsın.</p>
-      </div>
-      <ContactForm lang="tr" />
+  <section class="py-9 md:py-10 bg-primary border-t border-surface">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl font-bold text-ivory mb-3">Dosyanızı konuşalım</h2>
+      <p class="text-ivory/70 mb-6">İletişim sayfasından durumunuzu paylaşın veya WhatsApp üzerinden doğrudan ulaşın.</p>
+      <a href="/tr/iletisim/" class="inline-flex bg-brand text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#A33850] transition-colors">İletişim Sayfasına Git</a>
     </div>
   </section>
 </BaseLayout>

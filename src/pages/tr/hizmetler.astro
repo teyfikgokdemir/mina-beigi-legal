@@ -7,26 +7,29 @@ const services = [
   { link: '/tr/ogrenci-ikameti/', title: 'Öğrenci İkameti', desc: 'Türkiye\'deki üniversitelerde eğitim gören uluslararası öğrenciler için ikamet izni (öğrenci vizesi) başvuru koordinasyonu.' },
   { link: '/tr/gayrimenkul-ikamet-vatandaslik/', title: 'İkamet ve Vatandaşlık', desc: 'Gayrimenkul yatırımı yoluyla Türkiye\'de ikamet izni ve Türk vatandaşlığı başvuru süreçlerinin eksiksiz yönetimi.' },
   { link: '/tr/sirket-kurulusu/', title: 'Şirket Kuruluşu', desc: 'Yabancı yatırımcılar için Türkiye\'de limited (LTD) veya anonim (A.Ş.) şirket kurulumu, ticaret odası kayıtları ve yasal süreç danışmanlığı.' },
-  { link: '/tr/yatirim-danismanligi/', title: 'Yatırım Danışmanlığı', desc: 'Türkiye pazarında doğru yatırım alanlarının belirlenmesi, risk analizi ve yerel uzmanlara yönlendirme desteği.' },
-  { link: '/tr/deport-ret-surecleri/', title: 'Deport / Ret Süreçleri', desc: 'İkamet izni ret kararları ve deport (sınır dışı) dosyalarının ön incelemesi ve hukuki uzmanlara yönlendirme hizmeti.' },
-  { link: '/tr/tercumanlik/', title: 'Resmî Tercümanlık', desc: 'Noter onaylı ve resmî kurumlarda geçerli her türlü belgenin Türkçe-Farsça yeminli tercüme ve tasdik işlemleri.' }
+  { link: '/tr/yatirim-danismanligi/', title: 'Yatırım Danışmanlığı', desc: 'Türkiye pazarında yatırım hedefi, risk, şirketleşme, gayrimenkul ve uygulama planının koordinasyonu.' },
+  { link: '/tr/deport-ret-surecleri/', title: 'Deport / Ret Süreçleri', desc: 'İkamet retleri, tahdit ve deport dosyalarının ön değerlendirmesi ve izlenebilecek süreçlerin açıklanması.' },
+  { link: '/tr/tercumanlik/', title: 'Resmî Tercümanlık', desc: 'Noter onaylı ve resmî kurumlarda geçerli her türlü belgenin Türkçe-Farsça yeminli tercüme ve tasdik işlemleri.' },
+  { link: '/tr/banka-vergi-finansal-surecler/', title: 'Banka, Vergi ve Finansal Süreçler', desc: 'Yabancılar için vergi numarası, bireysel veya şirket banka hesabı, KYC ve finansal belge hazırlığı danışmanlığı.' }
 ];
 ---
-<BaseLayout title="Hizmetlerimiz | Mina Beigi" description="Türkiye’de Göçmenlik, Yatırım, Şirket Kuruluşu ve Resmî Süreç Danışmanlığı" lang="tr">
+<BaseLayout title="Türkiye’de Çalışma İzni, Şirket Kuruluşu, Yatırım ve Göçmenlik Hizmetleri" description="İranlılar ve diğer yabancılar için Türkiye’de çalışma izni, öğrenci ikameti, şirket kuruluşu, yatırım, gayrimenkul, resmî tercümanlık, banka, vergi ve deport/ret süreçleri." lang="tr">
   <Fragment slot="head">
     <link rel="canonical" href={SITE_URL + "/tr/hizmetler"} />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Mina Beigi Uluslararası Danışmanlık",
-        "description": "Türkiye'de göçmenlik, yatırım ve şirket kuruluşu süreçlerinde profesyonel danışmanlık hizmetleri.",
-        "url": "{SITE_URL}/tr/hizmetler"
-      }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Mina Beigi Türkiye danışmanlık hizmetleri",
+      "itemListElement": services.map((service, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": service.title,
+        "url": SITE_URL + service.link
+      }))
+    })} />
   </Fragment>
 
-  <div class="relative py-32 bg-primary border-b border-primary overflow-hidden">
+  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center object-cover opacity-80 z-0" style="background-image: url('/images/hero-company.webp');"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent z-10"></div>
     <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
@@ -37,17 +40,17 @@ const services = [
       </nav>
       <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6 leading-tight">Türkiye’de Göçmenlik, Yatırım ve <span class="text-brand">Resmî Süreç</span> Danışmanlığı</h1>
       <p class="text-lg text-ivory/80 max-w-2xl mx-auto leading-relaxed">
-        Türkiye ile İran arasındaki ticari, hukuki ve resmî işlerinizde profesyonel çözüm ortağınız. Tüm hizmetlerimizi aşağıdan inceleyebilirsiniz.
+        Türkiye ile İran arasındaki göçmenlik, yatırım, ticari ve resmî süreçlerde profesyonel destek. Hizmet başlıklarını aşağıdan inceleyebilirsiniz.
       </p>
     </div>
   </div>
 
   <div class="py-24 bg-primary">
     <div class="container mx-auto px-4 max-w-6xl">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
         {services.map(s => (
-          <div class="bg-surface border border-primary rounded-xl p-8 hover:-translate-y-2 hover:border-brand transition-all duration-300 shadow-lg flex flex-col">
-            <h3 class="text-2xl font-bold text-ivory mb-4">{s.title}</h3>
+          <div class="bg-surface border border-primary rounded-2xl p-7 hover:-translate-y-1.5 hover:border-brand hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 flex flex-col min-h-[250px]">
+            <h3 class="text-xl xl:text-2xl font-bold text-ivory mb-4 leading-snug">{s.title}</h3>
             <p class="text-ivory/70 leading-relaxed mb-8 flex-grow">{s.desc}</p>
             <a href={s.link} class="inline-flex items-center gap-2 text-brand font-semibold hover:text-bronze transition-colors mt-auto">
               Detayları İncele <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -55,6 +58,23 @@ const services = [
           </div>
         ))}
       </div>
+
+      <section class="mt-12 bg-surface/70 border border-primary rounded-2xl p-6 md:p-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-5 text-center">Hizmet kapsamımız</h2>
+        <div class="grid md:grid-cols-2 gap-3 text-ivory/75">
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Türkiye’de çalışma izni</strong><br><span class="text-sm">Başvuru, belge hazırlığı, yenileme ve takip koordinasyonu.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Türkiye’de öğrenci ikameti</strong><br><span class="text-sm">Öğrenci ikamet dosyasının hazırlanması ve başvuru sürecinin takibi.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Türkiye’de resmî tercümanlık</strong><br><span class="text-sm">Farsça–Türkçe resmî belge ve işlem tercümesi.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Gayrimenkul alımı yoluyla ikamet ve vatandaşlık</strong><br><span class="text-sm">Mülk, değerleme, tapu ve başvuru süreci koordinasyonu.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Şirket kuruluşu</strong><br><span class="text-sm">Şirket yapısı, tescil, ticaret odası ve operasyon başlangıcı.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Yatırım danışmanlığı</strong><br><span class="text-sm">Türkiye’de yatırım, pazar girişi ve ticari yapı planlaması.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Ticaret kartı / ticari kart işlemleri</strong><br><span class="text-sm">Faaliyete göre gerekli ticari kayıt ve kart süreçlerinin koordinasyonu.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">İstanbul ve Türkiye’de fabrika ve üretim atölyesi kurulumu</strong><br><span class="text-sm">İstanbul ve Türkiye’de sanayi bölgelerinde fabrika, tesis ve üretim atölyesi kurulumu için süreç planlama ve resmî işlem koordinasyonu.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Gerekli izinlerin alınması</strong><br><span class="text-sm">Faaliyete bağlı ruhsat, izin ve resmî başvuru koordinasyonu.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4"><strong class="text-ivory">Uluslararası banka hesabı açılması</strong><br><span class="text-sm">Bireysel ve kurumsal hesaplar için KYC ve belge hazırlığı.</span></div>
+          <div class="bg-primary/30 rounded-xl p-4 md:col-span-2"><strong class="text-ivory">Türkiye’de deport ve ret sorunlarının çözüm süreci</strong><br><span class="text-sm">Ret, tahdit ve deport dosyalarının değerlendirilmesi; izlenebilecek resmî ve hukuki yolların koordinasyonu.</span></div>
+        </div>
+      </section>
     </div>
   </div>
 </BaseLayout>

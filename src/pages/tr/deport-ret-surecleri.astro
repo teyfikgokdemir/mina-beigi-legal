@@ -1,57 +1,78 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContactForm from '../../components/ContactForm.astro';
 import { SITE_URL } from '../../consts';
 ---
-<BaseLayout title="Deport / Ret Danışmanlığı | Mina Beigi" description="Deport süreci danışmanlığı ve reddedilen ikamet dosyalarının değerlendirmesi. Giriş yasağı süreç takibi." lang="tr">
+<BaseLayout title="Deport / Ret Süreçleri | Mina Beigi" description="Ret, tahdit ve deport dosyalarında mevcut durumun ön değerlendirmesi ve izlenebilecek süreçlerin açıklanması." lang="tr">
   <Fragment slot="head">
-    <link rel="canonical" href={SITE_URL + "/tr/deport-ret-surecleri"} />
-    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/deport-ret-surecleri"} />
-    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/deport-ret-surecleri"} />
-    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/deport-ret-surecleri"} />
+    <link rel="canonical" href={SITE_URL + "/tr/deport-ret-surecleri/"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/deport-ret-surecleri/"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/deport-rejection/"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/deport-ret-surecleri/"} />
   </Fragment>
 
-  <div class="relative py-32 bg-primary border-b border-primary overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center object-cover opacity-80 z-0" style="background-image: url('/images/hero-translation.webp');"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent z-10"></div>
+  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-75 z-0" style="background-image: url('/images/hero-deport-rejection.webp');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/35 to-primary/10 z-10"></div>
     <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
-      <nav class="text-sm text-bronze/80 mb-6 flex items-center justify-center gap-2" aria-label="Breadcrumb" dir="ltr">
-        <a href="/tr/" class="hover:text-brand transition-colors">Ana Sayfa</a>
-        <span>/</span>
-        <a href="/tr/hizmetler" class="hover:text-brand transition-colors">Hizmetler</a>
-        <span>/</span>
-        <span class="text-ivory/60" aria-current="page">Deport / Ret Danışmanlığı</span>
+      <nav class="text-sm text-bronze/80 mb-5 flex items-center justify-center gap-2" aria-label="Breadcrumb">
+        <a href="/tr/" class="hover:text-brand">Ana Sayfa</a><span>/</span>
+        <a href="/tr/hizmetler/" class="hover:text-brand">Hizmetler</a><span>/</span>
+        <span class="text-ivory/60" aria-current="page">Deport / Ret Süreçleri</span>
       </nav>
-      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">Deport / Ret Danışmanlığı</h1>
-      <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">Deport / Ret Süreçleri</h1>
+      <p class="text-ivory/75 max-w-2xl mx-auto">Ret, tahdit ve deport dosyalarında mevcut durumun ön değerlendirmesi ve izlenebilecek süreçlerin açıklanması.</p>
     </div>
   </div>
-  
-  <div class="py-20 bg-primary">
-    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="ltr">
+
+  <main class="py-12 md:py-16 bg-primary">
+    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed text-lg space-y-10">
       
-      <section>
-        <p class="mb-4">Türkiye'de ikamet izni başvurularının reddedilmesi (Örn: G-87, V-84 gibi tahdit kodları) veya sınır dışı (deport) kararları, yabancılar için karmaşık ve stresli süreçlerdir.</p>
-        <p>Reddedilen dosyaların değerlendirilmesi, idari itiraz süreçlerinin takibi ve giriş yasağının (deport) kaldırılmasına yönelik meşruhatlı vize başvurularının koordinasyonu konularında, uzman çözüm ortaklarımızla birlikte profesyonel dosya yönetimi sunuyoruz.</p>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-ivory mt-10 mb-4">Süreç Nasıl İşler?</h2>
-        <ul class="list-disc list-inside space-y-2 text-ivory/70">
-          <li>Karar belgesinin (Tebliğ Formu) yasal süreler içinde detaylı incelenmesi</li>
-          <li>Ret veya tahdit kodunun gerekçesinin saptanması</li>
-          <li>İdari itiraz veya meşruhatlı vize (Özel amaçlı vize) stratejisinin belirlenmesi</li>
-          <li>Dosya hazırlığı ve takibi</li>
-        </ul>
-      </section>
-    
+<section>
+  <div class="mb-6 rounded-2xl border border-brand/40 bg-surface p-5">
+    <h2 class="text-2xl font-bold text-ivory mb-2">Türkiye’de deport ve ret sorunlarının çözüm süreci</h2>
+    <p class="text-ivory/75">Ret, tahdit, giriş yasağı ve deport dosyalarının mevcut durumunun incelenmesi; izlenebilecek resmî ve hukuki yolların koordinasyonu.</p>
+  </div>
+  <h2 class="text-3xl font-bold text-ivory mb-4">Ret veya deport kararında ilk adım: dosyayı doğru okumak</h2>
+  <p>İkamet başvurusunun reddi, tahdit kodu veya sınır dışı kararı aynı prosedür değildir. Hangi belgenin tebliğ edildiği, karar tarihi, mevcut statü ve varsa giriş yasağı bilgisi birlikte değerlendirilmelidir.</p>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">Ön değerlendirmede neye bakılır?</h2>
+  <ul class="list-disc list-inside space-y-2 text-ivory/70">
+    <li>Ret veya karar belgesinin türü ve tebliğ tarihi</li>
+    <li>Pasaport ve mevcut ikamet/başvuru durumu</li>
+    <li>Varsa tahdit kodu veya giriş yasağı bilgisi</li>
+    <li>Önceki başvurular ve sunulan belgeler</li>
+  </ul>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">Nasıl destek sağlıyoruz?</h2>
+  <p>Dosyanın mevcut durumu açıklanır, eksik bilgi ve belgeler belirlenir, hangi resmî veya hukuki süreçlerin gündeme gelebileceği konusunda yol haritası oluşturulur ve gerekli belge/tercüme koordinasyonu sağlanır. Hukuki temsil veya dava işlemleri söz konusu olduğunda işlem, Türkiye’de bu yetkiye sahip avukatlar tarafından yürütülür.</p>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">Sık sorulan sorular</h2>
+  <div class="space-y-3">
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">Ret kararı alan herkes aynı yolu mu izler?</summary><p class="mt-3 text-sm">Hayır. Kararın türü, tebliğ tarihi ve kişinin mevcut statüsü izlenecek yolu değiştirir.</p></details>
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">Tahdit kodu ne anlama gelir?</summary><p class="mt-3 text-sm">Kodun anlamı ve etkisi dosyaya göre değişebilir; yalnızca kod numarasına bakılarak sonuç çıkarılmamalıdır.</p></details>
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">Giriş yasağının kaldırılması garanti edilebilir mi?</summary><p class="mt-3 text-sm">Hayır. Sonuç, kararın nedeni ve yetkili makamların değerlendirmesine bağlıdır.</p></details>
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">İlk görüşmede ne getirmeliyim?</summary><p class="mt-3 text-sm">Karar/tebliğ belgesi, pasaport, varsa ikamet kartı ve önceki başvuru evrakları faydalıdır.</p></details>
+  </div>
+</section>
+
       
-      <div class="mt-16 pt-16 border-t border-surface">
-        <div class="bg-surface p-8 md:p-12 rounded-2xl border border-primary shadow-xl">
-          <h2 class="text-3xl font-bold text-ivory mb-6 text-center">Profesyonel Destek Alın</h2>
-          <p class="text-center mb-8">Sürecinizle ilgili ön değerlendirme yapmak ve danışmanlık talep etmek için formu doldurun.</p>
-          <ContactForm lang="tr" />
+      <section class="pt-7 border-t border-surface">
+        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">Durumunuzu hızlıca değerlendirelim</h2>
+          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">Kısa bir ön görüşme için WhatsApp’tan yazabilir veya detaylı bilgi bırakmak için iletişim sayfasını kullanabilirsiniz.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-3">
+            <a href="https://wa.me/905392425624" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">
+              WhatsApp Türkiye
+            </a>
+            <a href="/tr/iletisim/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">
+              İletişim Sayfası
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
-  </div>
+  </main>
 </BaseLayout>

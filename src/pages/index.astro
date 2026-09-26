@@ -41,22 +41,13 @@ import '../styles/global.css';
     }
     .brand-header {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
-    .brand-title {
-      color: var(--brand);
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-      margin: 0 0 0.5rem 0;
-    }
-    .brand-subtitle {
-      color: var(--bronze);
-      font-size: 0.875rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      opacity: 0.8;
-      margin: 0;
+    .landing-logo {
+      display: block;
+      width: min(520px, 82vw);
+      height: auto;
+      margin: 0 auto;
     }
     .cards-grid {
       display: grid;
@@ -204,8 +195,7 @@ import '../styles/global.css';
 <body>
   <main class="container">
     <div class="brand-header">
-      <h1 class="brand-title">MINA BEIGI</h1>
-      <p class="brand-subtitle">International Consulting</p>
+      <img src="/images/mina-beigi-logo.svg" alt="Mina Beigi International Consulting" class="landing-logo" />
     </div>
     
     <div class="cards-grid">
