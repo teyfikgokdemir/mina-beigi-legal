@@ -3,17 +3,35 @@
 </button>
 <script>
   const backToTop = document.getElementById('backToTop');
-  const updateBackToTop = () => {
+  let hideTimer;
+
+  const hideButton = () => {
+    if (!backToTop) return;
+    backToTop.classList.add('opacity-0','pointer-events-none','translate-y-2');
+    backToTop.classList.remove('opacity-100');
+  };
+
+  const revealButton = () => {
     if (!backToTop) return;
     if (window.scrollY > 360) {
       backToTop.classList.remove('opacity-0','pointer-events-none','translate-y-2');
       backToTop.classList.add('opacity-100');
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(hideButton, 2200);
     } else {
-      backToTop.classList.add('opacity-0','pointer-events-none','translate-y-2');
-      backToTop.classList.remove('opacity-100');
+      clearTimeout(hideTimer);
+      hideButton();
     }
   };
-  window.addEventListener('scroll', updateBackToTop, { passive: true });
-  window.addEventListener('load', updateBackToTop);
-  backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  window.addEventListener('scroll', revealButton, { passive: true });
+  window.addEventListener('load', hideButton);
+  backToTop?.addEventListener('mouseenter', () => clearTimeout(hideTimer));
+  backToTop?.addEventListener('mouseleave', () => {
+    if (window.scrollY > 360) hideTimer = setTimeout(hideButton, 1200);
+  });
+  backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    hideButton();
+  });
 </script>
