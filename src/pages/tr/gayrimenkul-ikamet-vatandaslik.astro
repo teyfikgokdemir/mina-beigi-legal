@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ContactForm from '../../components/ContactForm.astro';
 import { SITE_URL } from '../../consts';
 ---
 <BaseLayout title="Gayrimenkul, İkamet ve Vatandaşlık | Mina Beigi" description="Gayrimenkul yatırımı, ikamet ve vatandaşlık hedeflerinde işlem öncesi uygunluk ve belge koordinasyonu." lang="tr">
@@ -28,11 +27,19 @@ import { SITE_URL } from '../../consts';
 <section><h2 class="text-2xl font-bold text-ivory mb-4">Süreç nasıl ilerler?</h2><ol class="space-y-3 text-ivory/70"><li><strong class="text-ivory">1. Hedef analizi:</strong> Yatırım, ikamet veya vatandaşlık hedefi netleştirilir.</li><li><strong class="text-ivory">2. Mülk ve belge kontrolü:</strong> Tapu, değerleme ve ödeme belgeleri gözden geçirilir.</li><li><strong class="text-ivory">3. İşlem koordinasyonu:</strong> Tercüme, noter/tapu ve gerekli diğer resmî adımlar planlanır.</li><li><strong class="text-ivory">4. Başvuru dosyası:</strong> Kişisel belgeler ile yatırım belgelerinin birbiriyle uyumu kontrol edilir.</li></ol></section>
 <section><h2 class="text-2xl font-bold text-ivory mb-4">Dikkat edilmesi gerekenler</h2><p>Gayrimenkul ve vatandaşlık mevzuatı dönemsel olarak değişebilir. Sabit eşik, bölge veya sonuç varsayımıyla işlem yapılmamalı; güncel koşullar satın alma öncesinde kontrol edilmelidir.</p></section>
 <section><h2 class="text-2xl font-bold text-ivory mb-4">Sık sorulan sorular</h2><div class="space-y-3"><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">Her ev ikamet başvurusuna uygun mu?</summary><p class="mt-3 text-sm">Hayır. Taşınmazın niteliği, konumu ve güncel başvuru koşulları birlikte değerlendirilmelidir.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">Vatandaşlık için yalnızca tapu yeterli mi?</summary><p class="mt-3 text-sm">Hayır. Yatırımın türüne göre ek değerleme, ödeme ve uygunluk belgeleri gündeme gelebilir.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">Satın almadan önce dosya kontrolü yapılabilir mi?</summary><p class="mt-3 text-sm">Evet. İşlem öncesi kontrol, yatırım hedefiyle mülkün ve belgelerin uyumunu görmek açısından önemlidir.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">Sonuç garanti edilir mi?</summary><p class="mt-3 text-sm">Hayır. Son karar yetkili makamların değerlendirmesine bağlıdır.</p></details></div></section>
-      <section class="pt-8 border-t border-surface">
-        <div class="bg-surface p-6 md:p-10 rounded-2xl border border-primary shadow-xl">
-          <h2 class="text-3xl font-bold text-ivory mb-4 text-center">Dosyanızı Birlikte Değerlendirelim</h2>
-          <p class="text-center text-ivory/70 mb-8">Yatırım ve ikamet hedefinizi paylaşın; uygunluk ve hazırlık başlıklarını birlikte değerlendirelim.</p>
-          <ContactForm lang="tr" />
+      
+      <section class="pt-7 border-t border-surface">
+        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">Durumunuzu hızlıca değerlendirelim</h2>
+          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">Kısa bir ön görüşme için WhatsApp’tan yazabilir veya detaylı bilgi bırakmak için iletişim sayfasını kullanabilirsiniz.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-3">
+            <a href="https://wa.me/905392425624" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">
+              WhatsApp Türkiye
+            </a>
+            <a href="/tr/iletisim/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">
+              İletişim Sayfası
+            </a>
+          </div>
         </div>
       </section>
     </div>
