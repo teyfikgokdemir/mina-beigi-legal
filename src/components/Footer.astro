@@ -21,12 +21,12 @@ const marqueeItems = isTr
 <footer class="bg-surface border-t border-primary/80">
   <div class="container mx-auto px-4 pt-10 md:pt-12 pb-10" dir={isTr ? "ltr" : "rtl"}>
 
-    <div class="footer-marquee mb-6 overflow-hidden rounded-xl border border-primary/80 bg-primary/35" aria-label={isTr ? "Hizmet başlıkları" : "عناوین خدمات"}>
+    <div class={`footer-marquee mb-6 overflow-hidden rounded-xl border border-primary/80 bg-primary/35 ${isTr ? "is-tr" : "is-fa"}`} dir="ltr" aria-label={isTr ? "Hizmet başlıkları" : "عناوین خدمات"}>
       <div class="footer-marquee__track flex w-max items-center py-3 text-[0.78rem] md:text-sm font-medium tracking-wide text-bronze whitespace-nowrap">
         <div class="flex items-center shrink-0">
           {marqueeItems.map((item) => (
             <span class="inline-flex items-center">
-              <span class="px-5 md:px-7">{item}</span>
+              <span class="px-5 md:px-7" dir={isTr ? "ltr" : "rtl"}>{item}</span>
               <span class="text-brand/80">◆</span>
             </span>
           ))}
@@ -34,7 +34,7 @@ const marqueeItems = isTr
         <div class="flex items-center shrink-0" aria-hidden="true">
           {marqueeItems.map((item) => (
             <span class="inline-flex items-center">
-              <span class="px-5 md:px-7">{item}</span>
+              <span class="px-5 md:px-7" dir={isTr ? "ltr" : "rtl"}>{item}</span>
               <span class="text-brand/80">◆</span>
             </span>
           ))}
@@ -114,6 +114,10 @@ const marqueeItems = isTr
   .footer-marquee__track {
     animation: footerMarquee 34s linear infinite;
     will-change: transform;
+    direction: ltr;
+  }
+  .footer-marquee.is-fa .footer-marquee__track {
+    animation-direction: reverse;
   }
   .footer-marquee:hover .footer-marquee__track {
     animation-play-state: paused;
