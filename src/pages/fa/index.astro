@@ -57,8 +57,8 @@ import ContactForm from '../../components/ContactForm.astro';
           {l: '/fa/deport-rejection', t: 'مشاوره دیپورت و ریجکت', d: 'تحلیل پرونده‌های رد شده و پیگیری فرآیندهای اعتراض اداری.'},
           {l: '/fa/translation', t: 'ترجمه رسمی', d: 'ترجمه مدارک با تاییدیه نوتر و ترجمه شفاهی همزمان در ادارات.'}
         ].map(s => (
-          <a href={s.l} class="group block p-8 bg-surface rounded-xl border border-primary hover:border-brand/50 transition-all duration-300 text-start">
-            <h3 class="text-xl font-bold text-ivory mb-3 group-hover:text-brand transition-colors">{s.t}</h3>
+          <a href={s.l} class="group block p-8 bg-surface rounded-xl border border-primary hover:-translate-y-1 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-all duration-300 text-start">
+            <h3 class="text-xl font-bold text-ivory mb-3 group-hover:text-brand transition-colors">{s.t} <span class='inline-block transition-transform group-hover:-translate-x-1'>←</span></h3>
             <p class="text-ivory/60 leading-relaxed text-sm">{s.d}</p>
           </a>
         ))}

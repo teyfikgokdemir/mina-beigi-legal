@@ -3,28 +3,247 @@ import '../styles/global.css';
 ---
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mina Beigi | International Consulting</title>
-    <style>
-      body { background: #17191D; color: #F3EEE7; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: sans-serif; flex-direction: column; }
-      .brand { color: #8A2F43; font-size: 2rem; font-weight: bold; margin-bottom: 2rem; letter-spacing: 2px; }
-      .links { display: flex; gap: 2rem; }
-      a { padding: 1rem 2rem; border: 1px solid #242329; border-radius: 8px; color: #F3EEE7; text-decoration: none; transition: 0.3s; background: #242329; }
-      a:hover { background: #8A2F43; border-color: #8A2F43; }
-    </style>
-  </head>
-  <body>
-    <div class="brand">MINA BEIGI</div>
-    <div class="links">
-      <a href="/tr/">Türkçe (Istanbul)</a>
-      <a href="/fa/">فارسی (Tehran)</a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mina Beigi | International Consulting</title>
+  <meta name="description" content="Mina Beigi - International Consulting. Türkiye ve İran arasında danışmanlık hizmetleri. خدمات مشاوره بین ایران و ترکیه." />
+  
+  <style>
+    :root {
+      --primary: #17191D;
+      --surface: #242329;
+      --brand: #8A2F43;
+      --accent: #315B82;
+      --ivory: #F3EEE7;
+      --bronze: #A98B68;
+    }
+    body {
+      background-color: var(--primary);
+      color: var(--ivory);
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .brand-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .brand-title {
+      color: var(--brand);
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      margin: 0 0 0.5rem 0;
+    }
+    .brand-subtitle {
+      color: var(--bronze);
+      font-size: 0.875rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin: 0;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+    @media (min-width: 768px) {
+      .cards-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+    
+    .lang-card {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-decoration: none;
+      border: 1px solid var(--surface);
+      background-color: var(--surface);
+      transition: all 0.4s ease;
+      group: lang-card;
+    }
+    
+    .lang-card:hover, .lang-card:focus-visible {
+      transform: translateY(-8px);
+      border-color: var(--brand);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      outline: none;
+    }
+
+    .lang-card:focus-visible {
+      box-shadow: 0 0 0 3px var(--brand);
+    }
+    
+    .card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+      transition: transform 0.7s ease, opacity 0.4s ease;
+      z-index: 1;
+    }
+    
+    .lang-card:hover .card-bg, .lang-card:focus-visible .card-bg {
+      transform: scale(1.05);
+      opacity: 0.7;
+    }
+    
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(23,25,29,0.95) 0%, rgba(23,25,29,0.7) 40%, rgba(23,25,29,0.3) 100%);
+      z-index: 2;
+      transition: background 0.4s ease;
+    }
+    
+    .lang-card:hover .card-overlay {
+      background: linear-gradient(to top, rgba(23,25,29,0.95) 0%, rgba(138,47,67,0.4) 40%, rgba(23,25,29,0.3) 100%);
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 3;
+      padding: 2rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .card-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: rgba(243,238,231,0.1);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(243,238,231,0.2);
+      border-radius: 999px;
+      color: var(--ivory);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    
+    .card-title {
+      color: var(--ivory);
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .lang-card:hover .card-title {
+      color: #fff;
+    }
+    
+    .card-desc {
+      color: rgba(243,238,231,0.7);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0 0 1.5rem 0;
+      max-width: 90%;
+    }
+    
+    .card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--bronze);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    
+    .lang-card:hover .card-cta {
+      color: var(--ivory);
+    }
+    
+    .card-cta svg {
+      transition: transform 0.3s;
+    }
+    
+    .lang-card:hover .card-cta svg {
+      transform: translateX(4px);
+    }
+    
+    .lang-card.rtl-card .card-cta svg {
+      transform: rotate(180deg);
+    }
+    .lang-card.rtl-card:hover .card-cta svg {
+      transform: rotate(180deg) translateX(4px);
+    }
+
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="brand-header">
+      <h1 class="brand-title">MINA BEIGI</h1>
+      <p class="brand-subtitle">International Consulting</p>
     </div>
-    <script>
-      const lang = localeStorage.getItem('mb_lang') || navigator.language.slice(0,2);
-      if (lang === 'fa') window.location.href = '/fa/';
-      else if (lang === 'tr') window.location.href = '/tr/';
-    </script>
-  </body>
+    
+    <div class="cards-grid">
+      <!-- TR Card -->
+      <a href="/tr/" class="lang-card" aria-label="Türkçe siteye giriş yapın">
+        <div class="card-bg" style="background-image: url('/images/istanbul-bg.webp');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <span class="card-tag">İstanbul</span>
+          <h2 class="card-title">Türkçe</h2>
+          <p class="card-desc">Türkiye'de danışmanlık, başvuru koordinasyonu ve resmî süreçler.</p>
+          <div class="card-cta">
+            Siteye Git 
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </div>
+        </div>
+      </a>
+      
+      <!-- FA Card -->
+      <a href="/fa/" class="lang-card rtl-card" aria-label="ورود به سایت فارسی" dir="rtl">
+        <div class="card-bg" style="background-image: url('/images/tehran-bg.webp');"></div>
+        <div class="card-overlay"></div>
+        <div class="card-content">
+          <span class="card-tag">تهران</span>
+          <h2 class="card-title">فارسی</h2>
+          <p class="card-desc">خدمات مشاوره، هماهنگی پرونده‌ها و امور رسمی میان ایران و ترکیه.</p>
+          <div class="card-cta">
+            ورود به سایت
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+  </main>
+  
+  <script>
+    // Remove auto-redirect to allow users to see this beautiful screen
+    // or keep a very subtle language hint logic if needed.
+    // For now, we want the user to make a manual choice.
+  </script>
+</body>
 </html>
