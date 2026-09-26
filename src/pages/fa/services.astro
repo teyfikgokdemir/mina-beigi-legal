@@ -9,7 +9,8 @@ const services = [
   { link: '/fa/work-permit/', title: 'مجوز کار', desc: 'بررسی شرایط، آماده‌سازی مدارک و هماهنگی درخواست مجوز کار برای مدیران، کارکنان و شرکای تجاری.' },
   { link: '/fa/student-residence/', title: 'اقامت تحصیلی', desc: 'مشاوره و هماهنگی دریافت اقامت دانشجویی برای پذیرفته‌شدگان دانشگاه‌های ترکیه.' },
   { link: '/fa/translation/', title: 'ترجمه رسمی', desc: 'ترجمه رسمی، تایید نوتر (دفتر اسناد رسمی) و سفارت برای تمامی مدارک هویتی و تجاری.' },
-  { link: '/fa/deport-rejection/', title: 'بررسی اولیه پرونده‌های دیپورت', desc: 'ارزیابی اولیه دلایل ریجکتی، محدودیت یا منع ورود و توضیح مسیرهای قابل پیگیری.' }
+  { link: '/fa/deport-rejection/', title: 'بررسی اولیه پرونده‌های دیپورت', desc: 'ارزیابی اولیه دلایل ریجکتی، محدودیت یا منع ورود و توضیح مسیرهای قابل پیگیری.' },
+  { link: '/fa/banking-tax-financial-processes/', title: 'حساب بانکی، مالیات و امور مالی', desc: 'راهنمایی برای شماره مالیاتی، حساب بانکی شخصی و شرکتی، KYC و آماده‌سازی مدارک مالی در ترکیه.' }
 ];
 ---
 <BaseLayout title="خدمات | Mina Beigi" description="خدمات مشاوره سرمایه‌گذاری، اقامت و امور رسمی در ترکیه" lang="fa">
@@ -44,10 +45,10 @@ const services = [
 
   <div class="py-24 bg-primary">
     <div class="container mx-auto px-4 max-w-6xl" dir="rtl">
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
         {services.map(s => (
-          <div class="bg-surface border border-primary rounded-xl p-8 hover:-translate-y-2 hover:border-brand transition-all duration-300 shadow-lg flex flex-col text-start">
-            <h3 class="text-2xl font-bold text-ivory mb-4">{s.title}</h3>
+          <div class="bg-surface border border-primary rounded-2xl p-7 hover:-translate-y-1.5 hover:border-brand hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 flex flex-col text-start min-h-[250px]">
+            <h3 class="text-xl xl:text-2xl font-bold text-ivory mb-4 leading-snug">{s.title}</h3>
             <p class="text-ivory/70 leading-relaxed mb-8 flex-grow">{s.desc}</p>
             <a href={s.link} class="inline-flex items-center gap-2 text-brand font-semibold hover:text-bronze transition-colors mt-auto w-fit">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
