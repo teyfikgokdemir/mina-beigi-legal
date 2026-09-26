@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppBtn from '../components/WhatsAppBtn.astro';
 import BackToTop from '../components/BackToTop.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import { SITE_URL } from '../consts';
 
 interface Props {
@@ -57,5 +58,6 @@ const currentUrl = new URL(Astro.request.url);
     <Footer lang={lang} />
     <WhatsAppBtn lang={lang} />
     <BackToTop />
+    <CookieBanner lang={lang} />
   </body>
 </html>
