@@ -266,3 +266,20 @@
     }
   }
 }
+
+@layer components {
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: all 1s;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@layer utilities {
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+}

@@ -89,7 +89,13 @@ const serviceCatalog = [
       }
     })} />
   </head>
-  <body class="flex flex-col min-h-screen bg-primary selection:bg-brand selection:text-white">
+  <body class="flex flex-col min-h-screen bg-primary selection:bg-brand selection:text-white relative overflow-x-hidden">
+    <!-- Ambient Modern Glows (Glassmorphism / Mesh Background) -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+      <div class="absolute top-[-15%] left-[-10%] w-[50%] h-[50%] bg-brand/10 blur-[130px] rounded-full mix-blend-screen opacity-70"></div>
+      <div class="absolute bottom-[-15%] right-[-10%] w-[50%] h-[50%] bg-accent/10 blur-[130px] rounded-full mix-blend-screen opacity-60"></div>
+    </div>
+    
     <Header lang={lang} />
     <main class="flex-grow">
       <slot />
@@ -98,5 +104,22 @@ const serviceCatalog = [
     <WhatsAppBtn lang={lang} />
     <BackToTop />
     <CookieBanner lang={lang} />
+
+    <!-- Modern Scroll Reveal Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              // Don't unobserve if you want it to fade in every time, but usually we unobserve for a one-time elegant entrance.
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+      });
+    </script>
   </body>
 </html>

@@ -14,8 +14,9 @@ const nav = isTr ? [
   { name: "تماس با ما", href: "/fa/contact/" },
 ];
 
-const ctaText = isTr ? "Danışmanlık Talebi" : "درخواست مشاوره";
-const ctaLink = isTr ? "/tr/iletisim/" : "/fa/contact/";
+const ctaText = isTr ? "WhatsApp'tan Yazın" : "تماس در واتساپ";
+const waMsg = encodeURIComponent(isTr ? "Merhaba, danışmanlık hizmetleriniz hakkında bilgi almak istiyorum." : "سلام، من می‌خواهم در مورد خدمات مشاوره شما اطلاعاتی کسب کنم.");
+const ctaLink = isTr ? `https://wa.me/905392425624?text=${waMsg}` : `https://wa.me/989125102088?text=${waMsg}`;
 
 const otherLangLabel = isTr ? "Farsça" : "Türkçe";
 

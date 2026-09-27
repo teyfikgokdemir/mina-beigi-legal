@@ -38,8 +38,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-14 md:py-20 bg-primary">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center mb-8 md:mb-10" dir="rtl">
-        <h2 class="text-4xl font-bold text-ivory mb-4">خدمات تخصصی ما</h2>
-        <p class="text-ivory/60 text-base md:text-lg text-center mx-auto xl:w-fit xl:max-w-none xl:whitespace-nowrap">همراهی حرفه‌ای در سرمایه‌گذاری، ثبت شرکت، اقامت و امور رسمی در ترکیه.</p>
+        <h2 class="reveal-up text-4xl font-bold text-ivory mb-4">خدمات تخصصی ما</h2>
+        <p class="reveal-up delay-100 text-ivory/60 text-base md:text-lg text-center mx-auto xl:w-fit xl:max-w-none xl:whitespace-nowrap">همراهی حرفه‌ای در سرمایه‌گذاری، ثبت شرکت، اقامت و امور رسمی در ترکیه.</p>
       </div>
       
       <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6" dir="rtl">
@@ -51,8 +51,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           {l: '/fa/student-residence', t: 'اقامت ترکیه و مجوز کار', d: 'اخذ اقامت تحصیلی و کاری، و هماهنگی فرآیندهای اقامتی در ترکیه.'},
           {l: '/fa/translation', t: 'ترجمه رسمی', d: 'ترجمه رسمی مدارک با تایید نوتر برای تمامی امور ثبتی و قانونی.'},
           {l: '/fa/deport-rejection', t: 'بررسی اولیه پرونده‌های دیپورت و ریجکت', d: 'بررسی اولیه پرونده و توضیح مسیرهای قابل پیگیری بر اساس شرایط هر پرونده.'}
-        ].map(s => (
-          <a href={s.l} class="group block p-8 bg-surface rounded-xl border border-primary hover:-translate-y-1 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-all duration-300 text-start">
+        ].map((s, index) => (
+          <a href={s.l} style={`transition-delay: ${Math.min(300, index * 100)}ms`} class="reveal-up group block p-8 bg-surface/60 backdrop-blur-md rounded-xl border border-ivory/5 hover:-translate-y-1 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-all duration-300 text-start">
             <h3 class="text-xl font-bold text-ivory mb-3 group-hover:text-brand transition-colors">{s.t} <span class='inline-block transition-transform group-hover:-translate-x-1'>&larr;</span></h3>
             <p class="text-ivory/60 leading-relaxed text-sm">{s.d}</p>
           </a>
@@ -79,7 +79,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </div>
         <div class="w-full lg:w-7/12 text-start">
           <span class="text-rose font-medium tracking-wide uppercase text-sm mb-3 block">چرا ما را انتخاب کنید؟</span>
-          <h2 class="text-4xl font-bold mb-6 text-ivory">درباره مینا بیگی</h2>
+          <h2 class="reveal-up text-4xl font-bold mb-6 text-ivory">درباره مینا بیگی</h2>
           <p class="text-lg text-ivory/80 mb-8 leading-relaxed">
             با تمرکز بر نیازهای کارآفرینان و سرمایه‌گذاران ایرانی، بستری مطمئن برای مدیریت امور تجاری و اقامتی شما در ترکیه فراهم کرده‌ایم.
           </p>

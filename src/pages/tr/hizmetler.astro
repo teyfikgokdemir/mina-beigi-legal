@@ -48,8 +48,8 @@ const services = [
   <div class="py-24 bg-primary">
     <div class="container mx-auto px-4 max-w-6xl">
       <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-        {services.map(s => (
-          <div class="group bg-surface border border-primary rounded-2xl p-7 hover:-translate-y-1.5 hover:border-brand hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 flex flex-col min-h-[250px]">
+        {services.map((s, index) => (
+          <div style={`transition-delay: ${index * 100}ms`} class="reveal-up group bg-surface/60 backdrop-blur-md border border-ivory/5 shadow-2xl rounded-2xl p-7 hover:-translate-y-1.5 hover:border-brand hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 flex flex-col min-h-[250px]">
             <div class="aspect-video w-full mb-5 rounded-xl overflow-hidden bg-primary/50 border border-primary/20"><img src={s.img} alt={s.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
             <h3 class="text-xl xl:text-2xl font-bold text-ivory mb-4 leading-snug">{s.title}</h3>
             <p class="text-ivory/70 leading-relaxed mb-8 flex-grow">{s.desc}</p>
