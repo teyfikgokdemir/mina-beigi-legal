@@ -44,13 +44,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       
       <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6" dir="rtl">
         {[
-          {l: '/fa/investment-consulting', t: 'سرمایه گذاری در ترکیه', d: 'مشاوره سرمایه گذاری در استانبول، تحلیل بازار و راهنمایی سرمایه‌گذاران خارجی.'},
-          {l: '/fa/company-formation', t: 'ثبت شرکت در ترکیه برای ایرانیان', d: 'راه اندازی کسب و کار در ترکیه، دریافت مجوزهای تجاری و هماهنگی‌های ثبت شرکت.'},
-          {l: '/fa/property-residence-citizenship', t: 'خرید ملک در ترکیه / اقامت / شهروندی', d: 'اقامت ترکیه از طریق سرمایه گذاری، بررسی اسناد ملکی و هماهنگی امور شهروندی.'},
-          {l: '/fa/work-permit', t: 'مجوزهای تجاری و رسمی', d: 'دریافت مجوز کار و اقامت تجاری برای مدیران و هماهنگی‌های رسمی.'},
-          {l: '/fa/student-residence', t: 'اقامت ترکیه و مجوز کار', d: 'اخذ اقامت تحصیلی و کاری، و هماهنگی فرآیندهای اقامتی در ترکیه.'},
-          {l: '/fa/translation', t: 'ترجمه رسمی', d: 'ترجمه رسمی مدارک با تایید نوتر برای تمامی امور ثبتی و قانونی.'},
-          {l: '/fa/deport-rejection', t: 'بررسی اولیه پرونده‌های دیپورت و ریجکت', d: 'بررسی اولیه پرونده و توضیح مسیرهای قابل پیگیری بر اساس شرایط هر پرونده.'}
+          {l: '/fa/work-permit', t: 'دریافت اجازه کار', d: 'هماهنگی درخواست‌ها بر اساس مقررات و مدیریت حرفه‌ای پرونده‌ها.', i: '/images/srv-work.jpg'},
+          {l: '/fa/property-residence-citizenship', t: 'اقامت و شهروندی', d: 'ارزیابی اولیه پرونده‌های شهروندی از طریق خرید ملک و سرمایه‌گذاری.', i: '/images/srv-citizen.jpg'},
+          {l: '/fa/company-formation', t: 'ثبت شرکت', d: 'فرآیند ثبت در اتاق بازرگانی و هماهنگی مجوزهای تجاری.', i: '/images/blog-3.jpg'},
+          {l: '/fa/investment-consulting', t: 'مشاوره سرمایه‌گذاری', d: 'راهنمایی برای جایگاه‌یابی صحیح و استراتژیک در بازار.', i: '/images/blog-10.jpg'},
+          {l: '/fa/deport-rejection', t: 'مشاوره دیپورت و ریجکت', d: 'ارزیابی اولیه پرونده‌های رد شده و توضیح روندهای قابل پیگیری.', i: '/images/blog-8.jpg'},
+          {l: '/fa/translation', t: 'ترجمه رسمی', d: 'ترجمه رسمی مدارک با تایید نوتر و ترجمه شفاهی در ادارات دولتی.', i: '/images/hero-translation.webp'}
         ].map((s, index) => (
           <a href={s.l} style={`transition-delay: ${Math.min(300, index * 100)}ms`} class="reveal-up group block p-5 md:p-7 bg-surface/60 backdrop-blur-md rounded-xl border border-ivory/5 hover:-translate-y-1 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-all duration-300 text-start">
             <div class="w-full h-36 mb-5 rounded-lg overflow-hidden border border-ivory/5 bg-primary/30"><img src={s.i} alt={s.t} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" /></div>
