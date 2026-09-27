@@ -4,28 +4,28 @@ import { SITE_URL } from '../../consts';
 
 const faq = [
   {
-    q: 'آیا اتباع خارجی می‌توانند در ترکیه شماره مالیاتی بگیرند؟',
-    a: 'بله. سامانه اداره مالیات ترکیه امکان درخواست شماره مالیاتی بالقوه برای اتباع خارجی را فراهم کرده است. اطلاعات هویتی مورد استفاده بسته به وضعیت اقامتی و نوع معامله می‌تواند متفاوت باشد.'
+    q: 'آیا اتباع خارجی می‌توانند در ترکیه شماره مالیاتی دریافت کنند؟',
+    a: 'بله. درخواست شماره شناسایی مالیاتی بالقوه برای اتباع خارجی می‌تواند از طریق اداره مالیات دیجیتال سازمان امور مالیاتی انجام شود. اطلاعات هویتی مورد استفاده ممکن است بسته به شماره ملی خارجی فعلی شخص و نوع تراکنش متفاوت باشد.'
   },
   {
-    q: 'آیا یک خارجی می‌تواند در ترکیه حساب بانکی باز کند؟',
-    a: 'بانک‌ها می‌توانند برای مشتری خارجی حساب باز کنند، اما شرایط پذیرش در هر بانک متفاوت است. پاسپورت، آدرس، شماره مالیاتی، وضعیت اقامت و اسناد مربوط به منبع وجه ممکن است درخواست شود.'
+    q: 'آیا یک فرد خارجی می‌تواند در ترکیه حساب بانکی باز کند؟',
+    a: 'بانک‌ها می‌توانند برای مشتریان خارجی حساب باز کنند؛ اما معیارهای پذیرش از بانکی به بانک دیگر متفاوت است. ممکن است اسناد اضافی در مورد پاسپورت، آدرس، شماره مالیاتی، اطلاعات اقامت و منبع وجوه درخواست شود.'
   },
   {
-    q: 'حساب شرکتی با حساب شخصی یکسان است؟',
-    a: 'خیر. برای حساب شرکتی، مدارک ثبت شرکت، اطلاعات مالیاتی، صاحبان امضا و ساختار سهامداری نیز بررسی می‌شود.'
+    q: 'آیا فرآیند حساب شرکتی و حساب شخصی یکسان است؟',
+    a: 'خیر. در حساب شرکتی، اسناد شرکتی مانند مدارک ثبت شرکت، اطلاعات مالیاتی، حق امضا و ساختار شراکت به طور جداگانه بررسی می‌شوند.'
   },
   {
-    q: 'آیا برای انتقال وجه از ایران به ترکیه یک روش ثابت وجود دارد؟',
-    a: 'خیر. سیاست بانک، طرفین معامله، ارز، نوع معامله و کنترل‌های تطبیق می‌تواند روش قابل استفاده را تغییر دهد. بهتر است پیش از انتقال، مسیر و مدارک مورد نیاز روشن شود.'
+    q: 'آیا یک روش استاندارد واحد برای انتقال پول از ایران به ترکیه وجود دارد؟',
+    a: 'خیر. سیاست‌های بانکی، طرفین تراکنش، ارز، ماهیت رابطه تجاری و کنترل‌های انطباق می‌توانند بر این روش تأثیر بگذارند. قبل از انجام تراکنش، کانال مورد استفاده و مجموعه اسناد باید مشخص شوند.'
   },
   {
     q: 'آیا افتتاح حساب بانکی تضمین می‌شود؟',
-    a: 'خیر. تصمیم نهایی به سیاست پذیرش مشتری و کنترل‌های داخلی بانک مربوط است. در چارچوب مشاوره می‌توان مدارک و فرآیند درخواست را پیش از مراجعه آماده کرد.'
+    a: 'خیر. تصمیم نهایی به سیاست‌های پذیرش مشتری و انطباق بانک مربوطه بستگی دارد. در چارچوب مشاوره، می‌توان آماده‌سازی اسناد و هماهنگی فرآیند را پیش از درخواست انجام داد.'
   }
 ];
 ---
-<BaseLayout title="حساب بانکی، شماره مالیاتی و امور مالی | Mina Beigi" description="راهنمایی برای اتباع خارجی و سرمایه‌گذاران ایرانی درباره شماره مالیاتی، حساب بانکی شخصی و شرکتی، KYC و آماده‌سازی مدارک مالی در ترکیه." lang="fa">
+<BaseLayout title="حساب بانکی، شماره مالیاتی و فرآیندهای مالی | مینا بیگی" description="مشاوره برای دریافت شماره مالیاتی، حساب بانکی، حساب شرکتی، KYC و آماده‌سازی تراکنش‌های مالی در ترکیه برای سرمایه‌گذاران خارجی و ایرانی." lang="fa">
   <Fragment slot="head">
     <link rel="canonical" href={SITE_URL + "/fa/banking-tax-financial-processes/"} />
     <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/banka-vergi-finansal-surecler/"} />
@@ -42,67 +42,71 @@ const faq = [
     })} />
   </Fragment>
 
-  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
+  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden" dir="rtl">
     <div class="absolute inset-0 bg-[url('/images/blog-4.jpg')] bg-cover bg-center opacity-75 z-0"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/35 to-primary/10 z-10"></div>
-    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20" dir="rtl">
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
       <nav class="text-sm text-bronze/80 mb-5 flex items-center justify-center gap-2" aria-label="Breadcrumb">
-        <a href="/fa/" class="hover:text-brand">خانه</a><span>/</span>
+        <a href="/fa/" class="hover:text-brand">صفحه اصلی</a><span>/</span>
         <a href="/fa/services/" class="hover:text-brand">خدمات</a><span>/</span>
-        <span class="text-ivory/60">حساب بانکی، مالیات و امور مالی</span>
+        <span class="text-ivory/60">بانک، مالیات و فرآیندهای مالی</span>
       </nav>
-      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">حساب بانکی، شماره مالیاتی و امور مالی</h1>
-      <p class="text-ivory/80 text-lg max-w-3xl mx-auto">آماده‌سازی و هماهنگی امور شماره مالیاتی، حساب بانکی شخصی و شرکتی و مدارک مالی برای خارجی‌ها و سرمایه‌گذاران ایرانی در ترکیه.</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">حساب بانکی، شماره مالیاتی و فرآیندهای مالی</h1>
+      <p class="text-ivory/80 text-lg max-w-3xl mx-auto">آماده‌سازی مدارک مالی، حساب شرکتی، حساب بانکی و شماره مالیاتی برای اتباع خارجی که قصد سرمایه‌گذاری، تأسیس شرکت یا انجام معاملات شخصی در ترکیه را دارند.</p>
     </div>
   </div>
 
-  <main class="py-12 md:py-16 bg-primary">
-    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
+  <main class="py-12 md:py-16 bg-primary" dir="rtl">
+    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed text-lg space-y-10">
       <section>
-        <h2 class="text-3xl font-bold text-ivory mb-4">یکی از رایج‌ترین مشکلات خارجی‌ها در ترکیه: بانک و امور مالی</h2>
-        <p class="mb-4">افرادی که در ترکیه شرکت ثبت می‌کنند، ملک می‌خرند، سرمایه‌گذاری می‌کنند یا قصد فعالیت تجاری منظم دارند، خیلی زود با موضوع شماره مالیاتی، حساب بانکی و انتقال وجه روبه‌رو می‌شوند. هر بانک و هر معامله ممکن است الزامات متفاوتی داشته باشد.</p>
-        <p>برای سرمایه‌گذاران ایرانی بهتر است قبل از شروع معامله، نوع حساب، اسناد لازم و دلیل تجاری پرداخت به‌طور روشن مشخص شود.</p>
+        <div class="mb-6 rounded-2xl border border-brand/40 bg-surface p-5">
+          <h2 class="text-2xl font-bold text-ivory mb-2">افتتاح حساب بانکی بین‌المللی</h2>
+          <p class="text-ivory/75">هماهنگی فرآیندهای افتتاح حساب بانکی، KYC، دریافت شماره مالیاتی، منبع وجوه و آماده‌سازی اسناد مالی برای اتباع خارجی و شرکت‌ها.</p>
+        </div>
+        <h2 class="text-3xl font-bold text-ivory mb-4">یکی از چالش‌برانگیزترین زمینه‌ها برای اتباع خارجی: بانکداری و آماده‌سازی مالی</h2>
+        <p class="mb-4">بسیاری از اتباع خارجی که قصد تأسیس شرکت، خرید ملک، پرداخت مالیات یا انجام فعالیت‌های تجاری منظم در ترکیه را دارند، در مراحل اولیه با مسائلی نظیر دریافت شماره مالیاتی، افتتاح حساب بانکی و انتقال پول مواجه می‌شوند. اگرچه این فرآیندها ممکن است مرتبط به نظر برسند، اما هر نهاد ممکن است هویت، آدرس و کنترل‌های انطباق خاص خود را اعمال کند.</p>
+        <p>به‌ویژه برای سرمایه‌گذاران ایرانی، قبل از شروع هرگونه معامله باید مشخص شود که از چه حسابی استفاده خواهد شد، چه اسنادی باید آماده شوند و پرداخت به چه دلیل تجاری انجام می‌پذیرد.</p>
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-ivory mb-4">حوزه خدمات</h2>
+        <h2 class="text-2xl font-bold text-ivory mb-4">در چه زمینه‌هایی پشتیبانی ارائه می‌دهیم؟</h2>
         <div class="grid sm:grid-cols-2 gap-4">
-          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">شماره مالیاتی</strong><span class="text-sm">آماده‌سازی اطلاعات و مدارک برای درخواست شماره مالیاتی اتباع خارجی.</span></div>
-          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">حساب بانکی شخصی</strong><span class="text-sm">بررسی پاسپورت، آدرس، شماره مالیاتی و وضعیت اقامت پیش از مراجعه به بانک.</span></div>
-          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">حساب بانکی شرکت</strong><span class="text-sm">آماده‌سازی اسناد ثبت شرکت، صاحبان امضا، سهامداران و پرونده معرفی شرکت.</span></div>
-          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">پرونده مالی معامله</strong><span class="text-sm">تنظیم مدارک مربوط به سرمایه‌گذاری، خرید ملک یا پرداخت تجاری.</span></div>
+          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">شماره مالیاتی</strong><span class="text-sm">آماده‌سازی درخواست شماره شناسایی مالیاتی بالقوه برای اتباع خارجی و کنترل اسناد بر اساس نوع تراکنش.</span></div>
+          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">حساب بانکی شخصی</strong><span class="text-sm">آماده‌سازی پیش از درخواست از نظر پاسپورت، آدرس، اطلاعات مالیاتی و اقامتی.</span></div>
+          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">حساب بانکی شرکتی</strong><span class="text-sm">آماده‌سازی پرونده برای اسناد ثبت شرکت، حق امضا، ساختار شراکت و مصاحبه بانکی.</span></div>
+          <div class="bg-surface p-5 rounded-xl border border-primary"><strong class="text-ivory block mb-2">پرونده تراکنش مالی</strong><span class="text-sm">تنظیم شرح تراکنش، قراردادها و اسناد پشتیبان برای سرمایه‌گذاری، خرید ملک یا پرداخت‌های تجاری.</span></div>
         </div>
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-ivory mb-4">شماره مالیاتی چگونه برنامه‌ریزی می‌شود؟</h2>
-        <p>در سامانه دیجیتال اداره مالیات ترکیه امکان درخواست شماره مالیاتی بالقوه برای اتباع خارجی وجود دارد. صحت و هماهنگی اطلاعات پاسپورت، آدرس و اطلاعات تماس اهمیت زیادی دارد و نوع شناسه مورد استفاده با توجه به وضعیت فرد و نوع معامله می‌تواند متفاوت باشد.</p>
+        <h2 class="text-2xl font-bold text-ivory mb-4">برنامه‌ریزی برای دریافت شماره مالیاتی چگونه است؟</h2>
+        <p>در اداره مالیات دیجیتال سازمان امور مالیاتی، صفحه‌ای برای درخواست شماره شناسایی مالیاتی بالقوه برای اتباع خارجی وجود دارد. در این درخواست مهم است که اطلاعات هویتی، پاسپورت، تماس و آدرس دقیق و با یکدیگر سازگار باشند. برای افرادی که دارای شماره ملی اتباع خارجی در ترکیه هستند، اطلاعات هویتی مورد استفاده ممکن است بسته به نوع تراکنش متفاوت باشد.</p>
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-ivory mb-4">چرا نتیجه افتتاح حساب برای همه یکسان نیست؟</h2>
-        <p class="mb-4">سیاست پذیرش مشتری خارجی و کنترل‌های KYC/تطبیق در بانک‌ها یکسان نیست. برخی بانک‌ها علاوه بر پاسپورت و شماره مالیاتی، مدرک آدرس، کارت اقامت، اطلاعات درآمد، اسناد شرکت یا توضیح درباره منبع وجه را نیز درخواست می‌کنند.</p>
-        <p>به همین دلیل، به جای جستجوی «بانکی که حتماً حساب باز کند»، بهتر است پرونده‌ای متناسب با وضعیت شخص و هدف مالی آماده شود.</p>
+        <h2 class="text-2xl font-bold text-ivory mb-4">چرا همه نمی‌توانند نتیجه یکسانی در افتتاح حساب بانکی بگیرند؟</h2>
+        <p class="mb-4">سیاست‌های پذیرش مشتری و کنترل انطباق (KYC) در بانک‌های مختلف برای مشتریان خارجی یکسان نیست. در حالی که یک بانک ممکن است تنها با پاسپورت و شماره مالیاتی کار را پیش ببرد، بانک دیگر ممکن است مدارک اضافی در مورد اثبات آدرس، کارت اقامت، گواهی درآمد، اسناد شرکتی یا منبع وجوه درخواست کند.</p>
+        <p>بنابراین، به جای این رویکرد که «کدام بانک قطعا حساب باز می‌کند؟»، آماده‌سازی پرونده اسنادی مناسب با وضعیت شخص و هدف تراکنش، روشی بسیار منطقی‌تر است.</p>
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-ivory mb-4">نکات مهم برای سرمایه‌گذاران ایرانی</h2>
+        <h2 class="text-2xl font-bold text-ivory mb-4">نکات ویژه‌ای که سرمایه‌گذاران ایرانی باید به آن توجه کنند</h2>
         <ul class="list-disc list-inside space-y-2 text-ivory/70">
-          <li>قرارداد و اسناد توضیح‌دهنده دلیل تجاری پرداخت آماده باشد</li>
-          <li>کاربرد حساب شخصی و حساب شرکت از هم تفکیک شود</li>
-          <li>منبع وجه و زنجیره پرداخت قابل توضیح باشد</li>
-          <li>برای خرید ملک، سرمایه شرکت یا پرداخت تجاری از توضیحات و رسیدهای متناسب استفاده شود</li>
-          <li>برای درخواست اسناد تکمیلی KYC و تطبیق بانکی آمادگی وجود داشته باشد</li>
+          <li>آماده بودن قراردادها و اسنادی که دلیل تجاری سرمایه‌گذاری یا پرداخت را نشان می‌دهند</li>
+          <li>تفکیک هدف استفاده از حساب شخصی و حساب شرکتی</li>
+          <li>قابل توضیح بودن منبع وجوه و زنجیره پرداخت</li>
+          <li>استفاده از رسیدها و توضیحات متناسب با نوع تراکنش، خواه مربوط به املاک، سرمایه شرکت یا پرداخت تجاری باشد</li>
+          <li>آمادگی برای ارائه اسناد اضافی KYC/انطباق که ممکن است بانک درخواست کند</li>
         </ul>
       </section>
 
       <section>
-        <h2 class="text-2xl font-bold text-ivory mb-4">مراحل کار</h2>
+        <h2 class="text-2xl font-bold text-ivory mb-4">این فرآیند چگونه پیش می‌رود؟</h2>
         <ol class="space-y-3 text-ivory/70">
-          <li><strong class="text-ivory">۱. تعیین هدف:</strong> حساب شخصی، حساب شرکتی، سرمایه‌گذاری، ملک یا پرداخت تجاری مشخص می‌شود.</li>
-          <li><strong class="text-ivory">۲. کنترل مدارک:</strong> پاسپورت، آدرس، مالیات، اسناد شرکت و مدارک معامله بررسی می‌شود.</li>
-          <li><strong class="text-ivory">۳. آماده‌سازی درخواست:</strong> پرونده با توجه به الزامات بانک یا مرجع مربوطه تنظیم می‌شود.</li>
-          <li><strong class="text-ivory">۴. مرحله بعد:</strong> بانکداری اینترنتی، اختیار امضا یا پرداخت سرمایه‌گذاری در صورت نیاز جداگانه برنامه‌ریزی می‌شود.</li>
+          <li><strong class="text-ivory">۱. تعیین هدف تراکنش:</strong> هدف از افتتاح حساب شخصی، شرکتی، سرمایه‌گذاری، املاک یا پرداخت تجاری مشخص می‌شود.</li>
+          <li><strong class="text-ivory">۲. بررسی اسناد:</strong> پاسپورت، آدرس، اطلاعات مالیاتی، اسناد شرکتی و مدارک پشتیبان تراکنش مورد بررسی قرار می‌گیرند.</li>
+          <li><strong class="text-ivory">۳. آماده‌سازی درخواست:</strong> پرونده بر اساس فرمت‌های درخواستی بانک یا نهاد مربوطه تنظیم می‌شود.</li>
+          <li><strong class="text-ivory">۴. اقدامات بعدی:</strong> پس از افتتاح حساب، نیازهایی مانند بانکداری اینترنتی، اعطای مجوزهای شرکتی یا پرداخت‌های سرمایه‌گذاری به‌طور جداگانه برنامه‌ریزی می‌شوند.</li>
         </ol>
       </section>
 
@@ -120,12 +124,16 @@ const faq = [
 
       
       <section class="pt-7 border-t border-surface">
-        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center" dir="rtl">
-          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">برای ارزیابی سریع با ما در تماس باشید</h2>
-          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">برای یک بررسی اولیه از طریق واتساپ پیام دهید یا برای ارسال اطلاعات کامل‌تر از صفحه تماس استفاده کنید.</p>
+        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">وضعیت خود را به سرعت ارزیابی کنیم</h2>
+          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">برای یک مشاوره اولیه کوتاه می‌توانید از طریق واتس‌اپ پیام دهید یا برای ارائه اطلاعات دقیق‌تر از صفحه تماس استفاده کنید.</p>
           <div class="flex flex-col sm:flex-row justify-center gap-3">
-            <a href="https://wa.me/989125102088" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">واتساپ ایران</a>
-            <a href="/fa/contact/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">صفحه تماس</a>
+            <a href="https://wa.me/905392425624" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">
+              واتس‌اپ ترکیه
+            </a>
+            <a href="/fa/contact/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">
+              صفحه تماس
+            </a>
           </div>
         </div>
       </section>

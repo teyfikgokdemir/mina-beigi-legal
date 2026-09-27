@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL } from '../../consts';
 ---
-<BaseLayout title="فرآیندهای اقامت تحصیلی | Mina Beigi" description="آماده‌سازی پرونده، کنترل مدارک و هماهنگی فرآیند اقامت دانشجویی برای اتباع خارجی." lang="fa">
+<BaseLayout title="فرآیندهای اقامت تحصیلی | مینا بیگی" description="آماده‌سازی پرونده اقامت، بررسی مدارک و هماهنگی درخواست برای دانشجویان خارجی." lang="fa" dir="rtl">
   <Fragment slot="head">
     <link rel="canonical" href={SITE_URL + "/fa/student-residence/"} />
     <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/ogrenci-ikameti/"} />
@@ -10,37 +10,71 @@ import { SITE_URL } from '../../consts';
     <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/ogrenci-ikameti/"} />
   </Fragment>
 
-  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
+  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden" dir="rtl">
     <div class="absolute inset-0 bg-cover bg-center opacity-75 z-0" style="background-image: url('/images/srv-student.jpg');"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/35 to-primary/10 z-10"></div>
-    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20" dir="rtl">
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
       <nav class="text-sm text-bronze/80 mb-5 flex items-center justify-center gap-2" aria-label="Breadcrumb">
-        <a href="/fa/" class="hover:text-brand">خانه</a><span>/</span>
+        <a href="/fa/" class="hover:text-brand">صفحه اصلی</a><span>/</span>
         <a href="/fa/services/" class="hover:text-brand">خدمات</a><span>/</span>
         <span class="text-ivory/60" aria-current="page">فرآیندهای اقامت تحصیلی</span>
       </nav>
       <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">فرآیندهای اقامت تحصیلی</h1>
-      <p class="text-ivory/75 max-w-2xl mx-auto">آماده‌سازی پرونده، کنترل مدارک و هماهنگی فرآیند اقامت دانشجویی برای اتباع خارجی.</p>
+      <p class="text-ivory/75 max-w-2xl mx-auto">آماده‌سازی پرونده اقامت، بررسی مدارک و هماهنگی درخواست برای دانشجویان خارجی.</p>
     </div>
   </div>
 
-  <main class="py-12 md:py-16 bg-primary">
-    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
+  <main class="py-12 md:py-16 bg-primary" dir="rtl">
+    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed text-lg space-y-10">
       
-<section><h2 class="text-3xl font-bold text-ivory mb-4">اقامت تحصیلی؛ هماهنگی دقیق میان دانشگاه، مدارک و زمان‌بندی</h2><p>برای دانشجویان خارجی، ثبت‌نام دانشگاه تنها بخشی از مسیر است. وضعیت پاسپورت، مدرک دانشجویی، بیمه، آدرس و زمان درخواست باید با یکدیگر هماهنگ باشند تا پرونده بدون تناقض آماده شود.</p></section>
-<section><h2 class="text-2xl font-bold text-ivory mb-4">این خدمات برای چه کسانی مناسب است؟</h2><ul class="grid sm:grid-cols-2 gap-3 text-ivory/70"><li class="bg-surface p-4 rounded-lg">دانشجویانی که تازه تحصیل در ترکیه را آغاز می‌کنند</li><li class="bg-surface p-4 rounded-lg">دانشجویانی که قصد تمدید اقامت دارند</li><li class="bg-surface p-4 rounded-lg">افرادی که دانشگاه یا شهر محل تحصیل خود را تغییر داده‌اند</li><li class="bg-surface p-4 rounded-lg">متقاضیانی که به ترجمه رسمی و هماهنگی مدارک نیاز دارند</li></ul></section>
-<section><h2 class="text-2xl font-bold text-ivory mb-4">مراحل کار</h2><ol class="space-y-3 text-ivory/70"><li><strong class="text-ivory">۱. بررسی وضعیت:</strong> نوع تحصیل، وضعیت اقامت، پاسپورت و آدرس بررسی می‌شود.</li><li><strong class="text-ivory">۲. برنامه مدارک:</strong> مدرک دانشجویی، بیمه، آدرس و مدارک شخصی مشخص می‌شود.</li><li><strong class="text-ivory">۳. آماده‌سازی پرونده:</strong> فرم‌ها، ترجمه‌ها و هماهنگی نوتر در صورت نیاز انجام می‌شود.</li><li><strong class="text-ivory">۴. پیگیری پرونده:</strong> در صورت درخواست مدرک تکمیلی، پرونده دوباره بررسی می‌شود.</li></ol></section>
-<section><h2 class="text-2xl font-bold text-ivory mb-4">مدارک عمومی</h2><p>پاسپورت، مدرک دانشجویی معتبر، بیمه مناسب، اطلاعات آدرس، عکس بیومتریک و بسته به وضعیت پرونده مدارک تکمیلی مورد نیاز خواهد بود.</p></section>
-<section><h2 class="text-2xl font-bold text-ivory mb-4">سوالات متداول</h2><div class="space-y-3"><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا مدرک دانشجویی به‌تنهایی کافی است؟</summary><p class="mt-3 text-sm">خیر. پرونده اقامت مجموعه‌ای از اطلاعات شخصی، تحصیلی و آدرس است.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">با تغییر دانشگاه چه باید کرد؟</summary><p class="mt-3 text-sm">تغییر دانشگاه یا برنامه تحصیلی ممکن است نیاز به به‌روزرسانی پرونده داشته باشد.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">مدارک فارسی قابل استفاده هستند؟</summary><p class="mt-3 text-sm">بسته به مرجع مربوطه، ترجمه رسمی و در مواردی تایید نوتر لازم می‌شود.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">زمان نتیجه قطعی است؟</summary><p class="mt-3 text-sm">خیر. زمان بررسی با توجه به نوع پرونده، حجم درخواست‌ها و مدارک تکمیلی متفاوت است.</p></details></div></section>
+<section>
+  <div class="mb-6 rounded-2xl border border-brand/40 bg-surface p-5">
+    <h2 class="text-2xl font-bold text-ivory mb-2">اقامت تحصیلی در ترکیه</h2>
+    <p class="text-ivory/75">آماده‌سازی پرونده اقامت تحصیلی، بررسی مدارک و هماهنگی درخواست برای اتباع خارجی که در دانشگاه‌ها و سایر برنامه‌های آموزشی معتبر مشغول به تحصیل هستند.</p>
+  </div>
+  <h2 class="text-3xl font-bold text-ivory mb-4">برای اقامت تحصیلی تنها پر کردن فرم کافی نیست</h2>
+  <p>روند اقامت برای دانشجویان خارجی که در مقاطع کارشناسی، کارشناسی ارشد، دکترا یا برنامه‌های آموزشی معتبر در ترکیه مشغول به تحصیل هستند، نیازمند آماده‌سازی هماهنگ مدارک ثبت‌نام، آدرس، بیمه، گذرنامه و تقویم درخواست است. اطلاعات ناقص یا متناقض می‌تواند روند کار را به‌طور غیرضروری طولانی کند.</p>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">مناسب برای چه کسانی است؟</h2>
+  <ul class="grid sm:grid-cols-2 gap-3 text-ivory/70">
+    <li class="bg-surface p-4 rounded-lg">دانشجویان خارجی که تحصیلات خود را به‌تازگی در ترکیه آغاز می‌کنند</li>
+    <li class="bg-surface p-4 rounded-lg">دانشجویان فعلی که قصد تمدید مدت اقامت خود را دارند</li>
+    <li class="bg-surface p-4 rounded-lg">کسانی که پس از تغییر دانشگاه یا شهر نیاز به به‌روزرسانی پرونده خود دارند</li>
+    <li class="bg-surface p-4 rounded-lg">کسانی که برای هماهنگی مدارک، ترجمه و درخواست نیاز به پشتیبانی دارند</li>
+  </ul>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">روند کار چگونه پیش می‌رود؟</h2>
+  <ol class="space-y-3 text-ivory/70">
+    <li><strong class="text-ivory">۱. تحلیل وضعیت:</strong> وضعیت تحصیلی، وضعیت فعلی اقامت، آدرس و مدت اعتبار گذرنامه با هم بررسی می‌شوند.</li>
+    <li><strong class="text-ivory">۲. برنامه‌ریزی مدارک:</strong> فرمت آماده‌سازی گواهی اشتغال به تحصیل، بیمه، آدرس و مدارک شخصی مشخص می‌شود.</li>
+    <li><strong class="text-ivory">۳. آماده‌سازی درخواست:</strong> سازگاری فرم‌ها و مدارک بررسی شده و روندهای لازم برای ترجمه و تأیید نوتر (دفترخانه) هماهنگ می‌شود.</li>
+    <li><strong class="text-ivory">۴. پیگیری پرونده:</strong> در صورت نیاز به مدارک اضافی یا به‌روزرسانی پس از ثبت درخواست، پرونده مجدداً ارزیابی می‌شود.</li>
+  </ol>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">آماده‌سازی‌های کلی</h2>
+  <p>گذرنامه، گواهی تحصیلی به‌روز، بیمه درمانی مناسب، اطلاعات آدرس، عکس بیومتریک و بسته به نوع درخواست ممکن است مدارک اضافی مورد نیاز باشد. لیست دقیق بستگی به وضعیت تحصیلی و اقامتی شخص دارد.</p>
+</section>
+<section>
+  <h2 class="text-2xl font-bold text-ivory mb-4">سؤالات متداول</h2>
+  <div class="space-y-3">
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا گواهی تحصیلی به‌تنهایی کافی است؟</summary><p class="mt-3 text-sm">خیر. پرونده اقامت نیازمند ارزیابی همزمان اطلاعات شخصی، تحصیلی و آدرس است.</p></details>
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا با تغییر دانشگاه پرونده باید مجدداً ارزیابی شود؟</summary><p class="mt-3 text-sm">تغییرات در مؤسسه یا برنامه آموزشی می‌تواند بر اطلاعات پرونده تأثیر بگذارد؛ بنابراین بررسی وضعیت جدید الزامی است.</p></details>
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">اگر مدارک به زبان فارسی باشد چه باید کرد؟</summary><p class="mt-3 text-sm">بسته به سازمان موردنظر، ترجمه رسمی و در صورت نیاز تأیید نوتر برنامه‌ریزی می‌شود.</p></details>
+    <details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا می‌توان زمان دقیقی برای نتیجه درخواست اعلام کرد؟</summary><p class="mt-3 text-sm">خیر. زمان‌های پردازش بسته به پرونده، حجم کاری سازمان و درخواست مدارک اضافی متفاوت است.</p></details>
+  </div>
+</section>
 
       
       <section class="pt-7 border-t border-surface">
-        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center" dir="rtl">
-          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">برای ارزیابی سریع با ما در تماس باشید</h2>
-          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">برای یک بررسی اولیه از طریق واتساپ پیام دهید یا برای ارسال اطلاعات کامل‌تر از صفحه تماس استفاده کنید.</p>
+        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">بیایید وضعیت شما را سریعاً بررسی کنیم</h2>
+          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">برای یک مشاوره اولیه کوتاه می‌توانید از طریق واتس‌اپ پیام دهید یا برای ارائه اطلاعات دقیق‌تر از صفحه تماس استفاده کنید.</p>
           <div class="flex flex-col sm:flex-row justify-center gap-3">
-            <a href="https://wa.me/989125102088" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">
-              واتساپ ایران
+            <a href="https://wa.me/905392425624" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">
+              واتس‌اپ ترکیه
             </a>
             <a href="/fa/contact/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">
               صفحه تماس

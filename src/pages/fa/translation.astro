@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL } from '../../consts';
 ---
-<BaseLayout title="ترجمه رسمی فارسی و ترکی | Mina Beigi" description="ترجمه رسمی اسناد فارسی–ترکی و ترجمه شفاهی در امور اداری و رسمی." lang="fa">
+<BaseLayout title="ترجمه رسمی | مینا بیگی" description="ترجمه رسمی مدارک فارسی به ترکی و ترجمه شفاهی در امور رسمی." lang="fa" dir="rtl">
   <Fragment slot="head">
     <link rel="canonical" href={SITE_URL + "/fa/translation/"} />
     <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/tercumanlik/"} />
@@ -10,36 +10,40 @@ import { SITE_URL } from '../../consts';
     <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/tercumanlik/"} />
   </Fragment>
 
-  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
+  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden" dir="rtl">
     <div class="absolute inset-0 bg-cover bg-center opacity-75 z-0" style="background-image: url('/images/hero-translation.webp');"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/35 to-primary/10 z-10"></div>
-    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20" dir="rtl">
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
       <nav class="text-sm text-bronze/80 mb-5 flex items-center justify-center gap-2" aria-label="Breadcrumb">
-        <a href="/fa/" class="hover:text-brand">خانه</a><span>/</span>
+        <a href="/fa/" class="hover:text-brand">صفحه اصلی</a><span>/</span>
         <a href="/fa/services/" class="hover:text-brand">خدمات</a><span>/</span>
-        <span class="text-ivory/60" aria-current="page">ترجمه رسمی فارسی و ترکی</span>
+        <span class="text-ivory/60" aria-current="page">ترجمه رسمی</span>
       </nav>
-      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">ترجمه رسمی فارسی و ترکی</h1>
-      <p class="text-ivory/75 max-w-2xl mx-auto">ترجمه رسمی اسناد فارسی–ترکی و ترجمه شفاهی در امور اداری و رسمی.</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-5">ترجمه رسمی</h1>
+      <p class="text-ivory/75 max-w-2xl mx-auto">ترجمه رسمی مدارک فارسی به ترکی و ترجمه شفاهی در امور رسمی.</p>
     </div>
   </div>
 
-  <main class="py-12 md:py-16 bg-primary">
-    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed text-lg space-y-10" dir="rtl">
+  <main class="py-12 md:py-16 bg-primary" dir="rtl">
+    <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed text-lg space-y-10">
       
-<section><h2 class="text-3xl font-bold text-ivory mb-4">ترجمه رسمی فارسی–ترکی</h2><p>برای نوتر، اداره ثبت، شرکت، قرارداد، وکالت‌نامه، مدرک تحصیلی و سایر امور رسمی، ترجمه باید با هدف استفاده از سند و اصطلاحات درست هماهنگ باشد.</p></section>
-<section><h2 class="text-2xl font-bold text-ivory mb-4">دامنه خدمات</h2><div class="grid sm:grid-cols-2 gap-4"><div class="bg-surface p-5 rounded-xl"><strong class="text-ivory block mb-2">ترجمه کتبی</strong><span class="text-sm">پاسپورت، مدرک تحصیلی، قرارداد، وکالت‌نامه و اسناد شرکتی.</span></div><div class="bg-surface p-5 rounded-xl"><strong class="text-ivory block mb-2">ترجمه شفاهی</strong><span class="text-sm">همراهی در نوتر، تاپو و سایر امور رسمی.</span></div></div></section>
-<section><h2 class="text-2xl font-bold text-ivory mb-4">مراحل</h2><ol class="space-y-3 text-ivory/70"><li><strong class="text-ivory">۱.</strong> مرجع استفاده از سند و هدف ترجمه مشخص می‌شود.</li><li><strong class="text-ivory">۲.</strong> نیاز به تایید نوتر یا سایر تاییدها بررسی می‌شود.</li><li><strong class="text-ivory">۳.</strong> فرمت تحویل و زمان‌بندی هماهنگ می‌شود.</li></ol></section>
-<section><h2 class="text-2xl font-bold text-ivory mb-4">سوالات متداول</h2><div class="space-y-3"><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا همه ترجمه‌ها باید نوتر شوند؟</summary><p class="mt-3 text-sm">خیر. نیاز به تایید بستگی به مرجع و نوع استفاده از سند دارد.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">مدارک فارسی ترجمه می‌شوند؟</summary><p class="mt-3 text-sm">بله، ترجمه رسمی فارسی–ترکی در حوزه خدمات قرار دارد.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">همراهی در نوتر یا تاپو انجام می‌شود؟</summary><p class="mt-3 text-sm">بسته به نوع معامله، ترجمه شفاهی و حضوری قابل برنامه‌ریزی است.</p></details></div></section>
+<section><div class="mb-6 rounded-2xl border border-brand/40 bg-surface p-5"><h2 class="text-2xl font-bold text-ivory mb-2">ترجمه رسمی در ترکیه</h2><p class="text-ivory/75">ترجمه رسمی مدارک فارسی به ترکی و ارائه خدمات ترجمه شفاهی در دفاتر اسناد رسمی (نوتر) و ارگان‌های دولتی.</p></div><h2 class="text-3xl font-bold text-ivory mb-4">ترجمه رسمی فارسی به ترکی</h2><p>استفاده از اصطلاحات صحیح و ترجمه متناسب با نوع اقدام، برای مدارک مورد استفاده در نوتر، اداره تاپو (ثبت اسناد)، ثبت تجاری، ثبت شرکت، قراردادها، وکالتنامه‌ها، مدارک تحصیلی و سایر امور رسمی از اهمیت بالایی برخوردار است.</p></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">دامنه خدمات</h2><div class="grid sm:grid-cols-2 gap-4"><div class="bg-surface p-5 rounded-xl"><strong class="text-ivory block mb-2">ترجمه کتبی</strong><span class="text-sm">پاسپورت، مدارک تحصیلی، قراردادها، وکالتنامه‌ها و اسناد شرکتی.</span></div><div class="bg-surface p-5 rounded-xl"><strong class="text-ivory block mb-2">ترجمه شفاهی</strong><span class="text-sm">ترجمه شفاهی (پیاپی) در نشست‌های نوتر، تاپو و سایر مراحل رسمی.</span></div></div></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">مراحل کار</h2><ol class="space-y-3 text-ivory/70"><li><strong class="text-ivory">۱.</strong> تعیین نهاد موردنظر و هدف استفاده از مدرک.</li><li><strong class="text-ivory">۲.</strong> بررسی نیاز به ترجمه و در صورت لزوم تأییدیه نوتر.</li><li><strong class="text-ivory">۳.</strong> برنامه‌ریزی فرمت تحویل و روز انجام کار.</li></ol></section>
+<section><h2 class="text-2xl font-bold text-ivory mb-4">سؤالات متداول</h2><div class="space-y-3"><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا تمام ترجمه‌ها نیاز به تأیید نوتر دارند؟</summary><p class="mt-3 text-sm">خیر. نیاز به تأیید بستگی به نهاد دریافت‌کننده و نوع اقدام دارد.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا امکان ترجمه مدارک فارسی وجود دارد؟</summary><p class="mt-3 text-sm">بله، ترجمه رسمی مدارک از زبان فارسی به ترکی جزو خدمات ما می‌باشد.</p></details><details class="bg-surface p-5 rounded-xl"><summary class="font-semibold text-ivory cursor-pointer">آیا در نوتر و یا تاپو خدمات ترجمه شفاهی ارائه می‌شود؟</summary><p class="mt-3 text-sm">با توجه به ماهیت کار، امکان هماهنگی برای ترجمه شفاهی و پیاپی وجود دارد.</p></details></div></section>
 
       
       <section class="pt-7 border-t border-surface">
-        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center" dir="rtl">
-          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">برای ارزیابی سریع با ما در تماس باشید</h2>
-          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">برای یک بررسی اولیه از طریق واتساپ پیام دهید یا برای ارسال اطلاعات کامل‌تر از صفحه تماس استفاده کنید.</p>
+        <div class="bg-surface/80 border border-primary rounded-2xl p-6 md:p-7 text-center">
+          <h2 class="text-2xl md:text-3xl font-bold text-ivory mb-3">بیایید شرایط شما را سریعاً بررسی کنیم</h2>
+          <p class="text-ivory/70 max-w-2xl mx-auto mb-5">برای یک مشاوره اولیه کوتاه می‌توانید از طریق واتس‌اپ پیام دهید و یا برای ارائه توضیحات بیشتر از صفحه تماس با ما استفاده کنید.</p>
           <div class="flex flex-col sm:flex-row justify-center gap-3">
-            <a href="https://wa.me/989125102088" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">واتساپ ایران</a>
-            <a href="/fa/contact/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">صفحه تماس</a>
+            <a href="https://wa.me/905392425624" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-lg hover:scale-[1.02] transition-transform">
+              واتس‌اپ ترکیه
+            </a>
+            <a href="/fa/contact/" class="inline-flex items-center justify-center border border-brand text-brand font-semibold px-6 py-3 rounded-lg hover:bg-brand hover:text-white transition-colors">
+              صفحه تماس با ما
+            </a>
           </div>
         </div>
       </section>
