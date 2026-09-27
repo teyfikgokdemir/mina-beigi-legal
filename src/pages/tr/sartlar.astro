@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE_URL } from "../../consts";
+---
+<BaseLayout title="Kullanım Koşulları | Mina Beigi" description="Mina Beigi Uluslararası Danışmanlık Kullanım Koşulları ve yasal uyarılar." lang="tr">
+  <Fragment slot="head">
+    <link rel="canonical" href={SITE_URL + "/tr/sartlar/"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/sartlar/"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/terms/"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/sartlar/"} />
+  </Fragment>
+
+  <div class="py-24 bg-surface border-b border-primary">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h1 class="text-4xl font-bold text-ivory mb-6">Kullanım Koşulları</h1>
+      <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
+    </div>
+  </div>
+
+  <div class="py-16 md:py-20 bg-primary min-h-[50vh]">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed space-y-8">
+      
+      <section class="prose prose-invert max-w-none">
+        <h2>1. Sözleşmenin Kabulü</h2>
+        <p>
+          minabeigi.com web sitesini ("Site") ziyaret ederek veya hizmetlerimizden faydalanarak bu kullanım koşullarını kabul etmiş sayılırsınız. Eğer bu koşulların herhangi bir kısmını kabul etmiyorsanız, lütfen sitemizi kullanmaya devam etmeyiniz.
+        </p>
+
+        <h2>2. Hizmetlerin Kapsamı ve Hukuki Sorumluluk Sınırları</h2>
+        <p>
+          Mina Beigi Uluslararası Danışmanlık, Site üzerinde yer alan bilgilerin güncel ve doğru olması için çaba sarf eder. Ancak yasalar, mevzuatlar ve kurum uygulamaları (ikamet izni, vatandaşlık, vergi vb.) sürekli değişebildiğinden, Site üzerinde sağlanan bilgilerin her an güncel olduğunu veya hukuki mütalaa yerine geçtiğini garanti etmiyoruz.
+        </p>
+        <p>
+          Sitedeki bilgiler genel bilgilendirme amaçlı olup, kesin hukuki danışmanlık mahiyetinde değerlendirilmemelidir. Verilen kararlardan doğabilecek doğrudan veya dolaylı maddi/manevi zararlardan Mina Beigi Uluslararası Danışmanlık sorumlu tutulamaz. Herhangi bir işlem yapmadan önce mutlaka uzmanlarımızla birebir görüşme gerçekleştirmeniz tavsiye edilir.
+        </p>
+
+        <h2>3. Fikri Mülkiyet Hakları</h2>
+        <p>
+          Sitede yer alan tüm metinler, logolar, görseller, grafikler, tasarım öğeleri ve yazılımların fikri mülkiyet hakları Mina Beigi Uluslararası Danışmanlık'a veya lisans sağlayıcılarına aittir. Önceden yazılı izin alınmaksızın Site içeriğinin tamamen veya kısmen kopyalanması, çoğaltılması, dağıtılması veya izinsiz kullanılması yasaktır.
+        </p>
+
+        <h2>4. Üçüncü Taraf Bağlantıları</h2>
+        <p>
+          Sitemiz, kullanıcı kolaylığı sağlamak amacıyla üçüncü taraf web sitelerine bağlantılar (linkler) içerebilir. Bu dış bağlantıların içerikleri, gizlilik politikaları veya uygulamaları üzerinde hiçbir kontrolümüz bulunmamaktadır. Söz konusu sitelere erişim ve kullanımdan doğacak riskler kullanıcının kendisine aittir.
+        </p>
+
+        <h2>5. Değişiklik Yapma Hakkı</h2>
+        <p>
+          Mina Beigi Uluslararası Danışmanlık, bu Kullanım Koşulları'nı önceden bildirimde bulunmaksızın tek taraflı olarak değiştirme, güncelleme veya yenileme hakkını saklı tutar. Yapılan değişiklikler Sitede yayımlandığı andan itibaren yürürlüğe girer.
+        </p>
+
+        <h2>6. Yetkili Mahkeme</h2>
+        <p>
+          Bu Kullanım Koşulları, Türkiye Cumhuriyeti yasalarına tabidir. Site kullanımından doğabilecek her türlü ihtilafta İstanbul Çağlayan (Merkez) Mahkemeleri ve İcra Daireleri yetkilidir.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
