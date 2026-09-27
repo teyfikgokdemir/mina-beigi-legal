@@ -1,54 +1,63 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="درباره ما | Mina Beigi" description="مینا بیگی در حوزه مهاجرت، ترجمه رسمی، سرمایه‌گذاری، ثبت شرکت و هماهنگی امور میان ایران و ترکیه فعالیت می‌کند." lang="fa">
-  <section class="py-7 md:py-8 bg-surface border-b border-primary">
-    <div class="container mx-auto px-4 max-w-4xl text-center" dir="rtl">
-      <p class="text-brand font-semibold mb-2">استانبول • تهران</p>
-      <h1 class="text-3xl md:text-[2.15rem] font-bold text-ivory mb-3">درباره ما</h1>
-      <p class="text-ivory/70 max-w-2xl mx-auto">همراهی حرفه‌ای در امور مهاجرتی، ترجمه رسمی، سرمایه‌گذاری، ثبت شرکت و هماهنگی فرآیندهای میان ایران و ترکیه.</p>
+<BaseLayout title="درباره ما | Mina Beigi" description="مینا بیگی پشتیبانی حرفه‌ای در زمینه‌های اقامت، ترجمه رسمی، سرمایه‌گذاری و هماهنگی فرآیندها میان ایران و ترکیه ارائه می‌دهد." lang="fa">
+  <div class="relative min-h-[430px] md:min-h-[520px] bg-primary border-b border-primary overflow-hidden flex items-center">
+    <div class="absolute inset-0 bg-cover opacity-75 z-0" style="background-image: url('/images/mina-beigi-hakkimizda-hero.webp'); background-position: center 22%;"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/35 to-primary/10 z-10"></div>
+    <div class="container mx-auto px-4 max-w-6xl relative z-20 w-full min-h-[430px] md:min-h-[520px]" dir="rtl">
+      <nav class="absolute top-5 right-4 md:right-0 text-sm text-bronze/80 flex items-center gap-2" aria-label="Breadcrumb">
+        <a href="/fa/" class="hover:text-brand">صفحه اصلی</a><span>/</span>
+        <span class="text-ivory/60" aria-current="page">درباره ما</span>
+      </nav>
+
+      <div class="absolute inset-x-4 md:inset-x-0 bottom-4 md:bottom-5 text-center">
+        <p class="text-ivory/90 font-semibold mb-2">استانبول • تهران</p>
+        <h1 class="text-2xl md:text-[2.15rem] font-bold text-ivory mb-4">درباره ما</h1>
+        <p class="text-ivory/75 max-w-2xl mx-auto">مدل کاری ویژه که رویه‌های مهاجرتی، ترجمه رسمی، سرمایه‌گذاری و فرآیندهای تجاری میان ایران و ترکیه را شفاف‌تر و منظم‌تر می‌سازد.</p>
+      </div>
     </div>
-  </section>
+  </div>
 
   <main class="py-12 md:py-14 bg-primary">
     <div class="container mx-auto px-4 max-w-5xl text-ivory/80 leading-relaxed" dir="rtl">
       <section class="text-center max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-[2rem] lg:text-[2.2rem] font-bold text-ivory mb-4 lg:whitespace-nowrap">همراهی حرفه‌ای میان ایران و ترکیه</h2>
-        <p class="text-base md:text-[1.05rem] leading-7 max-w-5xl mx-auto">مینا بیگی در حوزه امور مهاجرتی، ترجمه رسمی، سرمایه‌گذاری، ثبت شرکت و هماهنگی درخواست‌ها فعالیت می‌کند. شیوه همکاری بر بررسی وضعیت پرونده، مشخص‌کردن مدارک و مراحل لازم و ایجاد یک مسیر روشن برای ادامه کار متمرکز است.</p>
+        <h2 class="text-3xl md:text-[2rem] lg:text-[2.2rem] font-bold text-ivory mb-4 lg:whitespace-nowrap">مدیریت حرفه‌ای فرآیندها میان ترکیه و ایران</h2>
+        <p class="text-base md:text-[1.05rem] leading-7 max-w-5xl mx-auto">مینا بیگی پشتیبانی حرفه‌ای در زمینه‌های آماده‌سازی درخواست‌ها برای امور فردی و تجاری، ترجمه رسمی، مهاجرت، سرمایه‌گذاری و فرآیندهای ثبت شرکت ارائه می‌دهد. مدل کاری بر درک وضعیت فعلی پرونده، شفاف‌سازی پیش‌نیازها و هماهنگی منظم فرآیندها استوار است.</p>
       </section>
 
-      <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-9">
-        <div class="bg-surface p-5 rounded-2xl border border-primary text-center">
-          <strong class="text-ivory block mb-2">وکیل پایه یک دادگستری</strong>
-          <span class="text-sm">عنوان درج‌شده در معرفی حرفه‌ای ایشان.</span>
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-9">
+        <div class="bg-surface p-5 md:p-5 rounded-2xl border border-primary text-center min-h-[180px] sm:min-h-[200px] lg:min-h-[220px] flex flex-col justify-center">
+          <strong class="text-ivory block mb-2">متخصص سیستم حقوقی ایران</strong>
+          <span class="text-sm leading-6 text-ivory/70">رویکرد مشاوره‌ای حرفه‌ای مبتنی بر سیستم حقوقی ایران و تجربه در فرآیندهای برون‌مرزی.</span>
         </div>
-        <div class="bg-surface p-5 rounded-2xl border border-primary text-center">
-          <strong class="text-ivory block mb-2">وکیل مهاجرت در ترکیه</strong>
-          <span class="text-sm">عنوان مورد استفاده در بیوگرافی اینستاگرام.</span>
+        <div class="bg-surface p-5 md:p-5 rounded-2xl border border-primary text-center min-h-[180px] sm:min-h-[200px] lg:min-h-[220px] flex flex-col justify-center">
+          <strong class="text-ivory block mb-2">وکیل مهاجرتی در ترکیه</strong>
+          <span class="text-sm leading-6 text-ivory/70">پشتیبانی حرفه‌ای منظم و نتیجه‌گرا در فرآیندهای مهاجرت، اقامت و درخواست‌ها در ترکیه.</span>
         </div>
-        <div class="bg-surface p-5 rounded-2xl border border-primary text-center">
+        <div class="bg-surface p-5 md:p-5 rounded-2xl border border-primary text-center min-h-[180px] sm:min-h-[200px] lg:min-h-[220px] flex flex-col justify-center">
           <strong class="text-ivory block mb-2">مترجم رسمی در ترکیه</strong>
-          <span class="text-sm">ترجمه رسمی فارسی و ترکی و همراهی در امور اداری.</span>
+          <span class="text-sm leading-6 text-ivory/70">پشتیبانی ترجمه معتبر در فرآیندهای اسناد، مدارک رسمی و امور سازمانی ترکی و فارسی.</span>
         </div>
-        <div class="bg-surface p-5 rounded-2xl border border-primary text-center">
-          <strong class="text-ivory block mb-2">عضو اتاق بازرگانی ایران–ایتالیا</strong>
-          <span class="text-sm">ارتباط با فضای تجارت و سرمایه‌گذاری بین‌المللی.</span>
+        <div class="bg-surface p-5 md:p-5 rounded-2xl border border-primary text-center min-h-[180px] sm:min-h-[200px] lg:min-h-[220px] flex flex-col justify-center">
+          <strong class="text-ivory block mb-2">عضو اتاق بازرگانی ایران و ایتالیا</strong>
+          <span class="text-sm leading-6 text-ivory/70">شبکه ارتباطی حرفه‌ای و قوی برای پشتیبانی از تجارت بین‌الملل، سرمایه‌گذاری و توسعه کسب‌وکار.</span>
         </div>
       </section>
 
       <section class="grid md:grid-cols-2 gap-6 mt-9">
         <div class="bg-surface/50 rounded-2xl border border-primary p-6 md:p-7">
-          <h2 class="text-2xl font-bold text-ivory mb-3">روش همکاری</h2>
-          <p>هر درخواست ابتدا از نظر هدف، مدارک موجود، نوع فرآیند و زمان‌بندی بررسی می‌شود. سپس مراحل لازم، موارد ناقص و نکات مهم به‌صورت شفاف توضیح داده می‌شود تا متقاضی با تصویر روشن‌تری تصمیم بگیرد و اقدام کند.</p>
+          <h2 class="text-2xl font-bold text-ivory mb-3">چگونه کار می‌کنیم؟</h2>
+          <p>هر درخواست بر اساس هدف، اسناد موجود، نوع درخواست و زمان‌بندی ارزیابی می‌شود. سپس مراحل لازم، کاستی‌ها و نکات مهم در فرآیند به وضوح به اشتراک گذاشته می‌شود. هدف ایجاد یک نقشه راه کنترل‌شده بدون سردرگمی در میان اسناد و ادارات مختلف است.</p>
         </div>
         <div class="bg-surface/50 rounded-2xl border border-primary p-6 md:p-7">
-          <h2 class="text-2xl font-bold text-ivory mb-3">مخاطبان خدمات</h2>
-          <p>سرمایه‌گذاران و کارآفرینان ایرانی، متقاضیان ثبت شرکت و خرید ملک در ترکیه، افراد نیازمند خدمات اقامتی و کاری و همچنین اشخاصی که برای امور رسمی به ترجمه فارسی–ترکی نیاز دارند.</p>
+          <h2 class="text-2xl font-bold text-ivory mb-3">با چه کسانی کار می‌کنیم؟</h2>
+          <p>ما با کارآفرینان ایرانی و سایر اتباع خارجی که قصد سرمایه‌گذاری، ثبت شرکت، خرید ملک و برنامه‌ریزی برای فرآیندهای اقامتی یا کاری در ترکیه را دارند، و همچنین با افرادی که به خدمات ترجمه رسمی و پشتیبانی در درخواست‌ها نیازمندند، کار می‌کنیم.</p>
         </div>
       </section>
 
       <div class="text-center mt-9">
-        <a href="/fa/contact/" class="inline-flex bg-brand text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#A33850] transition-colors">درخواست مشاوره</a>
+        <a href="/fa/contact/" class="inline-flex bg-brand text-white font-semibold px-8 py-3 rounded-lg hover:bg-[#A33850] transition-colors">ثبت درخواست مشاوره</a>
       </div>
     </div>
   </main>
