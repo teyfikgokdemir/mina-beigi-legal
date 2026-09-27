@@ -36,7 +36,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </section>
 
   <section class="py-14 md:py-20 bg-primary">
-    <div class="container mx-auto px-4 max-w-5xl">
+    <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center mb-8 md:mb-10">
         <h2 class="reveal-up text-4xl font-bold text-ivory mb-4">Uzmanlık Alanlarımız</h2>
         <p class="reveal-up delay-100 text-ivory/60 text-base md:text-lg text-center mx-auto max-w-2xl">Süreçlerinizin her aşamasında profesyonel ön değerlendirme, dosya hazırlığı ve resmî süreç koordinasyonu sağlıyoruz.</p>
@@ -51,9 +51,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           {l: '/tr/deport-ret-surecleri', t: 'Deport / Ret Danışmanlığı', d: 'Reddedilen dosyaların ön değerlendirmesi ve izlenebilecek süreçlerin açıklanması.', i: '/images/blog-8.jpg'},
           {l: '/tr/tercumanlik', t: 'Resmî Tercümanlık', d: 'Noter onaylı belge çevirisi ve kurumlarda ardıl sözlü tercümanlık.', i: '/images/hero-translation.webp'}
         ].map((s, index) => (
-          <a href={s.l} style={`transition-delay: ${Math.min(300, index * 100)}ms`} class="reveal-up group block p-4 md:p-5 bg-surface/60 backdrop-blur-md rounded-xl border border-ivory/5 hover:-translate-y-1 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-all duration-300">
-            <div class="w-full h-28 mb-5 rounded-lg overflow-hidden border border-ivory/5 bg-primary/30"><img src={s.i} alt={s.t} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" /></div>
-            <h3 class="text-lg font-bold text-ivory mb-3 group-hover:text-brand transition-colors">{s.t} <span class='inline-block transition-transform group-hover:translate-x-1'>→</span></h3>
+          <a href={s.l} style={`transition-delay: ${Math.min(300, index * 100)}ms`} class="reveal-up group block p-5 md:p-7 bg-surface/60 backdrop-blur-md rounded-xl border border-ivory/5 hover:-translate-y-1 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-all duration-300">
+            <div class="w-full h-36 mb-5 rounded-lg overflow-hidden border border-ivory/5 bg-primary/30"><img src={s.i} alt={s.t} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" /></div>
+            <h3 class="text-xl font-bold text-ivory mb-3 group-hover:text-brand transition-colors">{s.t} <span class='inline-block transition-transform group-hover:translate-x-1'>→</span></h3>
             <p class="text-ivory/60 leading-relaxed text-sm">{s.d}</p>
           </a>
         ))}
