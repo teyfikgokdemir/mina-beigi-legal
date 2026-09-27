@@ -52,7 +52,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           {l: '/fa/translation', t: 'ترجمه رسمی', d: 'ترجمه رسمی مدارک با تایید نوتر برای تمامی امور ثبتی و قانونی.'},
           {l: '/fa/deport-rejection', t: 'بررسی اولیه پرونده‌های دیپورت و ریجکت', d: 'بررسی اولیه پرونده و توضیح مسیرهای قابل پیگیری بر اساس شرایط هر پرونده.'}
         ].map((s, index) => (
-          <a href={s.l} style={`transition-delay: ${Math.min(300, index * 100)}ms`} class="reveal-up group block p-8 bg-surface/60 backdrop-blur-md rounded-xl border border-ivory/5 hover:-translate-y-1 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-all duration-300 text-start">
+          <a href={s.l} style={`transition-delay: ${Math.min(300, index * 100)}ms`} class="reveal-up group block p-5 md:p-6 bg-surface/60 backdrop-blur-md rounded-xl border border-ivory/5 hover:-translate-y-1 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-all duration-300 text-start">
+            <div class="w-full h-36 mb-5 rounded-lg overflow-hidden border border-ivory/5 bg-primary/30"><img src={s.i} alt={s.t} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" /></div>
             <h3 class="text-xl font-bold text-ivory mb-3 group-hover:text-brand transition-colors">{s.t} <span class='inline-block transition-transform group-hover:-translate-x-1'>&larr;</span></h3>
             <p class="text-ivory/60 leading-relaxed text-sm">{s.d}</p>
           </a>

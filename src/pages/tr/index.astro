@@ -44,14 +44,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       
       <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
         {[
-          {l: '/tr/calisma-izni', t: 'Çalışma İzni Süreçleri', d: 'Mevzuata uygun başvuru koordinasyonu ve profesyonel dosya yönetimi.'},
-          {l: '/tr/gayrimenkul-ikamet-vatandaslik', t: 'İkamet ve Vatandaşlık', d: 'Gayrimenkul ve yatırım yoluyla vatandaşlık dosyalarının ön değerlendirmesi.'},
-          {l: '/tr/sirket-kurulusu', t: 'Şirket Kuruluşu', d: 'Ticaret odası kayıt süreçleri ve ticari izinlerin koordinasyonu.'},
-          {l: '/tr/yatirim-danismanligi', t: 'Yatırım Danışmanlığı', d: 'Doğru ve stratejik pazar konumlandırması için rehberlik.'},
-          {l: '/tr/deport-ret-surecleri', t: 'Deport / Ret Danışmanlığı', d: 'Reddedilen dosyaların ön değerlendirmesi ve izlenebilecek süreçlerin açıklanması.'},
-          {l: '/tr/tercumanlik', t: 'Resmî Tercümanlık', d: 'Noter onaylı belge çevirisi ve kurumlarda ardıl sözlü tercümanlık.'}
+          {l: '/tr/calisma-izni', t: 'Çalışma İzni Süreçleri', d: 'Mevzuata uygun başvuru koordinasyonu ve profesyonel dosya yönetimi.', i: '/images/srv-work.jpg'},
+          {l: '/tr/gayrimenkul-ikamet-vatandaslik', t: 'İkamet ve Vatandaşlık', d: 'Gayrimenkul ve yatırım yoluyla vatandaşlık dosyalarının ön değerlendirmesi.', i: '/images/srv-citizen.jpg'},
+          {l: '/tr/sirket-kurulusu', t: 'Şirket Kuruluşu', d: 'Ticaret odası kayıt süreçleri ve ticari izinlerin koordinasyonu.', i: '/images/blog-3.jpg'},
+          {l: '/tr/yatirim-danismanligi', t: 'Yatırım Danışmanlığı', d: 'Doğru ve stratejik pazar konumlandırması için rehberlik.', i: '/images/blog-10.jpg'},
+          {l: '/tr/deport-ret-surecleri', t: 'Deport / Ret Danışmanlığı', d: 'Reddedilen dosyaların ön değerlendirmesi ve izlenebilecek süreçlerin açıklanması.', i: '/images/blog-8.jpg'},
+          {l: '/tr/tercumanlik', t: 'Resmî Tercümanlık', d: 'Noter onaylı belge çevirisi ve kurumlarda ardıl sözlü tercümanlık.', i: '/images/hero-translation.webp'}
         ].map((s, index) => (
-          <a href={s.l} style={`transition-delay: ${Math.min(300, index * 100)}ms`} class="reveal-up group block p-8 bg-surface/60 backdrop-blur-md rounded-xl border border-ivory/5 hover:-translate-y-1 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-all duration-300">
+          <a href={s.l} style={`transition-delay: ${Math.min(300, index * 100)}ms`} class="reveal-up group block p-5 md:p-6 bg-surface/60 backdrop-blur-md rounded-xl border border-ivory/5 hover:-translate-y-1 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand transition-all duration-300">
+            <div class="w-full h-36 mb-5 rounded-lg overflow-hidden border border-ivory/5 bg-primary/30"><img src={s.i} alt={s.t} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" /></div>
             <h3 class="text-xl font-bold text-ivory mb-3 group-hover:text-brand transition-colors">{s.t} <span class='inline-block transition-transform group-hover:translate-x-1'>→</span></h3>
             <p class="text-ivory/60 leading-relaxed text-sm">{s.d}</p>
           </a>
