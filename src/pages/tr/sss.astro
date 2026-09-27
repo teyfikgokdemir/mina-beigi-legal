@@ -1,16 +1,89 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE_URL } from "../../consts";
+
+const faqs = [
+  {
+    q: "Mina Beigi Uluslararası Danışmanlık hangi alanlarda hizmet veriyor?",
+    a: "Türkiye'de şirket kuruluşu, çalışma ve ikamet izni süreçleri, yatırım danışmanlığı, uluslararası banka hesabı açılışı, gayrimenkul ve vatandaşlık süreçleri ile yeminli tercümanlık alanlarında hizmet veriyoruz."
+  },
+  {
+    q: "Süreçler için ne kadar süre öngörüyorsunuz?",
+    a: "Süreçlerin tamamlanma süresi talep edilen hizmetin türüne ve resmi makamların yoğunluğuna göre değişiklik gösterir. Örneğin şirket kuruluşu birkaç gün içinde tamamlanabilirken, çalışma izni veya vatandaşlık süreçleri daha uzun sürebilir. İlk görüşmemizde size net bir zaman çizelgesi sunuyoruz."
+  },
+  {
+    q: "Türkiye'de yatırım yapmak isteyen yabancılar için alt limit var mı?",
+    a: "Gayrimenkul yatırımı yoluyla vatandaşlık için güncel alt limit 400.000 USD'dir. Ancak sadece ikamet veya şirket kuruluşu için yatırım amaçlı böyle bir yasal alt limit bulunmamaktadır. Detaylar ve en güncel yasal gereklilikler için danışmanlarımızla iletişime geçebilirsiniz."
+  },
+  {
+    q: "Danışmanlık ücretleriniz nasıl belirleniyor?",
+    a: "Ücretlendirmemiz, almak istediğiniz hizmetin kapsamına, sürecin karmaşıklığına ve gerekli operasyonel adımlara göre projelendirilerek belirlenir. Şeffaflık ilkemiz gereği, çalışmaya başlamadan önce tüm maliyetleri tarafınıza bildiriyoruz."
+  },
+  {
+    q: "Sadece İstanbul'da mı hizmet veriyorsunuz?",
+    a: "Merkezimiz İstanbul'da olmakla birlikte, Türkiye'nin birçok farklı şehrindeki operasyonları yürütebiliyoruz. Aynı zamanda Tahran ofisimizle Türkiye - İran ekseninde entegre bir hizmet sağlıyoruz."
+  }
+];
 ---
-<BaseLayout title="Sıkça Sorulan Sorular" description="Sıkça Sorulan Sorular - Mina Beigi" lang="tr">
-  <div class="py-24 bg-surface border-b border-primary">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">Sıkça Sorulan Sorular</h1>
-      <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
+<BaseLayout title="Sıkça Sorulan Sorular | Mina Beigi" description="Mina Beigi Uluslararası Danışmanlık hizmetleri hakkında sıkça sorulan sorular (SSS) ve detaylı yanıtları." lang="tr">
+  <Fragment slot="head">
+    <link rel="canonical" href={SITE_URL + "/tr/sss/"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/sss/"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/faq/"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/sss/"} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a
+        }
+      }))
+    })} />
+  </Fragment>
+
+  <div class="relative py-20 md:py-24 bg-primary border-b border-primary overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-40 z-0" style="background-image: url('/images/hero-office.webp');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/30 z-10"></div>
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-20">
+      <h1 class="text-4xl md:text-5xl font-bold text-ivory mb-6">Sıkça Sorulan Sorular</h1>
+      <p class="text-ivory/80 text-lg max-w-2xl mx-auto">Süreçlerimiz, hizmet detaylarımız ve çalışma prensiplerimiz hakkında aklınıza takılan soruların yanıtları.</p>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="ltr">
-      <p>Danışmanlık süreçlerimiz hakkında sıkça sorulan sorular.</p>
+
+  <div class="py-16 md:py-20 bg-primary min-h-[50vh]">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <details class="group bg-surface rounded-xl border border-primary/50 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-ivory font-semibold">
+              <h2 class="text-lg">{faq.q}</h2>
+              <span class="relative size-5 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 size-5 opacity-100 group-open:opacity-0 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 size-5 opacity-0 group-open:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </span>
+            </summary>
+            <div class="px-5 pb-5 pt-0 text-ivory/75 leading-relaxed">
+              <p>{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+      
+      <div class="mt-12 bg-surface/80 border border-brand/20 p-8 rounded-2xl text-center">
+        <h3 class="text-xl font-bold text-ivory mb-3">Aradığınız cevabı bulamadınız mı?</h3>
+        <p class="text-ivory/70 mb-6">Size özel durumunuzla ilgili detaylı bilgi almak için bizimle iletişime geçebilirsiniz.</p>
+        <a href="/tr/iletisim/" class="inline-flex justify-center items-center bg-brand text-primary font-semibold px-8 py-3 rounded-lg hover:bg-ivory transition-colors">
+          İletişime Geçin
+        </a>
+      </div>
     </div>
   </div>
 </BaseLayout>

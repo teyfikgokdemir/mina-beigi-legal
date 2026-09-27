@@ -1,16 +1,75 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE_URL } from "../../consts";
 ---
-<BaseLayout title="Gizlilik Politikası" description="Gizlilik Politikası - Mina Beigi" lang="tr">
+<BaseLayout title="Gizlilik ve Çerez Politikası | Mina Beigi" description="Mina Beigi Uluslararası Danışmanlık Gizlilik ve Çerez Politikası." lang="tr">
+  <Fragment slot="head">
+    <link rel="canonical" href={SITE_URL + "/tr/gizlilik/"} />
+    <link rel="alternate" hreflang="tr" href={SITE_URL + "/tr/gizlilik/"} />
+    <link rel="alternate" hreflang="fa" href={SITE_URL + "/fa/privacy/"} />
+    <link rel="alternate" hreflang="x-default" href={SITE_URL + "/tr/gizlilik/"} />
+  </Fragment>
+
   <div class="py-24 bg-surface border-b border-primary">
     <div class="container mx-auto px-4 max-w-4xl text-center">
-      <h1 class="text-4xl font-bold text-ivory mb-6">Gizlilik Politikası</h1>
+      <h1 class="text-4xl font-bold text-ivory mb-6">Gizlilik ve Çerez Politikası</h1>
       <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
     </div>
   </div>
-  <div class="py-20 bg-primary min-h-[50vh]">
-    <div class="container mx-auto px-4 max-w-3xl text-ivory/80 leading-relaxed text-lg" dir="ltr">
-      <p>Gizlilik politikamız ve veri güvenliği ilkelerimiz.</p>
+
+  <div class="py-16 md:py-20 bg-primary min-h-[50vh]">
+    <div class="container mx-auto px-4 max-w-4xl text-ivory/80 leading-relaxed space-y-8">
+      
+      <section class="prose prose-invert max-w-none">
+        <h2>1. Giriş</h2>
+        <p>
+          Mina Beigi Uluslararası Danışmanlık olarak sitemizi ziyaret eden kullanıcılarımızın gizliliğini ve veri güvenliğini önemsiyoruz. Bu Gizlilik ve Çerez Politikası, web sitemizi kullanırken kişisel bilgilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır.
+        </p>
+
+        <h2>2. Hangi Verileri Topluyoruz?</h2>
+        <p>Sitemizi kullanımınız sırasında aşağıdaki veriler toplanabilir:</p>
+        <ul>
+          <li><strong>İletişim Formları:</strong> İletişim formu aracılığıyla bize ulaştığınızda adınız, e-posta adresiniz, telefon numaranız ve mesajınız.</li>
+          <li><strong>Otomatik Toplanan Veriler (Çerezler):</strong> IP adresiniz, tarayıcı türünüz, ziyaret süreniz ve gezindiğiniz sayfalar gibi anonim kullanım istatistikleri.</li>
+        </ul>
+
+        <h2>3. Verilerin Kullanım Amacı</h2>
+        <p>Topladığımız bilgileri şu amaçlarla kullanmaktayız:</p>
+        <ul>
+          <li>Taleplerinize ve sorularınıza yanıt vermek.</li>
+          <li>Size danışmanlık hizmetlerimizle ilgili geri dönüş sağlamak.</li>
+          <li>Sitemizin performansını analiz etmek ve kullanıcı deneyimini iyileştirmek.</li>
+          <li>Yasal yükümlülüklerimizi yerine getirmek.</li>
+        </ul>
+
+        <h2>4. Çerez (Cookie) Kullanımı</h2>
+        <p>
+          Çerezler, web sitemizin daha verimli çalışmasını sağlamak amacıyla tarayıcınıza veya cihazınıza yerleştirilen küçük metin dosyalarıdır. Sitemizde şu çerez türleri kullanılmaktadır:
+        </p>
+        <ul>
+          <li><strong>Zorunlu Çerezler:</strong> Sitenin temel fonksiyonlarının çalışması için gereklidir.</li>
+          <li><strong>Analiz ve Performans Çerezleri:</strong> Ziyaretçi davranışlarını (ör. Google Analytics) analiz ederek siteyi geliştirmemize yardımcı olur. (Bu veriler tamamen anonimleştirilmiştir.)</li>
+        </ul>
+        <p>
+          Tarayıcı ayarlarınızı değiştirerek çerezleri reddedebilir veya çerez gönderildiğinde uyarı alabilirsiniz. Ancak çerezleri devre dışı bırakmanız halinde sitemizin bazı özellikleri düzgün çalışmayabilir.
+        </p>
+
+        <h2>5. Veri Güvenliği ve Paylaşımı</h2>
+        <p>
+          Kişisel verileriniz, uygun güvenlik önlemleri ile korunmaktadır. Bilgileriniz, yasal bir zorunluluk olmadığı sürece üçüncü şahıslarla, kurumlarla veya şirketlerle asla ticari amaçlı paylaşılmaz veya satılmaz.
+        </p>
+
+        <h2>6. KVKK Kapsamında Haklarınız</h2>
+        <p>
+          Türkiye Cumhuriyeti'nde Kişisel Verilerin Korunması Kanunu (KVKK) uyarınca haklarınız bulunmaktadır. Kişisel verilerinizin nasıl işlendiği ve haklarınızla ilgili detaylı bilgi için lütfen <a href="/tr/kvkk/" class="text-brand hover:underline">KVKK Aydınlatma Metni</a> sayfamızı inceleyiniz.
+        </p>
+
+        <h2>7. İletişim</h2>
+        <p>
+          Gizlilik ve çerez politikamızla ilgili her türlü sorunuz için bizimle <strong>info@minabeigi.com</strong> adresi üzerinden veya <a href="/tr/iletisim/" class="text-brand hover:underline">iletişim sayfamızdaki</a> numaralardan irtibata geçebilirsiniz.
+        </p>
+      </section>
+
     </div>
   </div>
 </BaseLayout>
