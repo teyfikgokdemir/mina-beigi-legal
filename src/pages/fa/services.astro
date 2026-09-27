@@ -3,14 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL } from '../../consts';
 
 const services = [
-  { link: '/fa/investment-consulting/', title: 'سرمایه‌گذاری در ترکیه', desc: 'مشاوره و راهنمایی تخصصی برای سرمایه‌گذاران ایرانی جهت ورود به بازار ترکیه و انتخاب بهترین گزینه‌ها.' },
-  { link: '/fa/company-formation/', title: 'ثبت شرکت در ترکیه', desc: 'بررسی ساختار شرکت، آماده‌سازی مدارک، ثبت تجاری و هماهنگی شروع فعالیت برای اتباع خارجی.' },
-  { link: '/fa/property-residence-citizenship/', title: 'خرید ملک / اقامت / شهروندی', desc: 'بررسی ملک، مدارک و هماهنگی فرآیندهای اقامت و شهروندی از طریق سرمایه‌گذاری.' },
-  { link: '/fa/work-permit/', title: 'مجوز کار', desc: 'بررسی شرایط، آماده‌سازی مدارک و هماهنگی درخواست مجوز کار برای مدیران، کارکنان و شرکای تجاری.' },
-  { link: '/fa/student-residence/', title: 'اقامت تحصیلی', desc: 'مشاوره و هماهنگی دریافت اقامت دانشجویی برای پذیرفته‌شدگان دانشگاه‌های ترکیه.' },
-  { link: '/fa/translation/', title: 'ترجمه رسمی', desc: 'ترجمه رسمی، تایید نوتر (دفتر اسناد رسمی) و سفارت برای تمامی مدارک هویتی و تجاری.' },
-  { link: '/fa/deport-rejection/', title: 'بررسی اولیه پرونده‌های دیپورت', desc: 'ارزیابی اولیه دلایل ریجکتی، محدودیت یا منع ورود و توضیح مسیرهای قابل پیگیری.' },
-  { link: '/fa/banking-tax-financial-processes/', title: 'حساب بانکی، مالیات و امور مالی', desc: 'راهنمایی برای شماره مالیاتی، حساب بانکی شخصی و شرکتی، KYC و آماده‌سازی مدارک مالی در ترکیه.' }
+  { link: '/fa/investment-consulting/', title: 'سرمایه‌گذاری در ترکیه', desc: 'مشاوره و راهنمایی تخصصی برای سرمایه‌گذاران ایرانی جهت ورود به بازار ترکیه و انتخاب بهترین گزینه‌ها.' , img: '/images/blog-10.jpg' },
+  { link: '/fa/company-formation/', title: 'ثبت شرکت در ترکیه', desc: 'بررسی ساختار شرکت، آماده‌سازی مدارک، ثبت تجاری و هماهنگی شروع فعالیت برای اتباع خارجی.' , img: '/images/blog-3.jpg' },
+  { link: '/fa/property-residence-citizenship/', title: 'خرید ملک / اقامت / شهروندی', desc: 'بررسی ملک، مدارک و هماهنگی فرآیندهای اقامت و شهروندی از طریق سرمایه‌گذاری.' , img: '/images/srv-citizen.jpg' },
+  { link: '/fa/work-permit/', title: 'مجوز کار', desc: 'بررسی شرایط، آماده‌سازی مدارک و هماهنگی درخواست مجوز کار برای مدیران، کارکنان و شرکای تجاری.' , img: '/images/srv-work.jpg' },
+  { link: '/fa/student-residence/', title: 'اقامت تحصیلی', desc: 'مشاوره و هماهنگی دریافت اقامت دانشجویی برای پذیرفته‌شدگان دانشگاه‌های ترکیه.' , img: '/images/srv-student.jpg' },
+  { link: '/fa/translation/', title: 'ترجمه رسمی', desc: 'ترجمه رسمی، تایید نوتر (دفتر اسناد رسمی) و سفارت برای تمامی مدارک هویتی و تجاری.' , img: '/images/hero-translation.webp' },
+  { link: '/fa/deport-rejection/', title: 'بررسی اولیه پرونده‌های دیپورت', desc: 'ارزیابی اولیه دلایل ریجکتی، محدودیت یا منع ورود و توضیح مسیرهای قابل پیگیری.' , img: '/images/blog-8.jpg' },
+  { link: '/fa/banking-tax-financial-processes/', title: 'حساب بانکی، مالیات و امور مالی', desc: 'راهنمایی برای شماره مالیاتی، حساب بانکی شخصی و شرکتی، KYC و آماده‌سازی مدارک مالی در ترکیه.' , img: '/images/blog-4.jpg' }
 ];
 ---
 <BaseLayout title="خدمات ایرانیان در ترکیه: سرمایه‌گذاری، ثبت شرکت، اقامت و اجازه کار" description="خدمات ایرانیان در ترکیه شامل سرمایه‌گذاری، ثبت شرکت، اجازه کار، اقامت تحصیلی، خرید ملک، ترجمه رسمی، حساب بانکی، مالیات و بررسی پرونده‌های دیپورت و ریجکت." lang="fa">
@@ -49,7 +49,8 @@ const services = [
     <div class="container mx-auto px-4 max-w-6xl" dir="rtl">
       <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
         {services.map(s => (
-          <div class="bg-surface border border-primary rounded-2xl p-7 hover:-translate-y-1.5 hover:border-brand hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 flex flex-col text-start min-h-[250px]">
+          <div class="group bg-surface border border-primary rounded-2xl p-7 hover:-translate-y-1.5 hover:border-brand hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 flex flex-col text-start min-h-[250px]">
+            <div class="aspect-video w-full mb-5 rounded-xl overflow-hidden bg-primary/50 border border-primary/20"><img src={s.img} alt={s.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
             <h3 class="text-xl xl:text-2xl font-bold text-ivory mb-4 leading-snug">{s.title}</h3>
             <p class="text-ivory/70 leading-relaxed mb-8 flex-grow">{s.desc}</p>
             <a href={s.link} class="inline-flex items-center gap-2 text-brand font-semibold hover:text-bronze transition-colors mt-auto w-fit">

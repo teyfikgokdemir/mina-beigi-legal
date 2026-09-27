@@ -3,14 +3,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL } from '../../consts';
 
 const services = [
-  { link: '/tr/calisma-izni/', title: 'Çalışma İzni Süreçleri', desc: 'Türkiye\'de yabancı personeller ve şirket ortakları için çalışma izni başvurusu, yenileme ve takip süreçlerinin uçtan uca yönetimi.' },
-  { link: '/tr/ogrenci-ikameti/', title: 'Öğrenci İkameti', desc: 'Türkiye\'deki üniversitelerde eğitim gören uluslararası öğrenciler için ikamet izni (öğrenci vizesi) başvuru koordinasyonu.' },
-  { link: '/tr/gayrimenkul-ikamet-vatandaslik/', title: 'İkamet ve Vatandaşlık', desc: 'Gayrimenkul yatırımı yoluyla Türkiye\'de ikamet izni ve Türk vatandaşlığı başvuru süreçlerinin eksiksiz yönetimi.' },
-  { link: '/tr/sirket-kurulusu/', title: 'Şirket Kuruluşu', desc: 'Yabancı yatırımcılar için Türkiye\'de limited (LTD) veya anonim (A.Ş.) şirket kurulumu, ticaret odası kayıtları ve yasal süreç danışmanlığı.' },
-  { link: '/tr/yatirim-danismanligi/', title: 'Yatırım Danışmanlığı', desc: 'Türkiye pazarında yatırım hedefi, risk, şirketleşme, gayrimenkul ve uygulama planının koordinasyonu.' },
-  { link: '/tr/deport-ret-surecleri/', title: 'Deport / Ret Süreçleri', desc: 'İkamet retleri, tahdit ve deport dosyalarının ön değerlendirmesi ve izlenebilecek süreçlerin açıklanması.' },
-  { link: '/tr/tercumanlik/', title: 'Resmî Tercümanlık', desc: 'Noter onaylı ve resmî kurumlarda geçerli her türlü belgenin Türkçe-Farsça yeminli tercüme ve tasdik işlemleri.' },
-  { link: '/tr/banka-vergi-finansal-surecler/', title: 'Banka, Vergi ve Finansal Süreçler', desc: 'Yabancılar için vergi numarası, bireysel veya şirket banka hesabı, KYC ve finansal belge hazırlığı danışmanlığı.' }
+  { link: '/tr/calisma-izni/', title: 'Çalışma İzni Süreçleri', desc: 'Türkiye\'de yabancı personeller ve şirket ortakları için çalışma izni başvurusu, yenileme ve takip süreçlerinin uçtan uca yönetimi.' , img: '/images/srv-work.jpg' },
+  { link: '/tr/ogrenci-ikameti/', title: 'Öğrenci İkameti', desc: 'Türkiye\'deki üniversitelerde eğitim gören uluslararası öğrenciler için ikamet izni (öğrenci vizesi) başvuru koordinasyonu.' , img: '/images/srv-student.jpg' },
+  { link: '/tr/gayrimenkul-ikamet-vatandaslik/', title: 'İkamet ve Vatandaşlık', desc: 'Gayrimenkul yatırımı yoluyla Türkiye\'de ikamet izni ve Türk vatandaşlığı başvuru süreçlerinin eksiksiz yönetimi.' , img: '/images/srv-citizen.jpg' },
+  { link: '/tr/sirket-kurulusu/', title: 'Şirket Kuruluşu', desc: 'Yabancı yatırımcılar için Türkiye\'de limited (LTD) veya anonim (A.Ş.) şirket kurulumu, ticaret odası kayıtları ve yasal süreç danışmanlığı.' , img: '/images/blog-3.jpg' },
+  { link: '/tr/yatirim-danismanligi/', title: 'Yatırım Danışmanlığı', desc: 'Türkiye pazarında yatırım hedefi, risk, şirketleşme, gayrimenkul ve uygulama planının koordinasyonu.' , img: '/images/blog-10.jpg' },
+  { link: '/tr/deport-ret-surecleri/', title: 'Deport / Ret Süreçleri', desc: 'İkamet retleri, tahdit ve deport dosyalarının ön değerlendirmesi ve izlenebilecek süreçlerin açıklanması.' , img: '/images/blog-8.jpg' },
+  { link: '/tr/tercumanlik/', title: 'Resmî Tercümanlık', desc: 'Noter onaylı ve resmî kurumlarda geçerli her türlü belgenin Türkçe-Farsça yeminli tercüme ve tasdik işlemleri.' , img: '/images/hero-translation.webp' },
+  { link: '/tr/banka-vergi-finansal-surecler/', title: 'Banka, Vergi ve Finansal Süreçler', desc: 'Yabancılar için vergi numarası, bireysel veya şirket banka hesabı, KYC ve finansal belge hazırlığı danışmanlığı.' , img: '/images/blog-4.jpg' }
 ];
 ---
 <BaseLayout title="Türkiye’de Çalışma İzni, Şirket Kuruluşu, Yatırım ve Göçmenlik Hizmetleri" description="İranlılar ve diğer yabancılar için Türkiye’de çalışma izni, öğrenci ikameti, şirket kuruluşu, yatırım, gayrimenkul, resmî tercümanlık, banka, vergi ve deport/ret süreçleri." lang="tr">
@@ -49,7 +49,8 @@ const services = [
     <div class="container mx-auto px-4 max-w-6xl">
       <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
         {services.map(s => (
-          <div class="bg-surface border border-primary rounded-2xl p-7 hover:-translate-y-1.5 hover:border-brand hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 flex flex-col min-h-[250px]">
+          <div class="group bg-surface border border-primary rounded-2xl p-7 hover:-translate-y-1.5 hover:border-brand hover:shadow-xl hover:shadow-brand/10 transition-all duration-300 flex flex-col min-h-[250px]">
+            <div class="aspect-video w-full mb-5 rounded-xl overflow-hidden bg-primary/50 border border-primary/20"><img src={s.img} alt={s.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
             <h3 class="text-xl xl:text-2xl font-bold text-ivory mb-4 leading-snug">{s.title}</h3>
             <p class="text-ivory/70 leading-relaxed mb-8 flex-grow">{s.desc}</p>
             <a href={s.link} class="inline-flex items-center gap-2 text-brand font-semibold hover:text-bronze transition-colors mt-auto">
