@@ -13,11 +13,11 @@
 
   const revealButton = () => {
     if (!backToTop) return;
-    if (window.scrollY > 360) {
+    if (window.scrollY > 200) {
       backToTop.classList.remove('opacity-0','pointer-events-none','translate-y-2');
       backToTop.classList.add('opacity-100');
       clearTimeout(hideTimer);
-      hideTimer = setTimeout(hideButton, 2200);
+      hideTimer = setTimeout(hideButton, 1000); // Hide 1 second after scrolling stops
     } else {
       clearTimeout(hideTimer);
       hideButton();
@@ -28,7 +28,7 @@
   window.addEventListener('load', hideButton);
   backToTop?.addEventListener('mouseenter', () => clearTimeout(hideTimer));
   backToTop?.addEventListener('mouseleave', () => {
-    if (window.scrollY > 360) hideTimer = setTimeout(hideButton, 1200);
+    if (window.scrollY > 200) hideTimer = setTimeout(hideButton, 1000);
   });
   backToTop?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
