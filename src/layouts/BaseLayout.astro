@@ -11,16 +11,13 @@ interface Props {
   title: string;
   description: string;
   lang: 'tr' | 'fa';
-  ogImage?: string;
 }
 
-const { title, description, lang, ogImage: ogImageProp } = Astro.props;
+const { title, description, lang } = Astro.props;
 const dir = lang === 'fa' ? 'rtl' : 'ltr';
 const currentUrl = new URL(Astro.request.url);
 const pageTitle = title.includes('Mina Beigi') ? title : `${title} | Mina Beigi`;
-const ogImage = ogImageProp
-  ? (ogImageProp.startsWith('http') ? ogImageProp : SITE_URL + ogImageProp)
-  : SITE_URL + '/images/mina-beigi-hakkimizda-hero.webp';
+const ogImage = SITE_URL + '/images/mina-beigi-hakkimizda-hero.webp';
 
 const serviceCatalog = [
   'Türkiye’de çalışma izni',
