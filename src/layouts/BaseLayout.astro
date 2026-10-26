@@ -17,7 +17,7 @@ const { title, description, lang } = Astro.props;
 const dir = lang === 'fa' ? 'rtl' : 'ltr';
 const currentUrl = new URL(Astro.request.url);
 const pageTitle = title.includes('Mina Beigi') ? title : `${title} | Mina Beigi`;
-const ogImage = SITE_URL + '/images/mina-beigi-hakkimizda-hero.webp';
+const ogImage = SITE_URL + '/images/mina-beigi-og.jpg';
 
 const serviceCatalog = [
   'Türkiye’de çalışma izni',
@@ -43,6 +43,10 @@ const serviceCatalog = [
     <meta property="og:title" content={pageTitle} />
     <meta property="og:url" content={SITE_URL + currentUrl.pathname} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content={lang === 'fa' ? 'fa_IR' : 'tr_TR'} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
